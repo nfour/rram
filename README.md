@@ -1,2 +1,2 @@
-# node-structures
-Structural layouts for node projects following &amp; setting convention
+# NodeJS Structures & Conventions
+Repository for nodejs project structures, build & test setups, client and server structures, linting, babel, gulp etc.
