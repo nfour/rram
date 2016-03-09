@@ -1,4 +1,4 @@
-# BLUE
+# HYDRA - Multi clients & servers
 
 For multiple clients & servers within a single project
 
