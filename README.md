@@ -9,6 +9,8 @@ Will contain & maintain battlehardened systems for:
 - Server architectures `hapi`
 - Deployment `flightplan`
 
+**PROTIP**: Use [octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc) or view `LAYOUTS` in editor.
+
 ## TODO
 
 - [ ] Complete `HYDRA` file layout & populate
