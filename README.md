@@ -7,7 +7,7 @@ Will contain & maintain battlehardened systems for:
 - Linting `eslint`
 - Client architectures `react`, `redux`
 - Server architectures `hapi`
-
+- Deployment `flightplan`
 
 ## TODO
 
