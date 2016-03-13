@@ -12,7 +12,7 @@
         "install_client" : "cd ./client && npm install",
         "install_server" : "cd ./server && npm install",
 
-        "build"          : "gulp",
+        "build"          : "gulp build:client",
         "start"          : "node ./server"
     },
 
@@ -35,8 +35,7 @@
         "babel-plugin-transform-object-rest-spread"       : "latest",
         "babel-plugin-transform-object-assign"            : "latest",
         "babel-plugin-transform-decorators"               : "latest",
-
-        "inline-environment-variables-webpack-plugin" : "0.0.x",
+        "babel-plugin-add-module-exports"                 : "0.1.x",
 
         "gulp"           : "3.9.x",
         "gulp-nodemon"   : "2.0.x",

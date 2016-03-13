@@ -20,13 +20,11 @@ export default class Tasks {
      */
     constructor(config = {}) {
         this.config = merge(
-            {
-                source : '',
-                dist   : path.resolve(__dirname, '../dist'),
-            },
             clone( require('./config') ),
             config
         )
+
+        console.log(this.config)
     }
 
     /**
@@ -137,7 +135,7 @@ export default class Tasks {
             {
                 test    : /\.jsx?$/i,
                 exclude : /node_modules/,
-                loaders : [ 'babel-loader', 'eslint-loader' ],
+                loader  : 'babel-loader',
                 query   : options.babel || {}
             },
             ...this.config.webpack.loaders

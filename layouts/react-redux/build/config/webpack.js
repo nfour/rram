@@ -1,11 +1,14 @@
-import InlineEnv from 'inline-environment-variables-webpack-plugin'
-
 /**
  *    These are all MANUALLY injected globally and do not reflect
  *    the webpack config structure; as arrays cant be merged automatically
  */
 export default {
     loaders: [
+        // {
+        //     test    : /\.jsx?$/i,
+        //     exclude : /node_modules/,
+        //     loader  : 'eslint-loader',
+        // },
         {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
@@ -26,7 +29,5 @@ export default {
 
     presets: [],
 
-    plugins: [
-        new InlineEnv()
-    ],
+    plugins: [],
 }
