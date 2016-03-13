@@ -21,6 +21,16 @@ class Test {
 #### Strings
 `'` and `"`, it doesnt matter, just use template strings as much as possible.
 
+
+#### Merging
+When merging objects and arrays, prefer ES6 spreads:
+```js
+let obj = { ...defaultProps, newProp: 1 }
+let arr = [ ...defaultItems, 1 ]
+```
+
+Keep in mind this is a **shallow** merge, thus references will persist. For deep merging and cloning, use `lutils-merge` and `lutils-clone`.
+
 ## Semicolons
 *Backed up by [NPM's style guide](https://docs.npmjs.com/misc/coding-style)*
 

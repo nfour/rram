@@ -41,6 +41,7 @@ Eslint has been configured to:
 - Trigger on some anti-patterns
 - Detect unused variables, and undefined variables in use
 - Will run on build & tests including the editor
+- Detects instances where semicolons are needed for you
 
 To configure eslint for `atom`:
 - Install the `linter-eslint` atom package
