@@ -23,8 +23,6 @@ export default class Tasks {
             clone( require('./config') ),
             config
         )
-
-        console.log(this.config)
     }
 
     /**
