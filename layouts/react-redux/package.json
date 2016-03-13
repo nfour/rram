@@ -12,8 +12,8 @@
         "install_client" : "cd ./client && npm install",
         "install_server" : "cd ./server && npm install",
 
-        "build"          : "gulp build:client",
-        "start"          : "node ./server"
+        "build"          : "gulp build",
+        "start"          : "gulp start"
     },
 
     "dependencies": {

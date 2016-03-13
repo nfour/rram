@@ -10,11 +10,11 @@ import Tasks from './build/Tasks'
 
 
 const WEB_SERVER = {
-    watch  : [ './server/*' ],
+    watch  : [ 'server/' ],
     ignore : [ 'node_modules' ],
-    script : './server',
-    ext    : 'js jsx ejs',
-    env    : { 'NODE_ENV': 'development' }
+    exec   : 'cd ./server && npm start',
+    ext    : 'js json',
+    env    : { 'NODE_ENV': 'development' },
 }
 
 const CLIENT = new Tasks({
@@ -22,7 +22,6 @@ const CLIENT = new Tasks({
         source  : path.resolve('./client/index.js'),
         dist    : path.resolve('./dist/client'),
         babel   : require('./client/babelrc.json'),
-        //webpack : {},
     }],
 })
 
@@ -31,27 +30,18 @@ const CLIENT = new Tasks({
 // Exposed tasks
 //
 
+gulp.task(`build`, async () => {
+    await CLIENT.clean()
+    return CLIENT.build()
+})
 
-const clients = {
-    client: CLIENT
-}
+gulp.task(`watch`, async () => {
+    await CLIENT.clean()
+    return CLIENT.build({ watch: true })
+})
 
-for ( let key in clients ) {
-    const CLIENT = clients[key]
-
-    gulp.task(`build:${key}`, async () => {
-        await CLIENT.clean()
-        return CLIENT.build()
-    })
-
-    gulp.task(`watch:${key}`, async () => {
-        await CLIENT.clean()
-        return CLIENT.build({ watch: true })
-    })
-
-    gulp.task(`start:${key}`, async () => {
-        await CLIENT.clean()
-        await CLIENT.build({ watch: true })
-        return gulpNodemon(WEB_SERVER)
-    })
-}
+gulp.task(`start`, async () => {
+    await CLIENT.clean()
+    await CLIENT.build({ watch: true })
+    return gulpNodemon(WEB_SERVER)
+})

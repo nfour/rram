@@ -4,11 +4,14 @@
  */
 export default {
     loaders: [
-        // {
-        //     test    : /\.jsx?$/i,
-        //     exclude : /node_modules/,
-        //     loader  : 'eslint-loader',
-        // },
+        {
+            test    : /\.jsx?$/i,
+            exclude : /node_modules/,
+            loader  : 'eslint-loader',
+            query: {
+                quiet: true,
+            }
+        },
         {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
@@ -30,4 +33,6 @@ export default {
     presets: [],
 
     plugins: [],
+
+    eslint: {},
 }

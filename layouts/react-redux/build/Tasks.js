@@ -141,7 +141,7 @@ export default class Tasks {
             ...this.config.webpack.loaders
         ]
 
-        const config = {
+        let config = {
             watch   : options.watch,
             entry   : [ 'babel-polyfill', options.source ],
             devtool : 'source-map',
@@ -150,9 +150,11 @@ export default class Tasks {
                 filename          : path.basename(options.source),
                 sourceMapFilename : `${path.basename(options.source)}.map`,
             },
+
+            eslint: this.config.webpack.eslint,
         }
 
-        if ( options.webpack ) merge(config, options.webpack)
+        if ( options.webpack ) config = merge( clone(config), options.webpack )
 
         let g = gulp.src(options.source)
             .pipe( gulpPlumber() )

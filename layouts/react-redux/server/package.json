@@ -4,6 +4,10 @@
     "main"        : "./index.js",
     "private"     : true,
 
+    "scripts": {
+        "start": "node -r babel-register index"
+    },
+
     "dependencies": {
         "bluebird"     : "3.3.x",
         "express"      : "^4.13.3",
