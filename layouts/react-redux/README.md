@@ -21,6 +21,7 @@ A layout for a `react`, `redux` client with basic `express` server.
     - [x] Mocha tests
     - [x] ES Linting checks
     - [x] `process.env.NODE_ENV` on client
+    - [ ] Minified builds
 
 - [x] Consistant, optimized babel featureset on client & server
 - [x] EJS templating
