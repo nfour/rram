@@ -35,15 +35,19 @@
         "max-params"                 : [1, 4],
         "new-parens"                 : 1,
         "key-spacing"                : [1, { "afterColon": true, "mode": "minimum" }],
-        "comma-dangle"               : [1, "always-multiline"],
         "comma-spacing"              : [1, {"before": false, "after": true}],
-        "consistent-this"            : [1, "self"]
+        "consistent-this"            : [1, "self"],
+
+        "comma-dangle"               : [0, "always-multiline"]
     },
+
     "parser": "babel-eslint",
+
     "ecmaFeatures": {
         "jsx"     : true,
         "modules" : true
     },
+
     "env": {
         "browser": true,
         "node" : true,

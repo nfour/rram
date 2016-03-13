@@ -11,16 +11,12 @@
 
         "install_client" : "cd ./client && npm install",
         "install_server" : "cd ./server && npm install",
-
-        "build"          : "gulp",
-        "start"          : "node ./server"
     },
 
     "dependencies": {
-        "bluebird"  : "3.3.x",
         "fs-extra"  : "0.26.x",
-        "lutils"    : "1.x.x",
-        "node-uuid" : "1.4.7"
+        "bluebird"  : "3.3.x",
+        "lutils"    : "1.x.x"
     },
 
     "devDependencies": {
@@ -35,8 +31,8 @@
         "babel-plugin-transform-object-rest-spread"       : "latest",
         "babel-plugin-transform-object-assign"            : "latest",
         "babel-plugin-transform-decorators"               : "latest",
+        "babel-plugin-add-module-exports"                 : "0.1.x",
 
-        "eslint-loader" : "1.0.x",
         "eslint"        : "1.x.x",
         "babel-eslint"  : "4.x.x",
 
