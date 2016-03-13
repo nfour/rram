@@ -11,6 +11,6 @@ Will contain & maintain battlehardened systems for:
 
 **PROTIP**: Use [octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc) or view `LAYOUTS` in editor.
 
-## TODO
+## Style Guide
 
-- [ ] Complete `HYDRA` file layout & populate
+See the style guide [here](./style-guide.md)

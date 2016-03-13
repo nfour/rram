@@ -1,0 +1,25 @@
+{
+    "name"        : "test",
+    "version"     : "0.1.0",
+    "main"        : "./index.js",
+    "private"     : true,
+
+    "devDependencies": {
+        "normalize.css" : "3.0.x",
+        "stylus"        : "0.53.x",
+
+        "classnames"  : "2.2.x",
+        "material-ui" : "0.14.x",
+        "lutils"      : "1.x.x",
+
+        "redux"                  : "3.0.x",
+        "redux-thunk"            : "1.0.x",
+        "react-tap-event-plugin" : "0.2.x",
+        "react-router-redux"     : "4.0.x",
+        "react-redux"            : "3.0.x",
+        "react-router"           : "2.0.x",
+        "react-addons-perf"      : "0.14.x",
+        "react-dom"              : "0.14.6",
+        "react"                  : "0.14.x"
+    }
+}

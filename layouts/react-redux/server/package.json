@@ -1,0 +1,13 @@
+{
+    "name"        : "server",
+    "version"     : "0.1.0",
+    "main"        : "./index.js",
+    "private"     : true,
+
+    "dependencies": {
+        "bluebird"     : "3.3.x",
+        "express"      : "^4.13.3",
+        "ejs"          : "2.4.x",
+        "lutils"       : "1.x.x"
+    }
+}
