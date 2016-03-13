@@ -17,6 +17,7 @@ Configs should exist throughout the app as necessary and follow a basic structur
 - `lutils` package for cloning & merging recursively.
 
 The rest of the config structure is up to the data.
+Ensure that any development/machine/local specific configs are in a `.gitignore`, with an accompanying `*.template.js` to ensure reproducability.
 
 When configs need to be shared in both client and server, create a root config which only includes that data, as a client sharing a server config could be a security issue.
 
