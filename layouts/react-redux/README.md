@@ -2,6 +2,10 @@
 
 A layout for a `react`, `redux` client with basic `express` server.
 
+## TODO
+- [ ] Add livereload to build process
+- [ ] Write some tests
+
 ## Installation
 - Clone this repo
 - `cd layouts/react-redux`
@@ -36,11 +40,6 @@ When configs need to be shared in both client and server, create a root config w
 	- `./stores -> store.js` if the app will only have one store
 	- `./sources` as necessary
 
-## Variants
-- `MULTI APP`
-	- Rename `client` with `clients`, add client nesting
-	- Rename `server` with `servers`, add server nesting
-
 ## Tests
 Tests should be inlined within each app. Consider this structure:
 
@@ -61,3 +60,8 @@ Tests should be inlined within each app. Consider this structure:
 ```
 
 Tests are then run using a glob `/**/*.spec.js` with mocha.
+
+## Variants
+- `MULTI APP`
+	- Rename `client` with `clients`, add client nesting
+	- Rename `server` with `servers`, add server nesting
