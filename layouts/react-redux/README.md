@@ -2,6 +2,12 @@
 
 A layout for a `react`, `redux` client with basic `express` server.
 
+## Installation
+- Clone this repo
+- `cd layouts/react-redux`
+- `npm install`, `npm run install_client`, `npm run install_server`
+- `npm run start` will build client, watch server for changes & `npm start` it
+
 ## Configs
 Configs should exist throughout the app as necessary and follow a basic structure:
 - `default.js` the defaults which are built on top of
@@ -16,9 +22,9 @@ When configs need to be shared in both client and server, create a root config w
 
 ## NPM
 `package.json` should exist in these places:
-- `./<project>/package.json` build, deployment etc.
-- `./<project>/server/package.json` server only packages
-- `./<project>/client/package.json` client only packages
+- `./package.json` build, deployment etc.
+- `./server/package.json` server only packages
+- `./client/package.json` client only packages
 
 `scripts` in the root `package.json` should exist to install, test, build, start etc.
 
