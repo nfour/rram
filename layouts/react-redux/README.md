@@ -34,8 +34,8 @@ A layout for a `react`, `redux` client with basic `express` server.
 ## Installation
 - Clone this repo
 - `cd layouts/react-redux`
-- `npm install`, `npm run install_client`, `npm run install_server`
-- `npm run start` will build client, watch server for changes & `npm start` it
+- `npm run install_all`
+- `npm run start` to build the client, watch the server for changes & `npm start` it
 
 ## Configs
 Configs should exist throughout the app as necessary and follow a basic structure:

@@ -12,6 +12,8 @@
         "install_client" : "cd ./client && npm install",
         "install_server" : "cd ./server && npm install",
 
+        "install_all"    : "npm install && npm run install_client && npm run install_server",
+
         "build"          : "gulp build",
         "start"          : "gulp start"
     },
