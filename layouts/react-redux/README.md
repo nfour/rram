@@ -8,6 +8,7 @@ A layout for a `react`, `redux` client with basic `express` server.
 - [ ] Tests
     - [ ] Unit tests with `mocha`
     - [ ] Integration tests with `karma`
+- [ ] Consider hotreloading if necessary
 
 ## Features
 - [x] Build

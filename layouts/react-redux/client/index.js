@@ -21,8 +21,6 @@ const history = syncHistoryWithStore(browserHistory, store)
 const NoMatch = () =>
     <div>NO MATCH</div>
 
-
-
 render(
     <Provider store={store}>
         <Router history={history}>
