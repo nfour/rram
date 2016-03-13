@@ -1,6 +1,8 @@
+import path from 'path'
+
 export default {
-    source  : require.resolve('../../'),
-    dist    : require.resolve('../../dist'),
+    source  : path.resolve(__dirname, '../../'),
+    dist    : path.resolve(__dirname, '../../dist'),
 
     webpack : require('./webpack')
 }
