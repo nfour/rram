@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+
 /**
  *    These are all MANUALLY injected globally and do not reflect
  *    the webpack config structure; as arrays cant be merged automatically
@@ -30,7 +32,11 @@ export default {
         }
     ],
 
-    plugins: [],
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || "development")
+        })
+    ],
 
     eslint: {},
 }

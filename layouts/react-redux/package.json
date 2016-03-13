@@ -47,9 +47,9 @@
         "gulp-debug"     : "2.1.x",
         "gulp-plumber"   : "1.0.x",
         "gulp-stylus"    : "2.3.x",
-        "babel-loader"   : "6.2.x",
-        "webpack-stream" : "3.1.x",
         "del"            : "2.2.x",
+        "webpack-stream" : "3.1.x",
+        "webpack"        : "^1.12.x",
 
         "url-loader"    : "0.5.x",
         "stylus-loader" : "1.5.x",

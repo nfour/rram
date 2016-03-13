@@ -8,12 +8,19 @@ import configureStore from './stores'
 import App from './containers/App'
 import Counter from './containers/Counter'
 
+export const CONFIG = require('./config')
+
+console.log({ CONFIG })
+console.log({ NODE_ENV: process.env.NODE_ENV })
+
 export const store = configureStore()
 
 const history = syncHistoryWithStore(browserHistory, store)
 
 const NoMatch = () =>
     <div>NO MATCH</div>
+
+
 
 render(
     <Provider store={store}>
