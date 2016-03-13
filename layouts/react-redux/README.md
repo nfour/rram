@@ -5,8 +5,8 @@ A layout for a `react`, `redux` client with basic `express` server.
 ## TODO
 - [ ] Add production build steps
     - [ ] UglifyJS2
-- [ ] Write some tests
-    - [ ] Unit tests
+- [ ] Tests
+    - [ ] Unit tests with `mocha`
     - [ ] Integration tests with `karma`
 
 ## Features
@@ -26,6 +26,8 @@ A layout for a `react`, `redux` client with basic `express` server.
 - [x] EJS templating
 - [x] Isomorphic structure
 - [x] Minimal express server
+- [x] Isomorphic mocha testing
+- [ ] Karma integration tests
 
 ## Installation
 - Clone this repo
