@@ -1,15 +1,14 @@
 # NodeJS Structures & Conventions
 
-Will contain & maintain battlehardened systems for:
-- Isomorphic project & file structures
+Contains battlehardened systems for:
+- Isomorphic project layouts
 - Build systems, `gulp`, `webpack`, `babel`
-- Testing, `mocha`, `eslint`
-- Linting `eslint`
-- Client architectures `react`, `redux`
-- Server architectures `hapi`
-- Deployment `flightplan`
+- Testing, linting, unit & integration, `mocha`, `eslint`, `karma`
+- Client architectures: `react`, `redux`
+- Server architectures: `hapi`, `express`
+- Deployment: `flightplan`
 
-**PROTIP**: Use [octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc) or view `LAYOUTS` in editor.
+**PROTIP**: To view; Use [octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc) or [atom.io](http://atom.io).
 
 ## Babel
 Babel has been configured to:
@@ -24,15 +23,15 @@ Babel has been configured to:
     - `class-properties`
         - ES2017
         - Example: `class Test { static prop = {}; }`
-    - `decorators`
-        - ES2017
-        - Currently unused, but may fit in when clear
     - `add-module-exports`
         - Ensures commonjs & ES6 exports behave the same
     - `async-to-module-method`
         - `ES2016`
         - Example: `async function() { await fetch('http://stuff.com') }`
         - Causes all `async` functions to become `bluebird` `coroutine`'s. Exact same syntax as the async await poised to be integrated into ES7, but ensures the promise involved an instance of `bluebird`.
+    - `decorators`
+        - ES2017
+        - Currently unused, but may fit in when clear
 
 
 ## ESLint
