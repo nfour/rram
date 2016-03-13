@@ -1,6 +1,6 @@
-# LAYOUT - REACT REDUX HAPI
+# LAYOUT - REACT REDUX
 
-A layout for a `react`, `redux` client and `hapi` server.
+A layout for a `react`, `redux` client with basic `express` server.
 
 ## Configs
 Configs should exist throughout the app as necessary and follow a basic structure:
