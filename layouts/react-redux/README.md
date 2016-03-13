@@ -3,9 +3,9 @@
 A layout for a `react`, `redux` client with basic `express` server.
 
 ## TODO
-- [ ] Add livereload to build process
-- [ ] Write some tests
+- [x] Add livereload to build watch process
 - [x] Add url `resolve` prefix for static assets
+- [ ] Write some tests
 
 ## Installation
 - Clone this repo

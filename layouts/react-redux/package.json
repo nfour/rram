@@ -36,6 +36,7 @@
         "babel-plugin-transform-object-assign"            : "latest",
         "babel-plugin-transform-decorators"               : "latest",
         "babel-plugin-add-module-exports"                 : "0.1.x",
+        "webpack-livereload-plugin"                       : "0.6.x",
 
         "gulp"           : "3.9.x",
         "gulp-nodemon"   : "2.0.x",

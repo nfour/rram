@@ -17,6 +17,12 @@ const WEB_SERVER = {
     env    : { 'NODE_ENV': 'development' },
 }
 
+const LIVE_RELOAD = {
+    port            : 35729,
+    appendScriptTag : true,
+    ignore          : null,
+}
+
 const CLIENT = new Tasks({
     resolve : "/static/",
 
@@ -39,11 +45,11 @@ gulp.task(`build`, async () => {
 
 gulp.task(`watch`, async () => {
     await CLIENT.clean()
-    return CLIENT.build({ watch: true })
+    return CLIENT.build({ watch: true, liveReload: LIVE_RELOAD })
 })
 
 gulp.task(`start`, async () => {
     await CLIENT.clean()
-    await CLIENT.build({ watch: true })
+    await CLIENT.build({ watch: true, liveReload: LIVE_RELOAD })
     return gulpNodemon(WEB_SERVER)
 })

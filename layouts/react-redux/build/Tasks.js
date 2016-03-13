@@ -10,6 +10,7 @@ import gulpPlumber from 'gulp-plumber'
 import gulpStylus from 'gulp-stylus'
 import gulpRename from 'gulp-rename'
 import gutil from 'gulp-util'
+import LiveReload from 'webpack-livereload-plugin'
 import { merge, clone, typeOf } from 'lutils'
 
 export default class Tasks {
@@ -31,15 +32,18 @@ export default class Tasks {
      *    @return    {Promise}
      */
     webpack(options) {
-        options.babel = options.babel || {}
+        options.babel   = options.babel || {}
+        options.webpack = options.webpack || {}
+
+        merge.black(options.babel, this.config.babel)
 
         options.babel.presets = [
-            ...this.config.webpack.presets,
+            ...this.config.babel.presets,
             ...options.babel.presets
         ]
 
         options.babel.plugins = [
-            ...this.config.webpack.plugins,
+            ...this.config.babel.plugins,
             ...options.babel.plugins
         ]
 
@@ -53,6 +57,23 @@ export default class Tasks {
             ...this.config.webpack.loaders
         ]
 
+        const plugins = [
+            ...this.config.webpack.plugins,
+            ...(options.webpack.plugins ? options.webpack.plugins : [])
+        ]
+
+        if ( options.liveReload ) {
+            let liveOptions = typeOf.Object(options.liveReload)
+                ? options.liveReload
+                : null
+
+            plugins.push(new LiveReload(liveOptions))
+        }
+
+        const eslint = options.webpack.eslint
+            ? options.webpack.eslint
+            : this.config.webpack.eslint
+
         let config = {
             watch   : options.watch,
             entry   : [ 'babel-polyfill', options.source ],
@@ -64,11 +85,10 @@ export default class Tasks {
                 publicPath        : options.resolve || this.config.resolve,
             },
 
-            eslint: this.config.webpack.eslint,
-
+            eslint, plugins
         }
 
-        if ( options.webpack ) config = merge( clone(config), options.webpack )
+        merge.black( config, options.webpack )
 
         let g = gulp.src(options.source)
             .pipe( gulpPlumber() )
