@@ -3,9 +3,29 @@
 A layout for a `react`, `redux` client with basic `express` server.
 
 ## TODO
-- [x] Add livereload to build watch process
-- [x] Add url `resolve` prefix for static assets
+- [ ] Add production build steps
+    - [ ] UglifyJS2
 - [ ] Write some tests
+    - [ ] Unit tests
+    - [ ] Integration tests with `karma`
+
+## Features
+- [x] Build
+    - [x] Webpack
+    - [x] File watching
+    - [x] Livereload
+    - [x] Preconfigured gulp tasks & sane defaults
+    - [x] Stylus & CSS packaging and url resolution
+    - [x] File resolving & packaging
+    - [x] React/Redux structure
+    - [x] Mocha tests
+    - [x] ES Linting checks
+    - [x] `process.env.NODE_ENV` on client
+
+- [x] Consistant, optimized babel featureset on client & server
+- [x] EJS templating
+- [x] Isomorphic structure
+- [x] Minimal express server
 
 ## Installation
 - Clone this repo
@@ -38,31 +58,31 @@ When configs need to be shared in both client and server, create a root config w
 - `./deploy` as necessary
 - `./docs` as necessary
 - `./client/`
-	- `./stores -> store.js` if the app will only have one store
-	- `./sources` as necessary
+    - `./stores -> store.js` if the app will only have one store
+    - `./sources` as necessary
 
 ## Tests
 Tests should be inlined within each app. Consider this structure:
 
 ```html
 ./client
-	./__test
-		index.spec.js
+    ./__test
+        index.spec.js
 
-	./actions
-		./__test
-			doSomething.spec.js
-			somethingElse.spec.js
+    ./actions
+        ./__test
+            doSomething.spec.js
+            somethingElse.spec.js
 
-		doSomething.js
-		somethingElse.js
+        doSomething.js
+        somethingElse.js
 
-	index.js
+    index.js
 ```
 
 Tests are then run using a glob `/**/*.spec.js` with mocha.
 
 ## Variants
 - `MULTI APP`
-	- Rename `client` with `clients`, add client nesting
-	- Rename `server` with `servers`, add server nesting
+    - Rename `client` with `clients`, add client nesting
+    - Rename `server` with `servers`, add server nesting
