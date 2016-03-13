@@ -1,3 +1,4 @@
+import 'isomorphic-fetch'
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRedirect, browserHistory } from 'react-router'

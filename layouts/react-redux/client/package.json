@@ -8,9 +8,10 @@
         "normalize.css" : "3.0.x",
         "stylus"        : "0.53.x",
 
-        "classnames"  : "2.2.x",
-        "material-ui" : "0.14.x",
-        "lutils"      : "1.x.x",
+        "classnames"       : "2.2.x",
+        "material-ui"      : "0.14.x",
+        "lutils"           : "1.x.x",
+        "isomorphic-fetch" : "2.2.x",
 
         "redux"                  : "3.0.x",
         "redux-thunk"            : "1.0.x",
