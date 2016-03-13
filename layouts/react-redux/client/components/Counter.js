@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const image = require('../views/assets/test.png')
+const image = require('../views/assets/goodJob.jpg')
 
 export default class Counter extends React.Component {
     static propTypes = {
@@ -15,8 +15,10 @@ export default class Counter extends React.Component {
         } = this.props
 
         return (
-            <div>
-                <img src={`/static/${image}`} />
+            <div style={{ textAlign: "center" }}>
+                <img height="350" src={image} />
+                <h2>Good Job</h2>
+                <br/>
                 <div>
                     Count: {count}
                     <br/>

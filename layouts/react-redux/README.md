@@ -5,6 +5,7 @@ A layout for a `react`, `redux` client with basic `express` server.
 ## TODO
 - [ ] Add livereload to build process
 - [ ] Write some tests
+- [x] Add url `resolve` prefix for static assets
 
 ## Installation
 - Clone this repo

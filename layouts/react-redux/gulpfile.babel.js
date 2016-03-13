@@ -18,6 +18,8 @@ const WEB_SERVER = {
 }
 
 const CLIENT = new Tasks({
+    resolve : "/static/",
+
     scripts: [{
         source  : path.resolve('./client/index.js'),
         dist    : path.resolve('./dist/client'),
