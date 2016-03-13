@@ -5,10 +5,12 @@ import { routeActions } from 'react-router-redux'
 import actions from '../actions/counter'
 import sources from '../sources'
 
+import CounterComponent from '../components/Counter'
+
 require('normalize.css')
 require('../views/styles/style.styl')
 
-class App extends React.Component {
+class Counter extends React.Component {
     static propTypes = {
 
     };
@@ -16,7 +18,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                {this.props.children}
+                <CounterComponent {...this.props} />
             </div>
         )
     }
@@ -37,4 +39,4 @@ const mapDispatchToProps = (dispatch) => (
     }
 )
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)

@@ -1,9 +1,9 @@
 export default {
-    incriment: () => (
-        { type: "INCRIMENT" }
+    increment: () => (
+        { type: "INCREMENT" }
     ),
 
-    decriment: () => (
-        { type: "DECRIMENT" }
+    decrement: () => (
+        { type: "DECREMENT" }
     )
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, IndexRedirect, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
 
 import configureStore from './stores'
+import App from './containers/App'
 import Counter from './containers/Counter'
 
 export const store = configureStore()
@@ -17,8 +18,9 @@ const NoMatch = () =>
 render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path="/" component={Counter}>
-                <Route path="/test" component={NoMatch}/>
+            <Route path="/" component={App}>
+                <IndexRedirect to="/#/counter" />
+                <Route path="/#/counter" component={Counter}/>
                 <Route path="*" component={NoMatch}/>
             </Route>
         </Router>

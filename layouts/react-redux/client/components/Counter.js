@@ -10,18 +10,18 @@ export default class Counter extends React.Component {
 
     render() {
         const {
-            actions: { incriment, decriment },
+            actions: { increment, decrement },
             count
         } = this.props
 
         return (
             <div>
-                <img src={image} />
+                <img src={`/static/${image}`} />
                 <div>
                     Count: {count}
                     <br/>
-                    <button onClick={() => incriment() }>+</button>
-                    <button onClick={() => decriment() }>-</button>
+                    <button onClick={() => increment() }>+</button>
+                    <button onClick={() => decrement() }>-</button>
                 </div>
             </div>
         )
