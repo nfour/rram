@@ -9,7 +9,6 @@ import gulpDebug from 'gulp-debug'
 import gulpPlumber from 'gulp-plumber'
 import gulpStylus from 'gulp-stylus'
 import gulpRename from 'gulp-rename'
-import gutil from 'gulp-util'
 import LiveReload from 'webpack-livereload-plugin'
 import { merge, clone, typeOf } from 'lutils'
 
