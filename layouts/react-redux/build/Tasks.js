@@ -5,10 +5,10 @@ import webpackStream from 'webpack-stream'
 import del from 'del'
 import gulpUglify from 'gulp-uglify'
 import gulpStreamify from 'gulp-streamify'
-import gulpDebug from 'gulp-debug'
 import gulpPlumber from 'gulp-plumber'
 import gulpStylus from 'gulp-stylus'
 import gulpRename from 'gulp-rename'
+import gulpDebug from 'gulp-debug'
 import LiveReload from 'webpack-livereload-plugin'
 import { merge, clone, typeOf } from 'lutils'
 
@@ -77,7 +77,10 @@ export default class Tasks {
             watch   : options.watch,
             entry   : [ 'babel-polyfill', options.source ],
             devtool : 'source-map',
-            module  : { loaders },
+            module  : {
+                preLoaders: this.config.webpack.preLoaders,
+                loaders
+            },
             output: {
                 filename          : path.basename(options.source),
                 sourceMapFilename : `${path.basename(options.source)}.map`,
@@ -87,16 +90,14 @@ export default class Tasks {
             eslint, plugins
         }
 
-        merge.black( config, options.webpack )
+        merge.black(config, options.webpack)
 
         let g = gulp.src(options.source)
             .pipe( gulpPlumber() )
-            .pipe( gulpDebug({title: 'Webpack'}) )
+            .pipe( gulpDebug({ title: 'webpack' }) )
             .pipe( webpackStream(config) )
-            //.on('error', gutil.log.bind(gutil, 'Webpack Error'))
-            // TODO: handle error better. check out .old/cfg for the webpack-errors module used etc.
 
-        // TODO: configure uglify
+        // TODO: utlize webpacks built in uglify plugin?
         if ( options.compress ) g = g.pipe( gulpStreamify( gulpUglify() ) )
 
         return g.pipe(gulp.dest(options.dist))
@@ -166,14 +167,14 @@ export default class Tasks {
     stylus(options) {
         const run = () =>
             gulp.src(options.source)
-                .pipe(gulpPlumber())
-                .pipe(gulpDebug({title: 'stylus'}))
-                .pipe(gulpStylus({
+                .pipe( gulpPlumber() )
+                .pipe( gulpDebug({ title: 'stylus' }) )
+                .pipe( gulpStylus({
                     'include css' : true,
                     'compress'    : Boolean(options.compress),
-                }))
-                .pipe(gulpRename({ extname: options.extension || '.css' }))
-                .pipe(gulp.dest(options.dist))
+                }) )
+                .pipe( gulpRename({ extname: options.extension || '.css' }) )
+                .pipe( gulp.dest(options.dist) )
 
 
         if ( options.watch )

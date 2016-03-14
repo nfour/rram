@@ -43,7 +43,6 @@
         "gulp-nodemon"   : "2.0.x",
         "gulp-streamify" : "1.0.x",
         "gulp-uglify"    : "1.5.x",
-        "gulp-util"      : "3.0.x",
         "gulp-rename"    : "1.2.x",
         "gulp-debug"     : "2.1.x",
         "gulp-plumber"   : "1.0.x",

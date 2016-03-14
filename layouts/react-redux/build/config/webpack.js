@@ -5,15 +5,14 @@ import webpack from 'webpack'
  *    the webpack config structure; as arrays cant be merged automatically
  */
 export default {
-    loaders: [
+    preLoaders: [
         {
             test    : /\.jsx?$/i,
             exclude : /node_modules/,
             loader  : 'eslint-loader',
-            query: {
-                quiet: true,
-            }
         },
+    ],
+    loaders: [
         {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
@@ -38,5 +37,5 @@ export default {
         })
     ],
 
-    eslint: {},
+    eslint: { quiet: true },
 }
