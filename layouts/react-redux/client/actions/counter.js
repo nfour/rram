@@ -6,4 +6,4 @@ export default {
     decrement: () => (
         { type: "DECREMENT" }
     )
-};
+}
