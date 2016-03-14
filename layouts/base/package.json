@@ -10,7 +10,7 @@
         "test_server"    : "mocha -r babel-register -G -w -R nyan server/**/*.spec.js",
 
         "install_client" : "cd ./client && npm install",
-        "install_server" : "cd ./server && npm install",
+        "install_server" : "cd ./server && npm install"
     },
 
     "dependencies": {
@@ -30,7 +30,6 @@
         "babel-plugin-transform-class-properties"         : "latest",
         "babel-plugin-transform-object-rest-spread"       : "latest",
         "babel-plugin-transform-object-assign"            : "latest",
-        "babel-plugin-transform-decorators"               : "latest",
         "babel-plugin-add-module-exports"                 : "0.1.x",
 
         "eslint"        : "1.x.x",

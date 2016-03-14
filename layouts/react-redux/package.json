@@ -36,7 +36,6 @@
         "babel-plugin-transform-class-properties"         : "latest",
         "babel-plugin-transform-object-rest-spread"       : "latest",
         "babel-plugin-transform-object-assign"            : "latest",
-        "babel-plugin-transform-decorators"               : "latest",
         "babel-plugin-add-module-exports"                 : "0.1.x",
         "webpack-livereload-plugin"                       : "0.6.x",
 

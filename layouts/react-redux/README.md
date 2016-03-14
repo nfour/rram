@@ -19,7 +19,7 @@ A layout for a `react`, `redux` client with basic `express` server.
     - [x] Stylus & CSS packaging and url resolution
     - [x] File resolving & packaging
     - [x] React/Redux structure
-    - [x] Mocha tests
+    - [x] Mocha test infrastructure
     - [x] ES Linting checks
     - [x] `process.env.NODE_ENV` on client
     - [ ] Minified builds

@@ -4,7 +4,6 @@
         "transform-object-rest-spread",
         "transform-class-properties",
         "transform-object-assign",
-        "transform-decorators",
         "add-module-exports",
         [
             "transform-async-to-module-method",

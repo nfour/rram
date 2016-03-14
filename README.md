@@ -29,9 +29,6 @@ Babel has been configured to:
         - `ES2016`
         - Example: `async function() { await fetch('http://stuff.com') }`
         - Causes all `async` functions to become `bluebird` `coroutine`'s. Exact same syntax as the async await poised to be integrated into ES7, but ensures the promise involved an instance of `bluebird`.
-    - `decorators`
-        - ES2017
-        - Currently unused, but may fit in when clear
 
 
 ## ESLint
