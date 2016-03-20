@@ -5,9 +5,9 @@
     "description" : "For BUILDING, TESTING, LINTING",
 
     "scripts": {
-        "test"           : "mocha -r babel-register -G -w -R nyan {client,server}/**/*.spec.js",
-        "test_client"    : "mocha -r babel-register -G -w -R nyan client/**/*.spec.js",
-        "test_server"    : "mocha -r babel-register -G -w -R nyan server/**/*.spec.js",
+        "test"        : "mocha -r babel-register -G -w -R nyan $(find $MOCHA_FOLDER -name '*.spec.js' -not -path '*/node_modules/*')",
+        "test_client" : "MOCHA_FOLDER=client npm test",
+        "test_server" : "MOCHA_FOLDER=server npm test",
 
         "install_client" : "cd ./client && npm install",
         "install_server" : "cd ./server && npm install"
