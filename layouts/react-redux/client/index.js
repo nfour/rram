@@ -5,7 +5,7 @@ import 'isomorphic-fetch'
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRedirect, useRouterHistory } from 'react-router'
-import { createHashHistory } from 'history'
+import { createHistory } from 'history'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
 
@@ -23,7 +23,7 @@ require('react-tap-event-plugin')()
 export const CONFIG  = require('./config')
 export const STORE   = createStore()
 export const HISTORY = syncHistoryWithStore(
-    useRouterHistory(createHashHistory)({ queryKey: false }),
+    useRouterHistory(createHistory)({ queryKey: false }),
     STORE
 )
 
