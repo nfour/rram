@@ -2,14 +2,6 @@
 
 A layout for a `react`, `redux` client with basic `express` server.
 
-## TODO
-- [ ] Add production build steps
-    - [ ] UglifyJS2
-- [ ] Tests
-    - [ ] Unit tests with `mocha`
-    - [ ] Integration tests with `karma`
-- [ ] Consider hotreloading if necessary
-
 ## Features
 - [x] Build
     - [x] Webpack
@@ -19,17 +11,19 @@ A layout for a `react`, `redux` client with basic `express` server.
     - [x] Stylus & CSS packaging and url resolution
     - [x] File resolving & packaging
     - [x] React/Redux structure
-    - [x] Mocha test infrastructure
     - [x] ES Linting checks
     - [x] `process.env.NODE_ENV` on client
-    - [ ] Minified builds
+    - [ ] Minified (Uglified) builds
 
+- [x] Configured react router
 - [x] Consistant, optimized babel featureset on client & server
 - [x] EJS templating
 - [x] Isomorphic structure
 - [x] Minimal express server
-- [x] Isomorphic mocha testing
-- [ ] Karma integration tests
+- [x] Mocha test infrastructure, isomorphic
+- [ ] Example mocha tests
+- [ ] Karma test infrastructure
+- [ ] Example karma integration tests
 
 ## Installation
 - Clone this repo
