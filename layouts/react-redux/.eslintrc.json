@@ -37,15 +37,24 @@
         "comma-spacing"              : [1, {"before": false, "after": true}],
         "consistent-this"            : [1, "self"],
 
+        "react/no-deprecated"        : 2,
+        "react/jsx-uses-vars"        : 1,
+        "react/jsx-uses-react"       : 1,
+        "react/jsx-no-undef"         : 1,
+        "react/react-in-jsx-scope"   : 1,
+        
         "comma-dangle"               : [0, "always-multiline"]
     },
 
     "parser": "babel-eslint",
 
-    "ecmaFeatures": {
-        "jsx"     : true,
-        "modules" : true
+    "plugins": [ "react" ],
+
+    "parserOptions": {
+        "ecmaFeatures": { "jsx": true }
     },
+
+    "ecmaFeatures": { "jsx": true, "modules" : true },
 
     "env": {
         "browser": true,

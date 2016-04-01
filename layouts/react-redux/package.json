@@ -59,6 +59,7 @@
         "eslint-loader" : "1.0.x",
 
         "eslint"              : "2.4.x",
+        "eslint-plugin-react" : "4.x.x",
         "babel-eslint"        : "6.0.x",
 
         "mocha" : "2.3.x",
