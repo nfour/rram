@@ -36,7 +36,7 @@ Keep in mind this is a **shallow** merge, thus references will persist. For deep
 
 Know your javascript, don't use them, except in these 4 situations:
 
-- In loops, `for (;;;)`, they are required
+- In loops, `for (;;)`, they are required
 - For single liners `case 'foo': doStuff(); break`
 - In front of leading `(` and `[` at the start of the line, to prevent ambiguity from following expressions.
 - ES6-7 class non-fn properties, they require them
