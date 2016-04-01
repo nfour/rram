@@ -3,7 +3,7 @@ import React from 'react'
 import 'normalize.css'
 import '../views/styles/style.styl'
 
-class Root extends React.Component {
+export default class Root extends React.Component {
     static propTypes = {};
 
     render() {
@@ -14,5 +14,3 @@ class Root extends React.Component {
         )
     }
 }
-
-export default Root

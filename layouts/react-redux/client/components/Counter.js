@@ -24,6 +24,7 @@ export default class Counter extends React.Component {
                     <br/>
                     <button onClick={() => increment() }>+</button>
                     <button onClick={() => decrement() }>-</button>
+                    <button onClick={() => this.props.navigateTest() }>Navigate to /test</button>
                 </div>
             </div>
         )
