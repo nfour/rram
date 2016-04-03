@@ -1,16 +1,11 @@
 import path from 'path'
 import Promise from 'bluebird'
 import gulp from 'gulp'
-import del from 'del'
-import webpack from 'webpack'
 import gulpWebpack from 'webpack-stream'
-import gulpUglify from 'gulp-uglify'
-import gulpStreamify from 'gulp-streamify'
 import gulpPlumber from 'gulp-plumber'
-import gulpStylus from 'gulp-stylus'
-import gulpRename from 'gulp-rename'
 import gulpDebug from 'gulp-debug'
-import LiveReload from 'webpack-livereload-plugin'
+import webpack from 'webpack'
+import del from 'del'
 
 import { merge, clone, typeOf } from 'lutils'
 
@@ -63,14 +58,6 @@ export default class Tasks {
             ...(options.webpack.plugins ? options.webpack.plugins : [])
         ]
 
-        if ( options.liveReload ) {
-            let liveOptions = typeOf.Object(options.liveReload)
-                ? options.liveReload
-                : null
-
-            plugins.push(new LiveReload(liveOptions))
-        }
-
         const eslint = options.webpack.eslint
             ? options.webpack.eslint
             : this.config.webpack.eslint
@@ -78,7 +65,8 @@ export default class Tasks {
         let config = {
             watch   : options.watch,
             entry   : [ 'babel-polyfill', options.source ],
-            devtool : 'source-map',
+            devtool : '#eval-source-map',
+            target: "node",
             module  : {
                 preLoaders: this.config.webpack.preLoaders,
                 loaders
@@ -96,19 +84,18 @@ export default class Tasks {
 
         return new Promise((resolve, reject) => {
             let g = gulp.src(options.source)
-                .pipe( gulpPlumber() )
-                .pipe( gulpDebug({ title: 'webpack' }) )
-                .pipe(
-                    gulpWebpack(config, webpack, (err, stats) => {
-                        if ( err ) return reject(err)
-                        resolve()
-                    })
-                )
-
-            // TODO: utlize webpack build in compression
-            if ( options.compress ) g = g.pipe( gulpStreamify( gulpUglify() ) )
+            .pipe( gulpPlumber() )
+            .pipe( gulpDebug({ title: 'webpack' }) )
+            .pipe(
+                gulpWebpack(config, webpack, (err, stats) => {
+                    if ( err ) return reject(err)
+                    //console.log(stats)
+                    resolve()
+                })
+            )
 
             return g.pipe( gulp.dest(options.dist) )
+
         })
     }
 
@@ -122,7 +109,6 @@ export default class Tasks {
     build(overrides) {
         return Promise.all([
             ...this.scripts(overrides),
-            ...this.styles(overrides),
         ])
     }
 
@@ -146,52 +132,6 @@ export default class Tasks {
             })
         )
     }
-
-    /**
-     *    Builds configured styles entries and optionally watches for changes
-     *
-     *    @param     {Object}    overrides    =    { watch: true }
-     *
-     *    @return    {Array of Promise}
-     */
-    styles(overrides = {}) {
-        if ( ! typeOf.Array(this.config.styles) ) return []
-
-        return this.config.styles.map((options) =>
-            this.stylus({
-                ...merge(options, overrides),
-                source    : path.resolve(this.config.source, options.source),
-                dist      : path.resolve(this.config.dist, options.dist),
-                watchGlob : path.resolve(this.config.source, options.watchGlob || ''),
-            })
-        )
-    }
-
-
-    /**
-     *    Renders stylus to css to dist
-     *
-     *    @return    {Promise}
-     */
-    stylus(options) {
-        const run = () =>
-            gulp.src(options.source)
-                .pipe( gulpPlumber() )
-                .pipe( gulpDebug({ title: 'stylus' }) )
-                .pipe( gulpStylus({
-                    'include css' : true,
-                    'compress'    : Boolean(options.compress),
-                }) )
-                .pipe( gulpRename({ extname: options.extension || '.css' }) )
-                .pipe( gulp.dest(options.dist) )
-
-
-        if ( options.watch )
-            return Promise.all([ run(), gulp.watch(options.watchGlob, run)])
-        else
-            return run()
-    }
-
 
     /**
      *    Purges dist folder

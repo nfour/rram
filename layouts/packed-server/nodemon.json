@@ -1,0 +1,7 @@
+{
+    "watch"  : [ "src/" ],
+    "ignore" : [ "node_modules" ],
+    "exec"   : "node -r babel-register src",
+    "ext"    : "js json",
+    "env"    : { "NODE_ENV": "development" }
+}
