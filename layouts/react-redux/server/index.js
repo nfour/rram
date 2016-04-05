@@ -9,7 +9,7 @@ APP.set('views', CONFIG.paths.views)
 
 APP.use('/static', express.static(CONFIG.paths.dist) )
 
-APP.get('/', async function(req, res) {
+APP.get('/*', async function(req, res) {
     res.render('index', CONFIG)
 })
 

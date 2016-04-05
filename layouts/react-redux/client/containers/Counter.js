@@ -30,7 +30,7 @@ export default connect(
         };
 
         navigate() {
-            this.context.router.push('/#/test')
+            this.context.router.push('/test')
         }
 
         render() {
