@@ -3,7 +3,6 @@
         "no-negated-in-lhs"          : 1,
         "eqeqeq"                     : 1,
         "no-dupe-keys"               : 1,
-        "consistent-return"          : 1,
         "no-caller"                  : 1,
         "no-shadow-restricted-names" : 1,
         "no-shadow"                  : 1,
@@ -12,7 +11,6 @@
         "no-sync"                    : 1,
 
         "indent"                     : [2, 4, { "SwitchCase": 1 }],
-        "no-bitwise"                 : 2,
         "no-mixed-spaces-and-tabs"   : [2, "smart-tabs"],
         "no-spaced-func"             : 2,
         "constructor-super"          : 2,
@@ -41,9 +39,7 @@
         "react/jsx-uses-vars"        : 1,
         "react/jsx-uses-react"       : 1,
         "react/jsx-no-undef"         : 1,
-        "react/react-in-jsx-scope"   : 1,
-        
-        "comma-dangle"               : [0, "always-multiline"]
+        "react/react-in-jsx-scope"   : 1
     },
 
     "parser": "babel-eslint",
