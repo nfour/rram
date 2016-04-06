@@ -16,6 +16,10 @@
         "lutils"           : "1.x.x"
     },
 
+    "externalDependencies": [
+        "aws-sdk"
+    ],
+
     "devDependencies": {
         "babel-loader"                                    : "6.2.x",
         "babel-core"                                      : "6.6.x",

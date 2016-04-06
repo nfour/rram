@@ -62,7 +62,7 @@ export default class Tasks {
             watch     : options.watch,
             entry     : [ 'babel-polyfill', options.source ],
             devtool   : '#eval-source-map',
-            externals : Object.keys( require('../package.json').dependencies ),
+            externals : require('../package.json').externalDependencies || [],
             target    : "node",
             module    : {
                 preLoaders: this.config.webpack.preLoaders,
