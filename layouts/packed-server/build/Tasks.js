@@ -58,16 +58,13 @@ export default class Tasks {
             ...(options.webpack.plugins ? options.webpack.plugins : [])
         ]
 
-        const eslint = options.webpack.eslint
-            ? options.webpack.eslint
-            : this.config.webpack.eslint
-
         let config = {
-            watch   : options.watch,
-            entry   : [ 'babel-polyfill', options.source ],
-            devtool : '#eval-source-map',
-            target: "node",
-            module  : {
+            watch     : options.watch,
+            entry     : [ 'babel-polyfill', options.source ],
+            devtool   : '#eval-source-map',
+            externals : Object.keys( require('../package.json').dependencies ),
+            target    : "node",
+            module    : {
                 preLoaders: this.config.webpack.preLoaders,
                 loaders
             },
@@ -77,7 +74,7 @@ export default class Tasks {
                 publicPath        : options.resolve || this.config.resolve,
             },
 
-            eslint, plugins
+            plugins
         }
 
         merge.black(config, options.webpack)
@@ -89,7 +86,6 @@ export default class Tasks {
             .pipe(
                 gulpWebpack(config, webpack, (err, stats) => {
                     if ( err ) return reject(err)
-                    //console.log(stats)
                     resolve()
                 })
             )

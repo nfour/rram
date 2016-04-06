@@ -12,7 +12,6 @@
     },
 
     "dependencies": {
-        "fs-extra"         : "0.26.x",
         "bluebird"         : "3.3.x",
         "lutils"           : "1.x.x"
     },
@@ -29,13 +28,14 @@
         "babel-plugin-transform-object-assign"            : "latest",
         "babel-plugin-add-module-exports"                 : "0.1.x",
 
-        "gulp"           : "3.9.x",
-        "gulp-nodemon"   : "2.0.x",
-        "gulp-debug"     : "2.1.x",
-        "gulp-plumber"   : "1.0.x",
-        "del"            : "2.2.x",
-        "webpack-stream" : "3.1.x",
-        "webpack"        : "^1.12.x",
+        "gulp"                      : "3.9.x",
+        "gulp-nodemon"              : "2.0.x",
+        "gulp-debug"                : "2.1.x",
+        "gulp-plumber"              : "1.0.x",
+        "del"                       : "2.2.x",
+        "webpack-stream"            : "3.1.x",
+        "webpack"                   : "^1.12.x",
+        "serverless-webpack-plugin" : "0.4.x",
 
         "eslint-loader" : "1.0.x",
 

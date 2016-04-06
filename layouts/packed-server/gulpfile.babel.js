@@ -1,7 +1,7 @@
 import path from 'path'
 import gulp from 'gulp'
 import gulpNodemon from 'gulp-nodemon'
-import fs from 'fs-extra'
+import fs from 'fs'
 import Tasks from './build/Tasks'
 
 

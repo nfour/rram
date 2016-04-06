@@ -5,16 +5,28 @@ import webpack from 'webpack'
  *    the webpack config structure; as arrays cant be merged automatically
  */
 export default {
-    preLoaders: [
-        {
-            test    : /\.jsx?$/i,
-            exclude : /node_modules/,
-            loader  : 'eslint-loader',
-        },
-    ],
+    preLoaders: [],
     loaders: [],
 
-    plugins: [],
+    plugins: [
+        // // This plugin will add sourcemaps to the compiled output
+        // new webpack.BannerPlugin(
+        //     'require("source-map-support").install();',
+        //     { raw: true, entryOnly: false }
+        // ),
+
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                unused        : true,
+                dead_code     : true,
+                warnings      : false,
+                drop_debugger : true
+            }
+        }),
+
+    ],
 
     eslint: { quiet: true },
 }
