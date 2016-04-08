@@ -2,6 +2,16 @@
 
 A layout for a `react`, `redux` client with basic `express` server.
 
+## Installation
+```sh
+clone https://github.com/nfour/node-structures _temp-node-structures
+cp -R ./node-structures/layouts/react-redux react-redux
+rm -rf _temp-node-structures
+cd react-redux
+npm run install_all
+npm start
+```
+
 ## Features
 - [x] Build
     - [x] Webpack
@@ -21,15 +31,10 @@ A layout for a `react`, `redux` client with basic `express` server.
 - [x] Isomorphic structure
 - [x] Minimal express server
 - [x] Mocha test infrastructure, isomorphic
+- [x] Coverage testing via `nyc` when using `npm test`
 - [ ] Example mocha tests
 - [ ] Karma test infrastructure
 - [ ] Example karma integration tests
-
-## Installation
-- Clone this repo
-- `cd layouts/react-redux`
-- `npm run install_all`
-- `npm run start` to build the client, watch the server for changes & `npm start` it
 
 ## Configs
 Configs should exist throughout the app as necessary and follow a basic structure:

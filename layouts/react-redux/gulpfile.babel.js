@@ -1,4 +1,5 @@
 import path from 'path'
+import fs from 'fs'
 import gulp from 'gulp'
 import gulpNodemon from 'gulp-nodemon'
 import Tasks from './build/Tasks'
@@ -9,7 +10,7 @@ import Tasks from './build/Tasks'
 //
 
 
-const WEB_SERVER = {
+const NODEMON = {
     watch  : [ 'server/' ],
     ignore : [ 'node_modules' ],
     exec   : 'cd ./server && npm start',
@@ -29,7 +30,7 @@ const CLIENT = new Tasks({
     scripts: [{
         source  : path.resolve('./client/index.js'),
         dist    : path.resolve('./dist/client'),
-        babel   : require('./client/babelrc.json'),
+        babel   : JSON.parse( fs.readFileSync('./client/.babelrc', "UTF8") ),
     }],
 })
 
@@ -51,5 +52,5 @@ gulp.task(`watch`, async () => {
 gulp.task(`start`, async () => {
     await CLIENT.clean()
     await CLIENT.build({ watch: true, liveReload: LIVE_RELOAD })
-    return gulpNodemon(WEB_SERVER)
+    return gulpNodemon(NODEMON)
 })

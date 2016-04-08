@@ -5,38 +5,39 @@
     "description" : "For BUILDING, TESTING, LINTING",
 
     "scripts": {
-        "test"        : "mocha -r babel-register -G -w -R nyan $(find $MOCHA_FOLDER -name '*.spec.js' -not -path '*/node_modules/*')",
+        "test"        : "nyc --require babel-register mocha -G $(find $MOCHA_FOLDER -name '*.spec.js' -not -path '*/node_modules/*')",
         "test_client" : "MOCHA_FOLDER=client npm test",
         "test_server" : "MOCHA_FOLDER=server npm test",
 
         "install_client" : "cd ./client && npm install",
-        "install_server" : "cd ./server && npm install"
+        "install_server" : "cd ./server && npm install",
+        
+        "install_all"    : "npm install && npm run install_client && npm run install_server"
     },
 
     "dependencies": {
-        "fs-extra"  : "0.26.x",
-        "bluebird"  : "3.3.x",
-        "lutils"    : "1.x.x"
+        "bluebird"  : "~3.3.0"
     },
 
     "devDependencies": {
-        "babel-loader"                                    : "6.2.x",
-        "babel-core"                                      : "6.6.x",
-        "babel-register"                                  : "6.6.x",
-        "babel-preset-es2015"                             : "6.x.x",
-        "babel-preset-es2015-node5"                       : "1.x.x",
+        "babel-loader"                                    : "~6.2.0",
+        "babel-core"                                      : "~6.6.0",
+        "babel-register"                                  : "~6.6.0",
+        "babel-preset-es2015"                             : "^6.0.0",
+        "babel-preset-es2015-node5"                       : "^1.0.0",
         "babel-polyfill"                                  : "latest",
         "babel-plugin-transform-async-to-module-method"   : "latest",
         "babel-plugin-transform-class-properties"         : "latest",
         "babel-plugin-transform-object-rest-spread"       : "latest",
         "babel-plugin-transform-object-assign"            : "latest",
-        "babel-plugin-add-module-exports"                 : "0.1.x",
+        "babel-plugin-add-module-exports"                 : "~0.1.0",
 
-        "eslint"              : "2.4.x",
-        "babel-eslint"        : "6.0.x",
+        "eslint"        : "~2.7.0",
+        "babel-eslint"  : "~6.0.2",
 
-        "mocha" : "2.3.x",
-        "chai"  : "3.4.x"
+        "nyc"   : "~6.2.1",
+        "mocha" : "~2.4.5",
+        "chai"  : "~3.5.0"
     },
 
     "engines": {

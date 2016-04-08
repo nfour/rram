@@ -1,9 +1,9 @@
 {
-    "name"        : "_",
+    "name"        : "server",
     "version"     : "0.1.0",
     "main"        : "./index.js",
     "private"     : true,
-    
+
     "scripts": {
         "start": "node -r babel-register index"
     },
