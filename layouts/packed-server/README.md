@@ -4,8 +4,8 @@ A layout for packing a server up, transpiling it to ES5. For use in AWS Lambda a
 
 ## Installation
 ```sh
-clone https://github.com/nfour/node-structures _temp-node-structures
-cp -R ./node-structures/layouts/packed-server packed-server
+git clone https://github.com/nfour/node-structures _temp-node-structures
+cp -R ./_temp-node-structures/layouts/packed-server .
 rm -rf _temp-node-structures
 cd packed-server
 npm install

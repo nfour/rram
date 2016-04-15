@@ -4,8 +4,8 @@ A layout for a `react`, `redux` client with basic `express` server.
 
 ## Installation
 ```sh
-clone https://github.com/nfour/node-structures _temp-node-structures
-cp -R ./node-structures/layouts/react-redux react-redux
+git clone https://github.com/nfour/node-structures _temp-node-structures
+cp -R ./_temp-node-structures/layouts/react-redux .
 rm -rf _temp-node-structures
 cd react-redux
 npm run install_all
