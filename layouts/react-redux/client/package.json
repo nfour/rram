@@ -5,12 +5,12 @@
     "private"     : true,
 
     "devDependencies": {
-        "normalize.css" : "~3.x.x",
+        "normalize.css" : "~4.1.0",
         "stylus"        : "~0.54.2",
 
         "lutils"           : "^1.0.0",
         "classnames"       : "~2.2.0",
-        "material-ui"      : "~0.14.0",
+        "material-ui"      : "~0.15.0-beta.1",
         "isomorphic-fetch" : "~2.2.0",
 
         "redux"                  : "~3.3.1",
@@ -20,8 +20,8 @@
         "react-router-redux"     : "~4.0.2",
         "react-redux"            : "~4.4.0",
         "react-router"           : "~2.0.1",
-        "react-addons-perf"      : "~0.14.6",
-        "react-dom"              : "~0.14.6",
-        "react"                  : "~0.14.6"
+        "react-addons-perf"      : "~15.0.0",
+        "react-dom"              : "~15.0.0",
+        "react"                  : "~15.0.0"
     }
 }
