@@ -9,6 +9,7 @@ import Tasks from './build/Tasks'
 // Task configurations
 //
 
+const BABELRC = JSON.parse( fs.readFileSync('./.babelrc', 'UTF8') )
 
 const NODEMON = {
     watch  : [ 'server/' ],
@@ -30,7 +31,7 @@ const CLIENT = new Tasks({
     scripts: [{
         source  : path.resolve('./client/index.js'),
         dist    : path.resolve('./dist/client'),
-        babel   : JSON.parse( fs.readFileSync('./client/.babelrc', "UTF8") ),
+        babel   : BABELRC,
     }],
 })
 
