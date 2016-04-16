@@ -2,7 +2,6 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import actions from '../actions/counter'
-import sources from '../sources'
 
 import CounterComponent from '../components/Counter'
 
@@ -16,7 +15,6 @@ export default connect(
     (dispatch) => ({
         actions: bindActionCreators({
             ...actions,
-            ...sources,
         }, dispatch),
     })
 )(
