@@ -63,6 +63,22 @@ export default class Tasks {
             ...(options.webpack.plugins ? options.webpack.plugins : [])
         ]
 
+        if ( options.compress )
+            plugins.push(
+                ...[
+                    new webpack.optimize.DedupePlugin(),
+                    new webpack.optimize.OccurenceOrderPlugin(),
+                    new webpack.optimize.UglifyJsPlugin({
+                        compress: {
+                            unused        : true,
+                            dead_code     : true,
+                            warnings      : false,
+                            drop_debugger : true
+                        }
+                    }),
+                ]
+            )
+
         if ( options.liveReload ) {
             let liveOptions = typeOf.Object(options.liveReload)
                 ? options.liveReload
@@ -78,11 +94,14 @@ export default class Tasks {
         let config = {
             watch   : options.watch,
             entry   : [ 'babel-polyfill', options.source ],
-            devtool : 'source-map',
+            devtool : options.compress
+                ? false
+                : options.webpack.devtool || '#eval-source-map',
             module  : {
                 preLoaders: this.config.webpack.preLoaders,
                 loaders
             },
+
             output: {
                 filename          : path.basename(options.source),
                 sourceMapFilename : `${path.basename(options.source)}.map`,
@@ -104,9 +123,6 @@ export default class Tasks {
                         resolve()
                     })
                 )
-
-            // TODO: utlize webpack build in compression
-            if ( options.compress ) g = g.pipe( gulpStreamify( gulpUglify() ) )
 
             return g.pipe( gulp.dest(options.dist) )
         })
@@ -140,8 +156,8 @@ export default class Tasks {
         return this.config.scripts.map((options) =>
             this.webpack({
                 ...merge(options, overrides),
-                source   : path.resolve(this.config.source, options.source),
-                dist     : path.resolve(this.config.dist, options.dist),
+                source   : path.resolve(this.config.source, options.source || ''),
+                dist     : path.resolve(this.config.dist, options.dist || ''),
                 watch    : options.watch,
             })
         )
