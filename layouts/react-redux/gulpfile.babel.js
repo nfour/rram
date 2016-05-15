@@ -12,9 +12,11 @@ Promise.promisifyAll(fs)
 // Task configurations
 //
 
+const COMPRESS = !! ( process.env.COMPRESS || process.env.NODE_ENV === 'production' )
+
 const BABELRC = JSON.parse( fs.readFileSync('./.babelrc', 'UTF8') )
 
-// Use a lighter preset for the server
+// Use a the full preset for the clients
 BABELRC.presets.forEach((preset, i) => {
     if ( preset === 'es2015-node5' )
         BABELRC.presets[i] = 'es2015'
@@ -34,8 +36,6 @@ const LIVE_RELOAD = {
     appendScriptTag : true,
     ignore          : null,
 }
-
-const COMPRESS = !! ( process.env.COMPRESS || process.env.NODE_ENV === 'production' )
 
 const CLIENT = new Tasks({
     resolve : "/static/",
