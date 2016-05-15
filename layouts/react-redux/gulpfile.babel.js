@@ -25,13 +25,17 @@ const LIVE_RELOAD = {
     ignore          : null,
 }
 
+const COMPRESS = !! ( process.env.COMPRESS || process.env.NODE_ENV === 'production' )
+
 const CLIENT = new Tasks({
     resolve : "/static/",
+    source  : path.resolve('./client'),
+    dist    : path.resolve('./dist/client'),
 
     scripts: [{
-        source  : path.resolve('./client/index.js'),
-        dist    : path.resolve('./dist/client'),
+        source  : './index.js',
         babel   : BABELRC,
+        compress: COMPRESS
     }],
 })
 
@@ -54,4 +58,12 @@ gulp.task(`start`, async () => {
     await CLIENT.clean()
     await CLIENT.build({ watch: true, liveReload: LIVE_RELOAD })
     return gulpNodemon(NODEMON)
+})
+
+gulp.task(`bundle`, async () => {
+    await CLIENT.clean()
+    await CLIENT.build()
+
+    let view = await fs.readFileAsync( path.resolve(`./client/views/index.html`) )
+    await fs.writeFileAsync( path.resolve(`./dist/client/index.html`), view )
 })
