@@ -6,7 +6,7 @@
 
     "devDependencies": {
         "normalize.css" : "~4.1.0",
-        "stylus"        : "~0.54.2",
+        "less"          : "~2.7.1",
 
         "lutils"           : "^1.0.0",
         "classnames"       : "~2.2.0",

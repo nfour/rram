@@ -5,37 +5,25 @@ import webpack from 'webpack'
  *    the webpack config structure; as arrays cant be merged automatically
  */
 export default {
-    preLoaders: [
-        {
-            test    : /\.jsx?$/i,
-            exclude : /node_modules/,
-            loader  : 'eslint-loader',
-        },
-    ],
+    preLoaders: [],
     loaders: [
+        {
+            test: /\.less$/,
+            loader: 'style-loader!css-loader!less-loader'
+        },
         {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
         },
         {
-            test: /\.less/,
-            loader: 'style-loader!css-loader!less-loader'
-        },
-        {
-            test: /\.styl/,
-            loader: 'style-loader!css-loader!stylus-loader'
-        },
-        {
             test   : /\.(png|jpg|gif|woff|woff2)$/,
             loader : 'url-loader?limit=8192'
-        }
+        },
+        {
+            test   : /\.json$/,
+            loader : 'json-loader'
+        },
     ],
 
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || "development")
-        })
-    ],
-
-    eslint: { quiet: true },
+    plugins: [],
 }

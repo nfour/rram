@@ -1,8 +1,11 @@
 import path from 'path'
-import fs from 'fs'
 import gulp from 'gulp'
 import gulpNodemon from 'gulp-nodemon'
+import Promise from 'bluebird'
 import Tasks from './build/Tasks'
+import fs from 'fs'
+
+Promise.promisifyAll(fs)
 
 
 //
@@ -10,6 +13,13 @@ import Tasks from './build/Tasks'
 //
 
 const BABELRC = JSON.parse( fs.readFileSync('./.babelrc', 'UTF8') )
+
+// Use a lighter preset for the server
+BABELRC.presets.forEach((preset, i) => {
+    if ( preset === 'es2015-node5' )
+        BABELRC.presets[i] = 'es2015'
+})
+
 
 const NODEMON = {
     watch  : [ 'server/' ],
@@ -60,10 +70,7 @@ gulp.task(`start`, async () => {
     return gulpNodemon(NODEMON)
 })
 
-gulp.task(`bundle`, async () => {
-    await CLIENT.clean()
-    await CLIENT.build()
-
+gulp.task(`bundle`, ['build'], async () => {
     let view = await fs.readFileAsync( path.resolve(`./client/views/index.html`) )
     await fs.writeFileAsync( path.resolve(`./dist/client/index.html`), view )
 })

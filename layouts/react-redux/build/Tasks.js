@@ -96,7 +96,7 @@ export default class Tasks {
             entry   : [ 'babel-polyfill', options.source ],
             devtool : options.compress
                 ? false
-                : options.webpack.devtool || '#eval-source-map',
+                : options.webpack.devtool || 'source-map',
             module  : {
                 preLoaders: this.config.webpack.preLoaders,
                 loaders

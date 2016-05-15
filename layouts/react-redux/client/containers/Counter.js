@@ -6,7 +6,6 @@ import actions from '../actions/counter'
 import CounterComponent from '../components/Counter'
 
 require('normalize.css')
-require('../views/styles/style.styl')
 
 export default connect(
     (state) => ({
@@ -19,13 +18,11 @@ export default connect(
     })
 )(
     class Counter extends React.Component {
-        static propTypes = {
-
-        };
+        static propTypes = {}
 
         static contextTypes = {
             router: React.PropTypes.object
-        };
+        }
 
         navigate() {
             this.context.router.push('/test')
