@@ -3,7 +3,7 @@
 A layout for a `react`, `redux` client with basic `express` server.
 
 ## Installation
-```sh
+```bash
 git clone https://github.com/nfour/js-structures _temp-js-structures
 cp -R ./_temp-js-structures/layouts/react-redux .
 rm -rf _temp-js-structures
