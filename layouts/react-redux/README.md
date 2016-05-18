@@ -4,9 +4,9 @@ A layout for a `react`, `redux` client with basic `express` server.
 
 ## Installation
 ```sh
-git clone https://github.com/nfour/node-structures _temp-node-structures
-cp -R ./_temp-node-structures/layouts/react-redux .
-rm -rf _temp-node-structures
+git clone https://github.com/nfour/js-structures _temp-js-structures
+cp -R ./_temp-js-structures/layouts/react-redux .
+rm -rf _temp-js-structures
 cd react-redux
 npm run install_all
 npm start
@@ -23,7 +23,7 @@ npm start
     - [x] React/Redux structure
     - [x] ES Linting checks
     - [x] `process.env.NODE_ENV` on client
-    - [ ] Minified (Uglified) builds
+    - [x] Minified (Uglified) builds
 
 - [x] Configured react router
 - [x] Consistant, optimized babel featureset on client & server
