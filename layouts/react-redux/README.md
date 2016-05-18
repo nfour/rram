@@ -24,6 +24,7 @@ npm start
     - [x] ES Linting checks
     - [x] `process.env.NODE_ENV` on client
     - [x] Minified (Uglified) builds
+    - [ ] Webpack 2.0
 
 - [x] Configured react router
 - [x] Consistant, optimized babel featureset on client & server

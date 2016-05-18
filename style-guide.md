@@ -32,7 +32,7 @@ let arr = [ ...defaultItems, 1 ]
 Keep in mind this is a **shallow** merge, thus references will persist. For deep merging and cloning, use `lutils-merge` and `lutils-clone`.
 
 ## Semicolons
-*Backed up by [NPM's style guide](https://docs.npmjs.com/misc/coding-style)*
+*Inherited from [NPM's style guide](https://docs.npmjs.com/misc/coding-style)*
 
 Know your javascript, don't use them, except in these 4 situations:
 
@@ -65,3 +65,10 @@ class Test {
     static prop = 1;
 }
 ```
+
+
+## TODO
+
+- [ ] Expand upon and structure this like the airbnb guide
+    - [ ] Inherit rules from other mainstream/peer reviewed guides where possible
+- [ ] Consolidate all structural aspects described in the layouts into the style guide, or a new layout guide
