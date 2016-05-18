@@ -1,18 +1,20 @@
-# NodeJS Structures & Conventions
+# JS Structures & Conventions
 
 Contains battlehardened systems for:
 - Isomorphic project layouts
 - Build systems, `gulp`, `webpack`, `babel`
 - Testing, linting, unit & integration, `mocha`, `eslint`, `karma`
 - Client architectures: `react`, `redux`
-- Server architectures: `hapi`, `express`
-- Deployment: `flightplan`
+- Server architectures: `express`
 
-**PROTIP**: To view; Use [octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc) or [atom.io](http://atom.io).
+**PROTIP**: Use [octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc) or [atom.io](http://atom.io).
+
+
+## Style Guide
+See the style guide [here](./style-guide.md)
 
 ## Babel
 Babel has been configured to:
-
 - Ensure server & client Babel feature sets are **identical**
 - Support all of es2015
 - Support `react`, `jsx` in client & server
@@ -28,22 +30,16 @@ Babel has been configured to:
     - `async-to-module-method`
         - `ES2016`
         - Example: `async function() { await fetch('http://stuff.com') }`
-        - Causes all `async` functions to become `bluebird` `coroutine`'s. Exact same syntax as the async await poised to be integrated into ES7, but ensures the promise involved an instance of `bluebird`.
-
+        - Causes all `async` functions to become `bluebird` `coroutine`'s. Same syntax as standardized async await poised to be integrated into ES7, but ensures the promise involved an instance of `bluebird`.
 
 ## ESLint
 Eslint has been configured to:
 - Conform to the style guide, roughly
+    + Detects instances where semicolons are needed for you
 - Trigger on some anti-patterns
 - Detect unused variables, and undefined variables in use
-- Will run on build & tests including the editor
-- Detects instances where semicolons are needed for you
+- To be used in the editor only as to not effect build times
 
 To configure eslint for `atom`:
-- Install the `linter-eslint` atom package
-- `npm install` within the project directory to ensure `babel-eslint` is avaliable to the editor.
-
-
-## Style Guide
-
-See the style guide [here](./style-guide.md)
+- Install the `linter-eslint` atom package (and `linter`)
+- `npm install` within each project directory, ensuring `babel-eslint` is avaliable to the editor.
