@@ -9,7 +9,7 @@
 
         "lutils"           : "^1.0.0",
         "classnames"       : "~2.2.0",
-        "material-ui"      : "~0.15.0-beta.1",
+        "material-ui"      : "~0.15.0",
         "isomorphic-fetch" : "~2.2.0",
 
         "redux"                  : "~3.3.1",

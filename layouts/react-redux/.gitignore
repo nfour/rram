@@ -1,5 +1,4 @@
-npm-debug.log
-/node_modules
-/dist
-/**/node_modules
+npm-*
+node_modules
+dist
 .nyc_output
