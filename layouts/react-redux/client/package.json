@@ -15,12 +15,14 @@
         "redux"                  : "~3.3.1",
         "redux-thunk"            : "~2.0.1",
 
-        "react-tap-event-plugin" : "~0.2.2",
-        "react-router-redux"     : "~4.0.2",
-        "react-redux"            : "~4.4.0",
-        "react-router"           : "~2.0.1",
-        "react-addons-perf"      : "~15.0.0",
-        "react-dom"              : "~15.0.0",
-        "react"                  : "~15.0.0"
+        "react-tap-event-plugin"            : "~1.0.0",
+        "react-addons-css-transition-group" : "latest",
+        "react-addons-shallow-compare"      : "~15.0.2",
+        "react-router-redux"                : "~4.0.2",
+        "react-redux"                       : "~4.4.0",
+        "react-router"                      : "~2.0.1",
+        "react-addons-perf"                 : "~15.0.0",
+        "react-dom"                         : "~15.0.0",
+        "react"                             : "~15.0.0"
     }
 }
