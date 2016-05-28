@@ -1,3 +1,28 @@
+@import (css) url('https://fonts.googleapis.com/css?family=Roboto:400,300,500');
+@import (css) url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+    margin: 0;
+    font-family: "Roboto";
+}
+
+* {
+    box-sizing: border-box;
+}
+
+// Forces constraints to window size
+// NOTE: Remove this as content requires
+html, body, #ROOT, #ROOT > div {
+    width: 100%;
+    height: 100%;
+}
+
+
+//
+// Demo styles
+//
+
+
 body {
     color               : #222;
     background          : #eee;
@@ -11,4 +36,12 @@ img {
     box-shadow    : 0 2px 300px 180px #fff;
     border        : 4px solid #000;
     border-radius : 4px;
+}
+
+section.table {
+    margin     : 30px auto 60px;
+    width      : 400px;
+    padding    : 20px;
+    box-shadow : 0 5px 27px 0 rgba(0,0,0, 0.1), 0 1px 8px 0 rgba(0,0,0, 0.1);
+    background-color: rgba(255,255,255, 0.25);
 }

@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { RaisedButton } from 'material-ui'
 
 const image = require('../views/assets/goodJob.jpg')
 
@@ -18,13 +19,11 @@ export default class Counter extends React.Component {
             <div style={{ textAlign: "center" }}>
                 <img height="350" src={image} />
                 <h2>Good Job</h2>
-                <br/>
                 <div>
-                    Count: {count}
-                    <br/>
-                    <button onClick={() => increment() }>+</button>
-                    <button onClick={() => decrement() }>-</button>
-                    <button onClick={() => this.props.navigateTest() }>Navigate to /test</button>
+                    <h4>Count: {count}</h4>
+                    <RaisedButton onTouchTap={() => increment() }>INCR</RaisedButton>
+                    &nbsp;
+                    <RaisedButton onTouchTap={() => decrement() }>DECR</RaisedButton>
                 </div>
             </div>
         )
