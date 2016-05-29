@@ -35,8 +35,7 @@ export const HISTORY = syncHistoryWithStore(
 
 import Root from './containers/Root'
 import { Counter } from './containers/pages'
-
-const NoMatch = () => <div>NO MATCH</div>
+import { NotFound } from './containers/errors'
 
 render(
     <Provider store={STORE}>
@@ -45,10 +44,10 @@ render(
                 <IndexRoute component={Counter}/>
                 <Route path="/counter" component={Counter}/>
                 <Route path="/table" component={Counter}/>
-                <Route path="*" component={NoMatch}/>
+                <Route path="*" component={NotFound}/>
             </Route>
         </Router>
 
     </Provider>,
-    document.getElementById('app')
+    document.getElementById('ROOT')
 )
