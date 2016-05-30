@@ -5,9 +5,8 @@
     "description" : "For BUILDING, TESTING, LINTING and DEPLOYMENT",
 
     "scripts": {
-        "test"        : "nyc --require babel-register mocha -G $(find $MOCHA_FOLDER -name '*.spec.js' -not -path '*/node_modules/*')",
-        "test_client" : "MOCHA_FOLDER=client npm test",
-        "test_server" : "MOCHA_FOLDER=server npm test",
+        "test"       : "cd client && npm test",
+        "mocha_test" : "nyc --require babel-register mocha -G $(find $MOCHA_FOLDER -name '*.spec.js' -not -path '*/node_modules/*')",
 
         "install:client" : "cd ./client && npm install",
         "install:server" : "cd ./server && npm install",

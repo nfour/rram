@@ -8,7 +8,7 @@ git clone https://github.com/nfour/js-structures _temp-js-structures
 cp -R ./_temp-js-structures/layouts/react-redux .
 rm -rf _temp-js-structures
 cd react-redux
-npm run install_all
+npm run install:all
 npm start
 ```
 

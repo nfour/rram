@@ -4,6 +4,14 @@
     "main"        : "./index.js",
     "private"     : true,
 
+    "scripts": {
+        "test": "jest --verbose"
+    },
+
+    "jest": {
+        "unmockedModulePathPatterns": ["node_modules/"]
+    },
+
     "devDependencies": {
         "sorty"            : "~1.2.2",
         "classnames"       : "~2.2.0",
@@ -13,12 +21,16 @@
         "redux"       : "~3.3.1",
         "redux-thunk" : "~2.0.1",
 
+        "jest-cli"                          : "~12.1.1",
+        "babel-jest"                        : "~12.1.0",
+
         "material-ui"                       : "~0.15.0",
         "react-virtualized"                 : "~7.2.0",
         "react-selectize"                   : "~2.0.2",
         "react-tap-event-plugin"            : "~1.0.0",
         "react-addons-css-transition-group" : "latest",
         "react-addons-shallow-compare"      : "~15.0.2",
+        "react-addons-test-utils"           : "~15.1.0",
 
         "react-router-redux"                : "~4.0.2",
         "react-redux"                       : "~4.4.0",
