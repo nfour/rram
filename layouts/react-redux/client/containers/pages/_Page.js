@@ -5,7 +5,7 @@ export default class Page extends React.Component {
     render() {
         return (
             <div className="page">
-                <Header {...this.props.children[0].props} />
+                <Header location={this.props.location} />
                 {this.props.children}
             </div>
         )

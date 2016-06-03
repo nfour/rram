@@ -34,7 +34,7 @@ export default connect(
             }
 
             return (
-                <Page>
+                <Page {...this.props}>
                     <CounterComponent {...this.props} />
                     <section className="table">
                         <Table
