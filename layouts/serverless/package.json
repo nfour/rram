@@ -1,0 +1,51 @@
+{
+    "name"    : "slstest",
+    "private" : true,
+    "version" : "0.1.0",
+    "externalDependencies": [
+        "aws-sdk"
+    ],
+
+    "scripts": {
+        "deploy": "gulp deploy",
+        "i:all": "npm i && cd serverless && npm i"
+    },
+
+    "dependencies": {
+        "aws-sdk"  : "latest",
+        "bluebird" : "~3.3.0",
+        "lutils"   : "^1.0.0"
+    },
+
+    "devDependencies": {
+        "express"     : "^4.13.3",
+        "ejs"         : "~2.4.0",
+
+        "shelljs"                   : "~0.6.0",
+        "yargs"                     : "~4.7.1",
+        "gulp"                      : "~3.9.0",
+        "gulp-nodemon"              : "~2.0.0",
+        "gulp-rename"               : "~1.2.0",
+        "gulp-debug"                : "~2.1.0",
+        "gulp-plumber"              : "~1.0.0",
+        "del"                       : "~2.2.0",
+        "webpack-stream"            : "~3.1.0",
+        "webpack"                   : "2.1.0-beta.8",
+        "webpack-livereload-plugin" : "~0.7.0",
+
+        "eslint"       : "~2.7.0",
+        "babel-eslint" : "~6.0.2",
+
+        "babel-preset-es2015-node4"                           : "latest",
+        "babel-preset-es2015"                                 : "latest",
+        "babel-loader"                                        : "~6.2.0",
+        "babel-core"                                          : "~6.6.0",
+        "babel-register"                                      : "~6.6.0",
+        "babel-polyfill"                                      : "latest",
+        "babel-plugin-transform-async-to-module-method"       : "latest",
+        "babel-plugin-transform-class-properties"             : "latest",
+        "babel-plugin-transform-object-rest-spread"           : "latest",
+        "babel-plugin-transform-inline-environment-variables" : "latest",
+        "babel-plugin-add-module-exports"                     : "~0.1.0"
+    }
+}

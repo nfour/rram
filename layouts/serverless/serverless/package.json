@@ -1,0 +1,14 @@
+{
+  "name": "slstest",
+  "private": true,
+  "version": "0.0.0",
+  "externalDependencies": [
+    "aws-sdk"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-runtime-webpack": "~0.2.0",
+    "serverless-client-s3": "~2.0.0",
+    "webpack": "~1.13.0"
+  }
+}

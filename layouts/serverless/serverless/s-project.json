@@ -1,0 +1,15 @@
+{
+  "name": "serverless-bj9b4v",
+  "custom": {
+      "webpack": {
+        "configPath": "./webpack.config.js"
+    },
+    "client": {
+        "bucketName": "client.${name}"
+    }
+  },
+  "plugins": [
+    "serverless-runtime-webpack",
+    "serverless-client-s3"
+  ]
+}
