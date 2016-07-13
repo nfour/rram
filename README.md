@@ -1,19 +1,10 @@
-# JS Structures & Conventions
+# JS STRUCTURES
+Javascript convention and standardization.
 
-Contains battlehardened systems for:
-- Isomorphic project layouts
-- Build systems, `gulp`, `webpack`, `babel`
-- Testing, linting, unit & integration, `mocha`, `eslint`, `karma`
-- Client architectures: `react`, `redux`
-- Server architectures: `express`
+## STYLE GUIDE
+See the style guide [here](./style-guide/README.md)
 
-**PROTIP**: Use [octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc) or [atom.io](http://atom.io).
-
-
-## Style Guide
-See the style guide [here](./style-guide.md)
-
-## Babel
+## BABEL
 Babel has been configured to:
 - Ensure server & client Babel feature sets are **identical**
 - Support all of es2015
@@ -32,7 +23,7 @@ Babel has been configured to:
         - Example: `async function() { await fetch('http://stuff.com') }`
         - Causes all `async` functions to become `bluebird` `coroutine`'s. Same syntax as standardized async await poised to be integrated into ES7, but ensures the promise involved an instance of `bluebird`.
 
-## ESLint
+## LINTING
 Eslint has been configured to:
 - Conform to the style guide, roughly
     + Detects instances where semicolons are needed for you
