@@ -25,6 +25,8 @@ class Test {
 #### Strings
 - Utilize `template strings` as much as possible.
 
+- [x] *Detected by linter*
+
 #### Merging
 - When merging objects and arrays, prefer ES6 spreads:
 ```js
@@ -34,6 +36,8 @@ const arr = [ ...defaultItems, 1 ]
 
 Keep in mind this is a **shallow** merge, thus references will persist.
 - For deep merging and cloning, use `lutils-merge` and `lutils-clone`.
+
+- [x] *Detected by linter*
 
 ## Semicolons
 *Inherited from [NPM's style guide](https://docs.npmjs.com/misc/coding-style)*
@@ -46,3 +50,5 @@ const a = test()
 ```
 As above, in any instance where `()` can normally be expanded on.
 Aside from for loops and multi statement lines, semicolons are not necessary in any other situation.
+
+- [x] *Detected & Autofixed by linter*
