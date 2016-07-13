@@ -1,13 +1,17 @@
 
-## ES5-ES7
+## ECMASCRIPT FEATURES
 
 #### Arrow functions
-- Prefer them where sensible
-- Do not use in classes where `this` scoping is undesired
+- Prefer them always
+- Do not use where `this` scoping is needed
+
+It iss an antipattern to use `arguments` which is also discarded by arrow functions which further supports the use case for arrow functions everywhere.
 
 #### Async/Await
-- Use to make control flow clear whenever async occurs
-- ALWAYS prefer just promises in performance-important async code.
+- Prefer async await and async denoted functions for async operations
+- Make use of `.then` and `.catch` for side effects in order to preserve readability
+
+Async await allows one to bubble errors up just like normal synchronous javascript by default, and always returns a promise.
 
 ```js
 class Test {
@@ -19,56 +23,26 @@ class Test {
 ```
 
 #### Strings
-`'` and `"`, it doesnt matter, just use template strings as much as possible.
-
+- Utilize `template strings` as much as possible.
 
 #### Merging
-When merging objects and arrays, prefer ES6 spreads:
+- When merging objects and arrays, prefer ES6 spreads:
 ```js
-let obj = { ...defaultProps, newProp: 1 }
-let arr = [ ...defaultItems, 1 ]
+const obj = { ...defaultProps, newProp: 1 }
+const arr = [ ...defaultItems, 1 ]
 ```
 
-Keep in mind this is a **shallow** merge, thus references will persist. For deep merging and cloning, use `lutils-merge` and `lutils-clone`.
+Keep in mind this is a **shallow** merge, thus references will persist.
+- For deep merging and cloning, use `lutils-merge` and `lutils-clone`.
 
 ## Semicolons
 *Inherited from [NPM's style guide](https://docs.npmjs.com/misc/coding-style)*
 
-Know your javascript, don't use them, except in these 4 situations:
-
-- In loops, `for (;;)`, they are required
-- For single liners `case 'foo': doStuff(); break`
-- In front of leading `(` and `[` at the start of the line, to prevent ambiguity from following expressions.
-- ES6-7 class non-fn properties, they require them
-
-An example of the only places you need semicolons:
+Semicolons are not required in javascript and can be reliably excluded in all but one situation:
 
 ```js
-var a = someFunction()
-;(x || y).doSomething() // Prevents someFunction()(x || y)
-
-;(function() {
-	a = 1
-})()
-
-for (var i = 0; i < 10; i ++) {
-    switch (state) {
-        case 'begin': start(); continue
-        case 'end': finish(); break
-        default: throw new Error('unknown state')
-    }
-}
-
-class Test {
-    fn() {}
-    property = 1;
-    static prop = 1;
-}
+const a = test()
+;[1, 2].map((v) => v)
 ```
-
-
-## TODO
-
-- [ ] Expand upon and structure this like the airbnb guide
-    - [ ] Inherit rules from other mainstream/peer reviewed guides where possible
-- [ ] Consolidate all structural aspects described in the layouts into the style guide, or a new layout guide
+As above, in any instance where `()` can normally be expanded on.
+Aside from for loops and multi statement lines, semicolons are not necessary in any other situation.
