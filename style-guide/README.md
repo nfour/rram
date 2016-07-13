@@ -1,8 +1,6 @@
-
 #### Spacing & Indent
 - Use `4` spaces throughout
 - The linter will also dictate additional minor asthetic spacings and autofix them, for readability
-
 - [x] *Autofixed by linter*
 
 #### Classes
@@ -27,7 +25,6 @@ function fn({ foo, bar = {} }) {
 - Prefer them where scope is necessary
 - Do not use where `this` scoping is needed
 - Utilize named functions for exports to enhance error stacks, as `this` will be `global` and thus useless
-
 
 ```js
 export function fn() {
@@ -60,7 +57,6 @@ class Test {
 
 #### Strings
 - Utilize `template strings` as much as possible.
-
 - [x] *Detected by linter*
 
 #### Merging
@@ -72,7 +68,6 @@ const arr = [ ...defaultItems, 1 ]
 
 Keep in mind this is a **shallow** merge, thus references will persist.
 - For deep merging and cloning, use `lutils-merge` and `lutils-clone`.
-
 - [x] *Detected by linter*
 
 ## Semicolons
