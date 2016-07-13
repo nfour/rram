@@ -43,3 +43,8 @@ Eslint has been configured to:
 To configure eslint for `atom`:
 - Install the `linter-eslint` atom package (and `linter`)
 - `npm install` within each project directory, ensuring `babel-eslint` is avaliable to the editor.
+
+
+## LICENSE
+
+See [license](./LICENSE.md)
