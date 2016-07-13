@@ -1,11 +1,47 @@
 
-## ECMASCRIPT FEATURES
+#### Spacing & Indent
+- Use `4` spaces throughout
+- The linter will also dictate additional minor asthetic spacings and autofix them, for readability
+
+- [x] *Autofixed by linter*
+
+#### Classes
+- Utilize ES6 classes over ES5 prototypal "classes"
+- `super` and `extends` is permitted
+- Do not extend classes roughly beyond twice, as this produces too large of a dependency chain to reason about.
+
+#### Parameters
+- Opt int to use keyed objects for paramaters over 3-4 anonymous params in functions
+- This improves readability significantly
+- Utilize object destructuring in the parameters
+- Utilize default values in the parameters
+
+```js
+fn({ foo: true , bar: obj })
+function fn({ foo, bar = {} }) {
+    // ...
+}
+```
 
 #### Arrow functions
-- Prefer them always
+- Prefer them where scope is necessary
 - Do not use where `this` scoping is needed
+- Utilize named functions for exports to enhance error stacks, as `this` will be `global` and thus useless
 
-It iss an antipattern to use `arguments` which is also discarded by arrow functions which further supports the use case for arrow functions everywhere.
+
+```js
+export function fn() {
+    return {
+        foo: 100,
+        fn() { // Shorthand standard function
+            return () => this.foo // Preserve `this` scoping
+        }
+    }
+}
+
+```
+
+It is an antipattern to use `arguments` which is also discarded by arrow functions which further supports the use case for arrow functions everywhere.
 
 #### Async/Await
 - Prefer async await and async denoted functions for async operations
@@ -51,4 +87,4 @@ const a = test()
 As above, in any instance where `()` can normally be expanded on.
 Aside from for loops and multi statement lines, semicolons are not necessary in any other situation.
 
-- [x] *Detected & Autofixed by linter*
+- [x] *Autofixed by linter*
