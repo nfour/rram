@@ -26,7 +26,7 @@ Babel has been configured to:
 ## LINTING
 Eslint has been configured to:
 - Conform to the style guide, roughly
-    + Detects instances where semicolons are needed for you
+- Autofix various aspects
 - Trigger on some anti-patterns
 - Detect unused variables, and undefined variables in use
 - To be used in the editor only as to not effect build times
