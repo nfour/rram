@@ -3,7 +3,7 @@
 
 ## React
 ### Pure render immutability
-In order to preserve performance one needs to consider creation of new entities needlessly in the render method.
+In order to preserve performance one needs to consider the creation of new entities in the render method.
 
 #### BAD
 ```jsx
