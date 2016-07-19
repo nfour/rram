@@ -90,3 +90,8 @@ something like this:
 ```
 
 This way `Expensive` will be skipped.
+
+This example could be further improved by breaking the `Expensive` component into smaller pieces. To determine how to split
+them up you need to consider:
+- Do different parts of the `props` change between renders?
+- How can I split the `props` up between components to minimize renders?
