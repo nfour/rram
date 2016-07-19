@@ -50,11 +50,7 @@ class Component extends React.Component {
 export default (props, context) => {
     // ... do expensive compute on props ...
 
-    return (
-        {props.items.map((item) =>
-            <SomeComponent {...item} />)
-        }
-    )
+    return <SomeComponent {...props} />
 }
 ```
 
@@ -69,11 +65,7 @@ import { pure } from 'recompose'
 export default pure((props, context) => {
     // ... do expensive compute on props ...
 
-    return (
-        {props.items.map((item) =>
-            <SomeComponent {...item} />)
-        }
-    )
+    return <SomeComponent {...props} />
 })
 ```
 
