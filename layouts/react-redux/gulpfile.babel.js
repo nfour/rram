@@ -9,7 +9,7 @@ import path from 'path'
 import gulp from 'gulp'
 import gulpNodemon from 'gulp-nodemon'
 import fs from 'fs'
-import Tasks from './build/Tasks'
+import Build from './build/Build'
 
 Promise.promisifyAll(fs)
 
@@ -60,14 +60,15 @@ const LIVE_RELOAD = {
 
 const clients = {
     // Only one client in this app
-    client: new Tasks({
+    client: new Build({
         dist   : path.resolve(__dirname, PATHS.dist, './client'),
         source : path.resolve(__dirname, './client'),
 
         scripts: [{
-            source  : './index.js',
-            babel   : BABELRC,
-            compress: COMPRESS
+            source   : './index.js',
+            babel    : BABELRC,
+            compress : COMPRESS,
+            webpack  : { progress : true }
         }]
     })
 }
