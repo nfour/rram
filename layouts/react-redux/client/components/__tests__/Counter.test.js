@@ -11,7 +11,7 @@ describe('<Counter />', () => {
         const props = {
             count    : 22,
             actions  : {
-                incriment: sinon.spy(),
+                increment: sinon.spy(),
                 decrement: sinon.spy(),
             }
         }
@@ -24,9 +24,9 @@ describe('<Counter />', () => {
         expect( component.find('h2').text() ).to.equal("Good Job")
         expect( component.find('.count').text() ).to.equal(`${props.count}`)
 
-        component.find('.incriment').simulate('click')
+        component.find('.increment').simulate('click')
 
-        expect( props.actions.incriment.calledOnce ).to.equal(true)
+        expect( props.actions.increment.calledOnce ).to.equal(true)
     })
 
     // This is effectively a full render, with a <Provider> and material-ui context
@@ -34,7 +34,7 @@ describe('<Counter />', () => {
         const props = {
             count    : 15,
             actions  : {
-                incriment: sinon.spy(),
+                increment: sinon.spy(),
                 decrement: sinon.spy(),
             }
         }

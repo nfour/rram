@@ -38,13 +38,14 @@ import Root from './containers/Root'
 import { Counter } from './containers/pages'
 import { NotFound } from './containers/errors'
 
+import { Counter as PureCounter } from './containers/pure/pages'
+
 render(
     <Provider store={STORE}>
         <Router history={HISTORY}>
             <Route path="/" component={Root}>
                 <IndexRoute component={Counter}/>
-                <Route path="/counter" component={Counter}/>
-                <Route path="/table" component={Counter}/>
+                <Route path="/pure" component={PureCounter} />
                 <Route path="*" component={NotFound}/>
             </Route>
         </Router>

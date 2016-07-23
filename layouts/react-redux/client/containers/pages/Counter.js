@@ -1,7 +1,7 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import actions from '../../actions/counter'
+import * as actions from '../../actions/counter'
 
 import Page from './_Page'
 import CounterComponent from '../../components/Counter'
@@ -9,7 +9,8 @@ import Table from '../../components/Table'
 
 export default connect(
     (state) => ({
-        count: state.counter.count
+        count  : state.counter.count,
+        drawer : state.header.drawer
     }),
     (dispatch) => ({
         actions: bindActionCreators({
@@ -21,12 +22,13 @@ export default connect(
         static propTypes = {}
 
         static contextTypes = {
-            router: React.PropTypes.object
+            location: React.PropTypes.object,
+            router: React.PropTypes.object,
         }
 
         render() {
-            const { count } = this.props
-            
+            const { count, drawer } = this.props
+
             // Lets make some fake rows
             const rows = []
             for ( let i = 0; i <= count * 10000; ++i ) {
@@ -34,7 +36,10 @@ export default connect(
             }
 
             return (
-                <Page location={this.props.location}>
+                <Page
+                    location={this.context.location}
+                    drawer={drawer}
+                >
                     <CounterComponent
                         count={this.props.count}
                         actions={this.props.actions}

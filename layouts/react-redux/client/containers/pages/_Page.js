@@ -3,10 +3,9 @@ import Header from '../../components/Header'
 
 export default class Page extends React.Component {
     render() {
-        console.log(this.props.location)
         return (
             <div className="page">
-                <Header location={this.props.location} />
+                <Header drawer={this.props.drawer} location={this.props.location} />
                 {this.props.children}
             </div>
         )

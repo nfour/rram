@@ -7,14 +7,14 @@ export default class Counter extends React.Component {
     static propTypes = {
         count   : PropTypes.number.isRequired,
         actions : PropTypes.shape({
-            incriment : PropTypes.func.isRequired,
+            increment : PropTypes.func.isRequired,
             decrement : PropTypes.func.isRequired,
         })
     }
 
     render() {
         const {
-            actions: { incriment, decrement },
+            actions: { increment, decrement },
             count
         } = this.props
 
@@ -25,8 +25,8 @@ export default class Counter extends React.Component {
                 <div>
                     <h4>Count: <span className="count">{count}</span></h4>
                     <RaisedButton
-                        className="incriment"
-                        onClick={incriment}
+                        className="increment"
+                        onClick={increment}
                     >INCR</RaisedButton>
                     &nbsp;
                     <RaisedButton

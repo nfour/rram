@@ -17,8 +17,8 @@ export default class Header extends React.Component {
             to   : "/"
         },
         {
-            name : "Counter",
-            to   : "/counter"
+            name : "Pure Render",
+            to   : "/pure"
         },
     ]
 
