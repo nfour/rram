@@ -6,12 +6,15 @@ const image = require('../views/assets/goodJob.jpg')
 export default class Counter extends React.Component {
     static propTypes = {
         count   : PropTypes.number.isRequired,
-        actions : PropTypes.object.isRequired,
-    };
+        actions : PropTypes.shape({
+            incriment : PropTypes.func.isRequired,
+            decrement : PropTypes.func.isRequired,
+        })
+    }
 
     render() {
         const {
-            actions: { increment, decrement },
+            actions: { incriment, decrement },
             count
         } = this.props
 
@@ -20,10 +23,16 @@ export default class Counter extends React.Component {
                 <img height="350" src={image} />
                 <h2>Good Job</h2>
                 <div>
-                    <h4>Count: {count}</h4>
-                    <RaisedButton onTouchTap={() => increment() }>INCR</RaisedButton>
+                    <h4>Count: <span className="count">{count}</span></h4>
+                    <RaisedButton
+                        className="incriment"
+                        onClick={incriment}
+                    >INCR</RaisedButton>
                     &nbsp;
-                    <RaisedButton onTouchTap={() => decrement() }>DECR</RaisedButton>
+                    <RaisedButton
+                        className="decrement"
+                        onClick={decrement}
+                    >DECR</RaisedButton>
                 </div>
             </div>
         )

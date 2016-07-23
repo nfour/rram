@@ -27,6 +27,7 @@ export const HISTORY = syncHistoryWithStore(
     STORE
 )
 
+export { Provider, Router }
 
 //
 // ROUTING

@@ -26,7 +26,7 @@ export default connect(
 
         render() {
             const { count } = this.props
-
+            
             // Lets make some fake rows
             const rows = []
             for ( let i = 0; i <= count * 10000; ++i ) {
@@ -34,8 +34,11 @@ export default connect(
             }
 
             return (
-                <Page {...this.props}>
-                    <CounterComponent {...this.props} />
+                <Page location={this.props.location}>
+                    <CounterComponent
+                        count={this.props.count}
+                        actions={this.props.actions}
+                    />
                     <section className="table">
                         <Table
                             className="table"
