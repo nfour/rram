@@ -14,17 +14,16 @@ npm start
 
 ## Features
 - [x] Build
-    - [x] Webpack
+    - [x] Webpack 2.0
     - [x] File watching
     - [x] Livereload
     - [x] Preconfigured gulp tasks & sane defaults
-    - [x] Stylus & CSS packaging and url resolution
+    - [x] Less & CSS packaging and url resolution
     - [x] File resolving & packaging
     - [x] React/Redux structure
-    - [ ] ES Linting checks (Disabled)
     - [x] `process.env.NODE_ENV` on client
-    - [x] Minified (Uglified) builds
-    - [x] Webpack 2.0
+    - [x] Minified builds in production
+    - [ ] ES Linting checks (Disabled)
 - [x] Configured react router
 - [x] Consistant, optimized babel featureset on client & server
 - [x] Mocha test infrastructure, isomorphic
