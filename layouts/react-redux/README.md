@@ -21,19 +21,16 @@ npm start
     - [x] Stylus & CSS packaging and url resolution
     - [x] File resolving & packaging
     - [x] React/Redux structure
-    - [x] ES Linting checks
+    - [ ] ES Linting checks (Disabled)
     - [x] `process.env.NODE_ENV` on client
     - [x] Minified (Uglified) builds
     - [x] Webpack 2.0
-
 - [x] Configured react router
 - [x] Consistant, optimized babel featureset on client & server
-- [x] EJS templating
-- [x] Isomorphic structure
-- [x] Minimal express server
 - [x] Mocha test infrastructure, isomorphic
 - [x] Coverage testing via `nyc` when using `npm test`
-- [ ] Example mocha tests
+- [x] Example mocha tests
+- [x] Example pure render components
 
 ## Configs
 Configs should exist throughout the app as necessary and follow a basic structure:
