@@ -4,7 +4,7 @@
  *  See ../gulpfile.babel.js for usage.
  */
 export default {
-    progress : true,
+    progress : true,                  // Shows progress when compiling on the CLI
 
     entry    : [ 'babel-polyfill' ],  // Base entries (Only for requires)
     devtool  : 'source-map',          // Only when not compressing
@@ -12,7 +12,6 @@ export default {
     plugins: [],
 
     module   : {
-        preLoaders: [],
         loaders: [
             {
                 test: /\.less$/,
@@ -34,6 +33,11 @@ export default {
 
         /*
 
+        preLoaders: [],
+        postLoaders: [],
+
+        noParse: [ /node_modules/ ],
+
         // Disable handling of unknown requires
         unknownContextRegExp: /$^/,
         unknownContextCritical: false,
@@ -42,9 +46,10 @@ export default {
         exprContextRegExp: /$^/,
         exprContextCritical: false,
 
-        */
 
         // Warn for every expression in require
         wrappedContextCritical: true
+
+        */
     },
 }

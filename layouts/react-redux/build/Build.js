@@ -100,6 +100,7 @@ export default class Build {
                 filename          : path.basename(o.source),
                 sourceMapFilename : `${path.basename(o.source)}.map`,
                 publicPath        : o.resolve || this.config.resolve,
+                pathinfo          : ! o.compress
             },
         }
 
