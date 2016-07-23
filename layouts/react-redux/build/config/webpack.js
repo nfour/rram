@@ -14,7 +14,7 @@ export default {
             loader: 'style-loader!css-loader'
         },
         {
-            test   : /\.(png|jpg|gif|woff|woff2)$/,
+            test   : /\.(png|jpg|gif|woff|woff2|eot|svg)$/,
             loader : 'url-loader?limit=8192'
         },
         {

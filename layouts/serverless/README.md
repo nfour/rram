@@ -1,10 +1,7 @@
 ## Serverless structure
 
 ## TODO
-- [x] Add an S3 bucket to make `client deploy` work
-- [x] Test full deployment
-- [ ] Test full rendering of client assets from S3 via API Gateway & utilizing a fetch to a lambda
-- [ ] Strip out useless stuff from `build` tasks, maybe opt for a webpack.config.js for convention
+- [ ] `(July 23rd)` Refactor to reflect latest design
 
 ## Installation
 - Edit `serverless/s-project.json` and `s-resources-cf` as necessary

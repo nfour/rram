@@ -5,18 +5,12 @@ import del from 'del'
 import webpack from 'webpack'
 import gulpWebpack from 'webpack-stream'
 import gulpPlumber from 'gulp-plumber'
-import gulpRename from 'gulp-rename'
 import gulpDebug from 'gulp-debug'
 import LiveReload from 'webpack-livereload-plugin'
 
 import { merge, clone, typeOf } from 'lutils'
 
 export default class Tasks {
-    /**
-     *    Tasks
-     *
-     *    @param     {Object}    config = {}
-     */
     constructor(config = {}) {
         this.config = merge(
             clone( require('./config') ),
@@ -25,7 +19,7 @@ export default class Tasks {
     }
 
     /**
-     *    Bundles js to dist
+     *    Bundles webpack to dist
      *
      *    @return    {Promise}
      */
@@ -64,7 +58,6 @@ export default class Tasks {
             plugins.push(
                 ...[
                     new webpack.optimize.DedupePlugin(),
-                    new webpack.optimize.OccurenceOrderPlugin(),
                     new webpack.optimize.UglifyJsPlugin({
                         compress: {
                             unused        : true,
@@ -110,41 +103,35 @@ export default class Tasks {
 
         merge.black(config, options.webpack)
 
+        // Control flow to handle stream states between watching and building
         return new Promise((resolve, reject) => {
+            function done(err) {
+                if ( err ) return reject(err)
+                return resolve(g)
+            }
+
             let g = gulp.src(options.source)
                 .pipe( gulpPlumber() )
                 .pipe( gulpDebug({ title: 'webpack' }) )
-                .pipe(
-                    gulpWebpack(config, webpack, (err, stats) => {
-                        if ( err ) return reject(err)
-                        resolve()
-                    })
-                )
+                .pipe( gulpWebpack(config, webpack, options.watch ? done : null) )
+                .pipe( gulp.dest(options.dist) )
 
-            return g.pipe( gulp.dest(options.dist) )
+            if ( ! options.watch )
+                g = g.on('end', () => done())
+
+            return g
         })
     }
 
-    /**
-     *    Builds scripts and styles
-     *
-     *    @param     {Object}    overrides    Options to overwrite for each entry
-     *
-     *    @return    {Promise}
-     */
     build(overrides) {
-        return Promise.all([
-            ...this.scripts(overrides),
-            ...this.styles(overrides),
-        ])
+        return Promise.all( this.scripts(overrides) )
     }
 
 
     /**
      *    Builds configured scripts entries and optionally watches for changes
      *
-     *    @param     {Object}    overrides    =    { watch: true }
-     *
+     *    @param     {Object}               overrides = { watch: true }
      *    @return    {Array of Promise}
      */
     scripts(overrides = {}) {
@@ -161,54 +148,7 @@ export default class Tasks {
     }
 
     /**
-     *    Builds configured styles entries and optionally watches for changes
-     *
-     *    @param     {Object}    overrides    =    { watch: true }
-     *
-     *    @return    {Array of Promise}
-     */
-    styles(overrides = {}) {
-        if ( ! typeOf.Array(this.config.styles) ) return []
-
-        return this.config.styles.map((options) =>
-            this.stylus({
-                ...merge(options, overrides),
-                source    : path.resolve(this.config.source, options.source),
-                dist      : path.resolve(this.config.dist, options.dist),
-                watchGlob : path.resolve(this.config.source, options.watchGlob || ''),
-            })
-        )
-    }
-
-
-    /**
-     *    Renders stylus to css to dist
-     *
-     *    @return    {Promise}
-     */
-    stylus(options) {
-        const run = () =>
-            gulp.src(options.source)
-                .pipe( gulpPlumber() )
-                .pipe( gulpDebug({ title: 'stylus' }) )
-                .pipe( gulpStylus({
-                    'include css' : true,
-                    'compress'    : Boolean(options.compress),
-                }) )
-                .pipe( gulpRename({ extname: options.extension || '.css' }) )
-                .pipe( gulp.dest(options.dist) )
-
-
-        if ( options.watch )
-            return Promise.all([ run(), gulp.watch(options.watchGlob, run)])
-        else
-            return run()
-    }
-
-
-    /**
      *    Purges dist folder
-     *
      */
     clean() {
         return del( path.join(this.config.dist, './*') )

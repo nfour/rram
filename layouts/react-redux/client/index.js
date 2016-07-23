@@ -47,7 +47,6 @@ render(
                 <Route path="*" component={NotFound}/>
             </Route>
         </Router>
-
     </Provider>,
-    document.getElementById('ROOT')
+    document.getElementById('Root')
 )

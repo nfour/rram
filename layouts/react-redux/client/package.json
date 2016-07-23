@@ -1,45 +1,44 @@
 {
     "name"        : "react-redux-client",
-    "version"     : "0.1.0",
+    "version"     : "0.0.0",
     "main"        : "./index.js",
     "private"     : true,
 
     "scripts": {
-        "test": "jest --verbose"
-    },
-
-    "jest": {
-        "unmockedModulePathPatterns" : ["/node_modules/"],
-        "scriptPreprocessor"         : "<rootDir>/node_modules/webpack-babel-jest",
-        "testFileExtensions"         : ["es6", "js"],
-        "moduleFileExtensions"       : ["js", "json", "es6"]
+        "test"       : "NODE_ENV=test npm run test:mocha",
+        "test:mocha" : "mocha -r babel-register -r ignore-styles -r ./__tests__/setup.js -G $(find $MOCHA_FOLDER -name '*.test.js' -not -path '*/node_modules/*')",
+        "cover"      : "nyc npm test"
     },
 
     "devDependencies": {
-        "sorty"            : "~1.2.2",
-        "classnames"       : "~2.2.0",
-        "lutils"           : "^1.0.0",
-        "isomorphic-fetch" : "~2.2.0",
+        "lutils"                 : "^1.1.0",
+        "sorty"                  : "~1.2.2",
+        "classnames"             : "~2.2.0",
+        "isomorphic-fetch"       : "~2.2.0",
+        "recompose"              : "~0.20.0",
+        "material-ui"            : "~0.15.0",
+        "react-tap-event-plugin" : "~1.0.0",
+        "react-virtualized"      : "~7.2.0",
+        "react-selectize"        : "~2.0.2",
 
-        "redux"       : "~3.3.1",
-        "redux-thunk" : "~2.0.1",
+        "react-router-redux" : "~4.0.5",
+        "react-redux"        : "~4.4.5",
+        "react-router"       : "~2.6.0",
+        "redux"              : "~3.5.2",
+        "redux-thunk"        : "~2.1.0",
 
-        "jest-cli"                          : "~12.1.1",
-        "babel-jest"                        : "~12.1.0",
-        "webpack-babel-jest": "*",
-        "material-ui"                       : "~0.15.0",
-        "react-virtualized"                 : "~7.2.0",
-        "react-selectize"                   : "~2.0.2",
-        "react-tap-event-plugin"            : "~1.0.0",
-        "react-addons-css-transition-group" : "latest",
-        "react-addons-shallow-compare"      : "~15.0.2",
-        "react-addons-test-utils"           : "~15.1.0",
+        "react-addons-css-transition-group" : "~15.2.0",
+        "react-addons-shallow-compare"      : "~15.2.0",
+        "react-addons-test-utils"           : "~15.2.0",
+        "react-addons-perf"                 : "~15.2.0",
+        "react-dom"                         : "~15.2.0",
+        "react"                             : "~15.2.0",
 
-        "react-router-redux"                : "~4.0.2",
-        "react-redux"                       : "~4.4.0",
-        "react-router"                      : "~2.0.1",
-        "react-addons-perf"                 : "~15.0.0",
-        "react-dom"                         : "~15.0.0",
-        "react"                             : "~15.0.0"
+        "mocha"          : "~2.5.3",
+        "chai"           : "~3.5.0",
+        "jsdom"          : "~9.2.1",
+        "enzyme"         : "~2.3.0",
+        "babel-register" : "latest",
+        "ignore-styles"  : "^4.0.0"
     }
 }
