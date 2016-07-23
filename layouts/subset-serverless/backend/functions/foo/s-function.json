@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "foo",
   "runtime": "webpack",
-  "description": "slstest",
+  "description": "bar",
   "customName": false,
   "customRole": false,
   "handler": "handler.handler",
@@ -13,7 +13,7 @@
   },
   "endpoints": [
     {
-      "path": "testy",
+      "path": "foo",
       "method": "GET",
       "type": "AWS",
       "authorizationType": "none",

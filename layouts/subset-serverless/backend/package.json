@@ -9,6 +9,6 @@
   "devDependencies": {
     "serverless-runtime-webpack": "~0.2.0",
     "serverless-client-s3": "~2.0.0",
-    "webpack": "~1.13.0"
+    "webpack": "~2.1.0-beta.20"
   }
 }

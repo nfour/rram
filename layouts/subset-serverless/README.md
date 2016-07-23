@@ -6,6 +6,7 @@ This layout is a subset layout, specifically of `react-redux` (or any project) a
 - Copy `./backend` into a `react-redux` application
 - Ensure the `gulpfile.babel.js` has its `dist` folder configured to `./backend/client/dist`
 - Add `cd ./backend && npm i` to any npm `install:all` script
+- Modify the `s-project.json` with a new name
 - Remember that as this a subset, it will inherit all babel configurations from the root project.
     - You may need to add `json-loader` to the `webpack.config.js` for example.
 

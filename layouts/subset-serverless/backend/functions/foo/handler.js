@@ -1,10 +1,10 @@
 import 'babel-polyfill'
-import { TEST } from '../../lib/test'
+import { FOO } from '../../lib/foo'
 
 export function handler(event, context, done) {
     done = done || context.done
 
     return done(null, {
-        message: JSON.stringify(TEST)
+        message: JSON.stringify(FOO)
     })
 }

@@ -1,5 +1,5 @@
 {
-  "name": "serverless-bj9b4v",
+  "name": "subset-serverless",
   "custom": {
       "webpack": {
         "configPath": "./webpack.config.js"
