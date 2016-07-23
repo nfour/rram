@@ -63,7 +63,8 @@ export default class Tasks {
                             unused        : true,
                             dead_code     : true,
                             warnings      : false,
-                            drop_debugger : true
+                            drop_debugger : true,
+                            screw_ie8     : true,
                         }
                     }),
                 ]
