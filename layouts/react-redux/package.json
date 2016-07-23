@@ -7,7 +7,7 @@
         "test"       : "cd client && npm test",
 
         "install:client" : "cd ./client && npm install",
-        "install:all"    : "npm install && npm run install:client && npm run install:server",
+        "install:all"    : "npm install && npm run install:client",
 
         "build" : "gulp build:client",
         "start" : "gulp start:client"
