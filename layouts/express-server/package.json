@@ -5,8 +5,12 @@
     "private"     : true,
 
     "scripts": {
+        "test" : "mocha -r babel-register -G $(find $MOCHA_FOLDER -name '*.spec.js' -not -path '*/node_modules/*')",
+        "cover" : "nyc npm run test",
         "start" : "node -r babel-register index"
     },
+
+    "engines": { "node": ">= 6.0.0" },
 
     "dependencies": {
         "bluebird"     : "^3.4.0",

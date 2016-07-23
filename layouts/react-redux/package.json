@@ -13,9 +13,7 @@
         "start" : "gulp start:client"
     },
 
-    "engines": {
-        "node": ">= 6.0.0"
-    },
+    "engines": { "node": ">= 6.0.0" },
 
     "dependencies": {
         "bluebird"  : "~3.4.0",
