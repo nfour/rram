@@ -40,18 +40,18 @@ export default class Header extends React.Component {
             <div>
                 <AppBar
                     title={title}
-                    onLeftIconButtonTouchTap={() => this.setState({ drawer: true })}
+                    onLeftIconButtonClick={() => this.setState({ drawer: true })}
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                 />
                 <Drawer
                     docked={false}
                     open={this.state.drawer}
-                    onRequestChange={open => this.setState({ drawer: false })}
+                    onRequestChange={() => this.setState({ drawer: false })}
                 >
                     {this.links.map(({ name, to }) =>
                         <MenuItem
                             key={name}
-                            onTouchTap={() => {
+                            onClick={() => {
                                 this.navigate(to)
                                 this.setState({ drawer: false })
                             }}
