@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import { TEST } from '../../../server/test'
+import { TEST } from '../../lib/test'
 
 export function handler(event, context, done) {
     done = done || context.done

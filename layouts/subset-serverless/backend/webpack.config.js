@@ -10,7 +10,7 @@ module.exports = {
         'aws-sdk'
     ],
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js']
     },
     devtool: 'source-map',
     plugins: PRODUCTION ? [
@@ -20,7 +20,8 @@ module.exports = {
                 unused        : true,
                 dead_code     : true,
                 warnings      : false,
-                drop_debugger : true
+                drop_debugger : true,
+                screw_ie8     : true,
             }
         })
     ] : [],
