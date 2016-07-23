@@ -6,6 +6,7 @@ import { expect } from 'chai'
 import sinon from 'sinon'
 
 describe('<Counter />', () => {
+    // This is a shallow render and thus any child components will not render.
     it('Renders shallowly', async () => {
         const props = {
             count    : 22,
@@ -28,6 +29,7 @@ describe('<Counter />', () => {
         expect( props.actions.incriment.calledOnce ).to.equal(true)
     })
 
+    // This is effectively a full render, with a <Provider> and material-ui context
     it('Renders with material-ui', async () => {
         const props = {
             count    : 15,
