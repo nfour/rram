@@ -1,7 +1,8 @@
 import React from 'react'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import theme from '../views/styles/theme'
-import { Provider, STORE } from '../'
+import { STORE } from '../'
+import { Provider } from 'react-redux'
 
 /**
  *  This exists in order to ensure proper

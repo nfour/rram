@@ -20,14 +20,11 @@ require('react-tap-event-plugin')()
 //
 
 
-export const CONFIG  = require('./config')
 export const STORE   = createStore()
 export const HISTORY = syncHistoryWithStore(
     useRouterHistory(createHistory)(),
     STORE
 )
-
-export { Provider, Router }
 
 //
 // ROUTING
