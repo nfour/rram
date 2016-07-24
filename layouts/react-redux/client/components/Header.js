@@ -6,7 +6,6 @@ import {
 export default class Header extends React.Component {
     static contextTypes = {
         router: React.PropTypes.object,
-        location: React.PropTypes.object
     }
 
     state = { drawer: false }
@@ -27,6 +26,7 @@ export default class Header extends React.Component {
     }
 
     render() {
+        console.log({ state: this.state })
         let title = this.props.location.pathname
             .split('/').slice(1)
             .map((str = '') =>
@@ -40,7 +40,7 @@ export default class Header extends React.Component {
             <div>
                 <AppBar
                     title={title}
-                    onLeftIconButtonClick={() => this.setState({ drawer: true })}
+                    onLeftIconButtonTouchTap={() => this.setState({ drawer: true })}
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                 />
                 <Drawer
@@ -51,7 +51,7 @@ export default class Header extends React.Component {
                     {this.links.map(({ name, to }) =>
                         <MenuItem
                             key={name}
-                            onClick={() => {
+                            onTouchTap={() => {
                                 this.navigate(to)
                                 this.setState({ drawer: false })
                             }}

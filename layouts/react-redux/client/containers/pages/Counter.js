@@ -11,7 +11,6 @@ class CounterContainer extends React.Component {
     static propTypes = {}
 
     static contextTypes = {
-        location: React.PropTypes.object,
         router: React.PropTypes.object,
     }
 
@@ -26,7 +25,7 @@ class CounterContainer extends React.Component {
 
         return (
             <Page
-                location={this.context.location}
+                location={this.props.location}
                 drawer={drawer}
             >
                 <CounterComponent
