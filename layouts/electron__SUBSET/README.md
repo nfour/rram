@@ -41,3 +41,6 @@ const electron = new ElectronApp(`file://${__dirname}/index.html`)
  *  See ./electron.js for functionalty.
  */
 ```
+
+## REFERENCE
+https://github.com/electron/electron-quick-start
