@@ -47,4 +47,5 @@ https://github.com/electron/electron-quick-start
 
 ## TODO
 - [ ] Add packaging
-- [ ] Add `devtron` devtools and other fancy shit
+    - [ ] Add `electron-builder`, to allow for auto-updates
+- [x] Add `devtron` devtools

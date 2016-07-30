@@ -1,4 +1,5 @@
 const electron = require('electron')
+const devtron = require('devtron')
 
 electron.windows = []
 
@@ -25,6 +26,7 @@ class Window {
 module.exports = function App(url) {
     electron.app
         .on('ready', () => {
+            devtron.install()
             new Window().load(url)
         })
         .on('activate', () => {
