@@ -13,7 +13,7 @@ const links = [
     },
 ]
 
-const Header = ({ drawer, actions: { setDrawer }, location }, { router }) => {
+export const Header = ({ drawer, actions: { setDrawer }, location }, { router }) => {
     let title = location.pathname
         .split('/').slice(1)
         .map((str = '') =>
@@ -30,7 +30,7 @@ const Header = ({ drawer, actions: { setDrawer }, location }, { router }) => {
                 onLeftIconButtonTouchTap={() => {
                     setDrawer({ open: true })
                 }}
-                style={{ background: "#999" }} // Because we pure 
+                style={{ background: "#999" }} // Because we pure
                 iconClassNameRight="muidocs-icon-navigation-expand-more"
             />
             <Drawer

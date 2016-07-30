@@ -4,7 +4,7 @@ import { pure } from 'recompose'
 
 const image = require('../../views/assets/goodJob.jpg')
 
-const Counter = ({ actions: { increment, decrement }, count }) =>
+export const Counter = ({ actions: { increment, decrement }, count }) =>
     <div style={{ textAlign: "center" }}>
         <img height="350" src={image} />
         <h2>Good Job</h2>
