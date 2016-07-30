@@ -48,4 +48,6 @@ https://github.com/electron/electron-quick-start
 ## TODO
 - [ ] Add packaging
     - [ ] Add `electron-builder`, to allow for auto-updates
+- [ ] Add redux devtools
+- [ ] Add react devtools
 - [x] Add `devtron` devtools
