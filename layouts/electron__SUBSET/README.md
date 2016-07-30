@@ -46,8 +46,9 @@ const electron = new ElectronApp(`file://${__dirname}/index.html`)
 https://github.com/electron/electron-quick-start
 
 ## TODO
-- [ ] Add packaging
-    - [ ] Add `electron-builder`, to allow for auto-updates
-- [ ] Add redux devtools
-- [ ] Add react devtools
-- [x] Add `devtron` devtools
+- [ ] Add necessary addons found under [awesome-react](https://github.com/sindresorhus/awesome-electron#boilerplates)
+    - [ ] Add packaging
+        - [ ] Add `electron-builder`/`electron-release`/`electron-updater`, to allow for auto-updates
+    - [x] Add redux devtools
+    - [x] Add react devtools
+    - [x] Add `devtron` devtools
