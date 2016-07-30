@@ -1,5 +1,5 @@
 # ELECTRON SUBSET
-This servers an electron running subset app.
+This serves as an electron subset app, to be dropped into any other layouts, turning them into desktop apps.
 
 ## USAGE
 - Drop `./electron` into any app
@@ -44,3 +44,7 @@ const electron = new ElectronApp(`file://${__dirname}/index.html`)
 
 ## REFERENCE
 https://github.com/electron/electron-quick-start
+
+## TODO
+- [ ] Add packaging
+- [ ] Add `devtron` devtools and other fancy shit
