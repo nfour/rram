@@ -5,6 +5,7 @@ var path    = require('path')
 var PRODUCTION = process.env.NODE_ENV === 'production'
 
 module.exports = {
+    entry: PRODUCTION ? [] : [ 'source-map-support/register' ],
     target: 'node',
     externals: [
         'aws-sdk'
@@ -12,7 +13,7 @@ module.exports = {
     resolve: {
         extensions: ['', '.js']
     },
-    devtool: 'source-map',
+    devtool: PRODUCTION ? null : 'source-map',
     plugins: PRODUCTION ? [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
@@ -20,18 +21,21 @@ module.exports = {
                 unused        : true,
                 dead_code     : true,
                 warnings      : false,
-                drop_debugger : true,
-                screw_ie8     : true,
+                drop_debugger : true
             }
         })
     ] : [],
     module: {
         loaders: [
             {
-                test    : /\.jsx?$/,
+                test    : /\.js$/,
                 loader  : 'babel',
                 exclude : /node_modules/,
                 query   : JSON.parse( fs.readFileSync( path.join(__dirname, '../.babelrc'), 'UTF8') )
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
             }
         ]
     }

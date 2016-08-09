@@ -1,15 +1,25 @@
 {
-  "name": "subset-serverless",
+  "name": "untitled",
   "custom": {
       "webpack": {
         "configPath": "./webpack.config.js"
     },
     "client": {
         "bucketName": "client.${name}"
+    },
+    "cors": {
+      "allowOrigin": "*",
+      "allowHeaders": [
+        "Content-Type",
+        "X-Amz-Date",
+        "Authorization",
+        "X-Api-Key"
+      ]
     }
   },
   "plugins": [
-    "serverless-runtime-webpack",
-    "serverless-client-s3"
+    "serverless-webpack-plugin",
+    "serverless-client-s3",
+    "serverless-cors-plugin"
   ]
 }

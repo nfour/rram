@@ -1,4 +1,3 @@
-import 'babel-polyfill'
 import { FOO } from '../../lib/foo'
 
 export function handler(event, context, done) {

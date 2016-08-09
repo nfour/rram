@@ -1,6 +1,6 @@
 {
   "name": "foo",
-  "runtime": "webpack",
+  "runtime": "nodejs4.3",
   "description": "bar",
   "customName": false,
   "customRole": false,
