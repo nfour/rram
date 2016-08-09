@@ -1,7 +1,7 @@
 {
-  "name": "foo",
+  "name": "___untitled___",
   "runtime": "nodejs4.3",
-  "description": "bar",
+  "description": "",
   "customName": false,
   "customRole": false,
   "handler": "handler.handler",
@@ -13,16 +13,14 @@
   },
   "endpoints": [
     {
-      "path": "foo",
-      "method": "GET",
+      "path": "___untitled___",
+      "method": "POST",
       "type": "AWS",
       "authorizationType": "none",
       "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
-      "requestTemplates": {
-        "application/json": ""
-      },
+      "requestTemplates": "$${apiRequestTemplate}",
       "responses": {
         "400": {
           "statusCode": "400"
@@ -42,9 +40,9 @@
   ],
   "events": [],
   "environment": {
-    "SERVERLESS_PROJECT": "${project}",
-    "SERVERLESS_STAGE": "${stage}",
-    "SERVERLESS_REGION": "${region}"
+    "SLS_PROJECT": "${project}",
+    "SLS_STAGE": "${stage}",
+    "SLS_REGION": "${region}"
   },
   "vpc": {
     "securityGroupIds": [],
