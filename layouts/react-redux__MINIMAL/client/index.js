@@ -5,7 +5,7 @@ import 'isomorphic-fetch'
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, useRouterHistory } from 'react-router'
-import { createHistory } from 'history'
+import { createHashHistory } from 'history'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
 
@@ -22,7 +22,7 @@ require('react-tap-event-plugin')()
 
 export const STORE   = createStore()
 export const HISTORY = syncHistoryWithStore(
-    useRouterHistory(createHistory)(),
+    useRouterHistory(createHashHistory)({ queryKey: false }),
     STORE
 )
 
@@ -31,17 +31,14 @@ export const HISTORY = syncHistoryWithStore(
 //
 
 
-import {
-    Root, NotFound,
-    CounterPage, PureCounterPage
-} from './containers'
+import { Root, Container, NotFound } from './containers'
 
 render(
     <Provider store={STORE}>
         <Router history={HISTORY}>
             <Route path="/" component={Root}>
-                <IndexRoute component={CounterPage}/>
-                <Route path="/pure" component={PureCounterPage} />
+                <IndexRoute component={Container}/>
+                <Route path="/container" component={Container} />
                 <Route path="*" component={NotFound}/>
             </Route>
         </Router>

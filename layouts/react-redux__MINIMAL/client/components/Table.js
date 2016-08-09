@@ -5,7 +5,13 @@ import { AutoSizer, FlexTable, FlexColumn } from 'react-virtualized'
 
 import 'react-virtualized/styles.css'
 
-// https://github.com/bvaughn/react-virtualized
+/**
+ *  Virtualized table component.
+ *  https://github.com/bvaughn/react-virtualized
+ *
+ *  Extend & minimize this as needed.
+ *  Currently the props are highly dynamic, arbitrary as this is not battle-tested.
+ */
 export const Table = (props) => {
     let { columns, rows = {}, options = {} } = props
 
