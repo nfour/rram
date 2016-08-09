@@ -21,6 +21,12 @@ In, for example, the [layouts/react-redux](../react-redux) layout, there are sev
 - It may also be necessary to set up `sls meta sync`
 - Consider adding npm or gulp scripts to automate some of this.
 
+### HINTS
+
+#### CLOUD FORMATION
+- DYANMODB - `"Type": "AWS::DynamoDB::Table"`
+    - When `"DeletionPolicy": "Retain"` is set, removing the stage/resources will fail. Remove this in development or set a meta variable.
+
 ### FOLDER STRUCTURE
 ```
 ./backend
