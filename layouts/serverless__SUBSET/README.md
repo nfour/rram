@@ -17,10 +17,9 @@ In, for example, the [layouts/react-redux](../react-redux) layout, there are sev
 - `cd ./backend`
 - `npm i`
 - `sls init` to init
-- `sls function test run` to test a function compiles
-- `sls dash deploy` to use a deploy ui
 - `sls client deploy` to deploy `./backend/client/dist` to S3
 - It may also be necessary to set up `sls meta sync`
+- Consider adding npm or gulp scripts to automate some of this.
 
 ### FOLDER STRUCTURE
 ```
