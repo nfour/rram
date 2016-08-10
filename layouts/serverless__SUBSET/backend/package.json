@@ -14,6 +14,7 @@
   "devDependencies": {
     "json-loader"  : "^0.5.4",
     "babel-loader" : "^6.2.0",
+    "aws-sdk"      : "latest",
 
     "babel-preset-es2015-node4"                           : "latest",
     "babel-preset-stage-1"                                : "^6.0.0",
