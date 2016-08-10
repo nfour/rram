@@ -2,3 +2,4 @@
 /client
 /admin.env
 /node_modules
+/.serverless
