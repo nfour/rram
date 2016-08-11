@@ -11,3 +11,13 @@ Currently, serverless@1.0.0-beta.2 does not support configuring the credentials 
 Instead choose one of the following methods:
 - Set a `[default]` credential in the ini
 - In your shell, do this once: `export AWS_PROFILE=myProfileName`
+
+To deploy:
+```
+sls deploy
+```
+
+If you encounter issues, remove first:
+```
+sls remove && sls deploy
+```
