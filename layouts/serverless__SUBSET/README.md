@@ -2,6 +2,10 @@
 
 A serverless subset layout, intended to be contained enough to be dropped into any existing layout; [layouts/react-redux](../react-redux) or simply [layouts/base](../base).
 
+WARNING: WIP
+- Integration of webpack plugin will change structure significantly.
+
+
 ### USAGE
 
 - Configure `~/.aws/credentials`
