@@ -1,6 +1,7 @@
 const Promise           = require('bluebird')
 const electron          = require('electron')
 const devToolsInstaller = require('electron-devtools-installer')
+const devtron           = require('devtron')
 
 electron.windows = []
 
@@ -28,6 +29,8 @@ module.exports = function App(url) {
     electron.app
         .on('ready', () => {
             // Adds these devtools, ignoring errors
+            devtron.install()
+
             Promise.map(['REDUX_DEVTOOLS', 'REACT_DEVELOPER_TOOLS'], (key) =>
                 devToolsInstaller.default(key, !! process.env.UPGRADE_EXTENSIONS).catch(() => {})
             ).then(() => {
