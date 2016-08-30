@@ -7,7 +7,7 @@ function onChange(actionFn) {
     return (event) => actionFn(event.target.value)
 }
 
-export const Example = ({ text, actions }) =>
+export const Example = ({ text, actions, validation }) =>
     <div style={{ border: `10px solid #${(Math.random() * 1000).toString().slice(0, 3)}` }}>
         <p>Text: {text}</p>
         <img src={image__goodJob} height="100" />
