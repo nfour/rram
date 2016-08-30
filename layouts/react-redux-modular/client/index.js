@@ -4,31 +4,22 @@ import 'isomorphic-fetch'
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, IndexRoute, useRouterHistory } from 'react-router'
-import { createHistory } from 'history'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
 
 import createStore from './stores'
 
-// Polyfills
-require('react-tap-event-plugin')()
-
-
 //
 // EXPORTS
 //
 
-
 export const STORE   = createStore()
-export const HISTORY = syncHistoryWithStore(
-    useRouterHistory(createHistory)(),
-    STORE
-)
+export const HISTORY = syncHistoryWithStore(hashHistory, STORE)
 
 //
 // ROUTING
-//z
+//
 
 import ExampleContainer from './modules/example/containers/Example'
 

@@ -4,8 +4,7 @@ import { routerReducer } from 'react-router-redux'
 import example from '../modules/example/reducer'
 
 export const reducers = {
-    routing : routerReducer,
-
+    routing: routerReducer,
     example,
 }
 

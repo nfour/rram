@@ -1,16 +1,39 @@
 import React from 'react'
+import { pure } from 'recompose'
 
-export const Example = (props) =>
+import image__goodJob from '../assets/goodJob.jpg'
+
+function onChange(actionFn) {
+    return (event) => actionFn(event.target.value)
+}
+
+export const Example = ({ text, actions }) =>
     <div>
-        <p>{props.text}</p>
-        Set: <input value={props.text} onChange={(event) => {
-            console.log({ event })
-            props.actions.setText(event.target.value)
-        }} />
-        <br/>
-        Append: <input onChange={(event) => {
-            props.actions.appendText(event.target.value)
-        }} value={""}/>
+        <p>Text: {text}</p>
+        <img src={image__goodJob} height="100" />
+        <p>
+            Set:
+            <input
+                value={text}
+                onChange={ onChange(actions.setText) }
+            />
+        </p>
+        <p>
+            Append:
+            <input
+                value=""
+                onChange={ onChange(actions.appendText) }
+            />
+        </p>
+        <p>
+            Fake Change:
+            <button
+                onClick={ () => {
+                    console.log(1)
+                    actions.setText("d")
+                }}
+            >FAKE</button>
+        </p>
     </div>
 
-export default Example
+export default pure(Example)

@@ -1,4 +1,5 @@
 export function setText(payload) {
+    console.log({ payload })
     return { type: "SET__EXAMPLE_TEXT", payload }
 }
 
