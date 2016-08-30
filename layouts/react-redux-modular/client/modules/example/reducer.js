@@ -9,7 +9,6 @@ function doStuff(state, action) {
 export default function(state = initialState, action) {
     switch (action.type) {
         case "SET__EXAMPLE_TEXT":
-            console.log('set')
             return { ...state, text: action.payload }
 
         case "APPEND__EXAMPLE_TEXT":

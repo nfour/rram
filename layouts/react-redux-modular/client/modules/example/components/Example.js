@@ -8,7 +8,7 @@ function onChange(actionFn) {
 }
 
 export const Example = ({ text, actions }) =>
-    <div>
+    <div style={{ border: `10px solid #${(Math.random() * 1000).toString().slice(0, 3)}` }}>
         <p>Text: {text}</p>
         <img src={image__goodJob} height="100" />
         <p>
@@ -28,11 +28,8 @@ export const Example = ({ text, actions }) =>
         <p>
             Fake Change:
             <button
-                onClick={ () => {
-                    console.log(1)
-                    actions.setText("d")
-                }}
-            >FAKE</button>
+                onClick={ () => actions.appendText("")}
+            >WONT UPDATE</button>
         </p>
     </div>
 
