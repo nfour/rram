@@ -8,7 +8,8 @@ import './lib/polyfill';
 
 import createStore from './stores';
 import ExampleContainer from './modules/example/containers/Example';
-import { NotFound, Root } from './components';
+import Root from './components/Root';
+import { NotFound } from './components/errors';
 
 
 //
