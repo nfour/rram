@@ -7,7 +7,7 @@ rules:
     #
     react/jsx-filename-extension : 0 # Arbitrary in a react app
     import/prefer-default-export : 0 # Needlessly limiting
-    import/no-named-as-default   : 0 # No clue why this is a thing
+    # import/no-named-as-default   : 0 # No clue why this is a thing
     global-require               : 0 # Limiting
     no-restricted-syntax         : 0 # Super arbitrary stuff, like no loops
 

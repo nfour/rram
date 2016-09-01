@@ -15,8 +15,10 @@ import { NotFound, Root } from './components';
 // EXPORTS
 //
 
+
 export const STORE = createStore();
 export const HISTORY = syncHistoryWithStore(hashHistory, STORE);
+
 
 //
 // ROUTING
