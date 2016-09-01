@@ -1,8 +1,8 @@
-import { merge, clone } from 'lutils'
+import { merge, clone } from 'lutils';
 
 export default merge(
-    clone( require('./default') ),
-    {
+  clone(require('./default')),
+  {
 
-    }
-)
+  }
+);
