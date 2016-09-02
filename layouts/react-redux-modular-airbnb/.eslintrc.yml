@@ -10,6 +10,12 @@ rules:
     no-restricted-syntax         : 0 # Super arbitrary stuff, like no loops
 
     #
+    # DISABLE BECAUSE OF ERRORS
+    #
+    generator-star-spacing : 0 # This produces an error on async/await
+    require-yield          : 0 # This produces an error on async/await
+
+    #
     # WARNINGS
     #
     react/prefer-stateless-function : 1
@@ -21,7 +27,7 @@ env:
     es6     : true
 
 parserOptions:
-    ecmaVersion: 7
+    ecmaVersion: 8
     sourceType: "module"
     ecmaFeatures:
         jsx: true

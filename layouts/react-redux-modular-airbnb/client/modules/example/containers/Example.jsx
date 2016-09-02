@@ -8,7 +8,7 @@ import * as actions from '../actions';
 import ExampleComponent from '../components/Example';
 
 
-const ExampleContainer = (props) =>
+const ExampleContainer = async (props) =>
   <section className="module__Example">
     <ExampleComponent actions={props.actions} text={props.text} />
   </section>;
@@ -18,6 +18,7 @@ ExampleContainer.propTypes = {
   actions: PropTypes.object.isRequired,
   text: PropTypes.string.isRequired,
 };
+
 
 export default connect(
   (state) => ({
