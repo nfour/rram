@@ -65,7 +65,7 @@ const clients = {
     source: path.resolve(__dirname, './client'),
 
     scripts: [{
-      source: './index.js',
+      source: './index.jsx',
       babel: BABELRC,
       compress: COMPRESS,
       webpack: { progress: true },

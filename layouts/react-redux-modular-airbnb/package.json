@@ -16,8 +16,8 @@
     "engines": { "node": ">= 6.0.0" },
 
     "dependencies": {
-        "bluebird"  : "~3.4.0",
-        "lutils"    : "^1.1.0"
+        "bluebird" : "~3.4.0",
+        "lutils"   : "^1.1.0"
     },
 
     "devDependencies": {
@@ -51,6 +51,7 @@
         "webpack"                   : "~2.1.0-beta.20",
         "webpack-livereload-plugin" : "~0.7.0",
         "express"                   : "^4.14.0",
+        "yargs"                     : "latest",
 
         "babel-polyfill"                                      : "latest",
         "babel-preset-react"                                  : "^6.0.0",

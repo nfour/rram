@@ -1,10 +1,10 @@
 import express from 'express';
 import path from 'path';
 import { argv } from 'yargs';
-import fs from 'fs'
+import fs from 'fs';
 
-;['view', 'dist'].forEach((key) => {
-  if (!argv[key]) throw `Invalid args, need a valid --${key}`;
+['view', 'dist'].forEach((key) => {
+  if (!argv[key]) throw new Error(`Invalid args, need a valid --${key}`);
 });
 
 
@@ -25,6 +25,6 @@ APP.get('/*', (req, res) => {
   fs.createReadStream(CONFIG.paths.view).pipe(res);
 });
 
-export const SERVER = APP.listen(CONFIG.port, CONFIG.host, function () {
+export const SERVER = APP.listen(CONFIG.port, CONFIG.host, () => {
   console.log(`Listening on ${SERVER.address().address}:${SERVER.address().port}`);
 });

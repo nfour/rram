@@ -8,6 +8,8 @@ rules:
     import/prefer-default-export : 0 # Needlessly limiting
     global-require               : 0 # Limiting
     no-restricted-syntax         : 0 # Super arbitrary stuff, like no loops
+    guard-for-in                 : 0 # For the above rule
+    arrow-body-style             : 0 # Doesn't let you have single statement block functions
 
     #
     # DISABLE BECAUSE OF ERRORS
