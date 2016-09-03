@@ -1,44 +1,58 @@
 extends:
-    - airbnb
+  - airbnb
 
 rules:
-    #
-    # DISABLED RULES
-    #
+  #
+  # DISABLED RULES
+  #
 
-    # Allows ForIn
-    no-restricted-syntax:
-      - error
-      - LabeledStatement
-      - WithStatement
-    # - ForInStatement
+  # Allows ForIn
+  no-restricted-syntax:
+    - error
+    - LabeledStatement
+    - WithStatement
+  # - ForInStatement
 
-    guard-for-in     : 0 # For the above rule
-    global-require   : 0 # Limiting
-    arrow-body-style : 0 # Doesn't let you have single statement block functions
+  guard-for-in     : 0 # For the above rule
+  global-require   : 0 # Limiting
+  arrow-body-style : 0 # Doesn't let you have single statement block functions
+  no-param-reassign: 0 # There is nothing wrong with this
 
-    #
-    # DISABLE BECAUSE OF ERRORS
-    #
-    generator-star-spacing : 0 # This produces an error on async/await
-    require-yield          : 0 # This produces an error on async/await
+  # This allows devDependencies to be imported for build files
+  # This can be applied to specific files when eslint supports that feature later
+  import/no-extraneous-dependencies:
+    - error
+    - devDependencies: true
 
-    #
-    # WARNINGS
-    #
-    react/prefer-stateless-function : 1
-    import/prefer-default-export    : 1 # Limits multi-export files when they aren't populated
+  key-spacing: 0
+  no-multi-spaces:
+    - 0
+    - exceptions:
+        VariableDeclarator: true
+
+
+  #
+  # DISABLE BECAUSE OF ERRORS
+  #
+  generator-star-spacing : 0 # This produces an error on async/await
+  require-yield          : 0 # This produces an error on async/await
+
+  #
+  # WARNINGS
+  #
+  react/prefer-stateless-function : 1
+  import/prefer-default-export    : 1 # Limits multi-export files when they aren't populated
 
 env:
-    mocha   : true
-    browser : true
-    node    : true
-    es6     : true
+  mocha   : true
+  browser : true
+  node    : true
+  es6     : true
 
 parserOptions:
-    ecmaVersion: 8
-    sourceType: "module"
-    ecmaFeatures:
-        jsx: true
+  ecmaVersion: 8
+  sourceType: "module"
+  ecmaFeatures:
+    jsx: true
 
 parser: babel-eslint

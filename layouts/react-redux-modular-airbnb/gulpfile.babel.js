@@ -1,50 +1,41 @@
-/**
- *  This gulpfile is configured to handle
- *  - Multiple clients
- *  - Seperate server & client babel configurations
- */
-
-import Promise from 'bluebird';
 import path from 'path';
 import gulp from 'gulp';
 import gulpNodemon from 'gulp-nodemon';
 import fs from 'fs';
+import del from 'del';
 import Build from './build/Build';
 
-Promise.promisifyAll(fs);
-
 //
-// Task configurations
+// CONFIGURATIONS
 //
 
 const PATHS = {
-  server: './build/server',
-  dist: './dist',
+  server : './build/server',
+  dist   : './dist',
 };
 
-const COMPRESS = !!(process.env.COMPRESS === 'true' || process.env.NODE_ENV === 'production');
+const COMPRESS = !!process.env.COMPRESS || process.env.NODE_ENV === 'production';
+
+console.log({ COMPRESS });
 
 const BABELRC = JSON.parse(fs.readFileSync('./.babelrc', 'UTF8'));
 
 // Use a the full preset for the clients
 BABELRC.presets.forEach((preset, i) => {
-  if (/es2015/.test(preset))
-    BABELRC.presets[i] = 'es2015';
+  if (/es2015/.test(preset)) BABELRC.presets[i] = 'es2015';
 });
 
 // Add transforms to clientside
 BABELRC.plugins.push([
-  'transform-runtime',
-    { 'polyfill': true, 'regenerator': true },
+  'transform-runtime', { polyfill: true, regenerator: true },
 ]);
 
-// NOTE: May want to regex replace the client source within the dev servers index.js, or use webpack dev server.
 const NODEMON = {
-  ignore: ['node_modules'],
-  exec: `node -r babel-register ${PATHS.server}`, // Will be appended to below
-  ext: 'js json',
-  env: { 'NODE_ENV': 'development' },
-  watch: false,
+  ignore : ['node_modules'],
+  exec   : `node -r babel-register ${PATHS.server}`, // Will be appended to below
+  ext    : 'js json',
+  env    : { NODE_ENV: 'development' },
+  watch  : false,
 };
 
 const LIVE_RELOAD = {
@@ -55,20 +46,22 @@ const LIVE_RELOAD = {
 
 
 //
-// Exposed tasks
+// EXPOSED TASKS
 //
 
-const clients = {
-    // Only one client in this app
-  client: new Build({
-    dist: path.resolve(__dirname, PATHS.dist, './client'),
-    source: path.resolve(__dirname, './client'),
 
-    scripts: [{
-      source: './index.jsx',
-      babel: BABELRC,
-      compress: COMPRESS,
-      webpack: { progress: true },
+// There is currently only one client in this app
+// but there can be many
+const clients = {
+  client: new Build({
+    dist   : path.resolve(__dirname, PATHS.dist, './client'),
+    source : path.resolve(__dirname, './client'),
+
+    builds: [{
+      source   : './index.jsx',
+      babel    : BABELRC,
+      compress : COMPRESS,
+      webpack  : { progress: true },
     }],
   }),
 };
@@ -76,29 +69,41 @@ const clients = {
 
 for (const key in clients) {
   const CLIENT = clients[key];
-  const name = key.toLowerCase();
 
   const viewPath = path.resolve(CLIENT.config.source, './index.html');
 
-  gulp.task(`clean:${name}`, async () => {
-    return CLIENT.clean();
-  });
 
-  gulp.task(`build:${name}`, [`clean:${name}`], async () => {
-    await CLIENT.build();
-
-    const viewFile = await fs.readFileAsync(viewPath);
-    await fs.writeFileAsync(path.resolve(CLIENT.config.dist, './index.html'), viewFile);
-  });
-
-  gulp.task(`watch:${name}`, [`clean:${name}`], async () => {
-    return CLIENT.build({ watch: true, liveReload: LIVE_RELOAD });
-  });
-
-  gulp.task(`start:${name}`, [`clean:${name}`, `watch:${name}`], async () => {
+  /**
+   *  START DEVELOPMENT SERVER & WATCH
+   */
+  gulp.task(`start:${key}`, [`clean:${key}`, `watch:${key}`], async () => {
     return gulpNodemon({
       ...NODEMON,
       exec: `${NODEMON.exec} --dist=${CLIENT.config.dist} --view=${viewPath}`,
     });
+  });
+
+  /**
+   *  BUILD DIST
+   *  - For prod, set NODE_ENV=production first.
+   */
+  gulp.task(`build:${key}`, [`clean:${key}`, `copy-assets:${key}`], async () => {
+    return CLIENT.build();
+  });
+
+  /**
+   *  WATCH & BUILD, LIVERELOAD
+   */
+  gulp.task(`watch:${key}`, [`clean:${key}`, `copy-assets:${key}`], async () => {
+    return CLIENT.build({ watch: true, liveReload: LIVE_RELOAD });
+  });
+
+  gulp.task(`copy-assets:${key}`, async () => {
+    const viewFile = fs.readFileSync(viewPath);
+    fs.writeFileSync(path.resolve(CLIENT.config.dist, './index.html'), viewFile);
+  });
+
+  gulp.task(`clean:${key}`, async () => {
+    return del(`${CLIENT.config.dist}/*`);
   });
 }

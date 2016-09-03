@@ -3,6 +3,8 @@ import path from 'path';
 import { argv } from 'yargs';
 import fs from 'fs';
 
+const { view, dist, port, host } = argv;
+
 ['view', 'dist'].forEach((key) => {
   if (!argv[key]) throw new Error(`Invalid args, need a valid --${key}`);
 });
@@ -10,11 +12,11 @@ import fs from 'fs';
 
 const CONFIG = {
   paths: {
-    view: path.resolve(__dirname, '../../', `${argv.view || ''}`),
-    dist: path.resolve(__dirname, '../../', `${argv.dist || ''}`),
+    view: path.resolve(__dirname, '../../', `${view || ''}`),
+    dist: path.resolve(__dirname, '../../', `${dist || ''}`),
   },
-  port: argv.port || 1337,
-  host: argv.host || '0.0.0.0',
+  port: port || 1337,
+  host: host || '0.0.0.0',
 };
 
 export const APP = express();

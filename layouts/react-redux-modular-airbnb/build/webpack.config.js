@@ -6,7 +6,7 @@
 export default {
   progress: true,              // Shows progress when compiling on the CLI
 
-  entry: ['babel-polyfill'],   // Base entries (Only for requires)
+  entry  : ['babel-polyfill'], // Base entries (Only for requires)
   devtool: 'source-map',       // Only when not compressing
 
   plugins: [],
