@@ -5,11 +5,17 @@ rules:
     #
     # DISABLED RULES
     #
-    import/prefer-default-export : 0 # Needlessly limiting
-    global-require               : 0 # Limiting
-    no-restricted-syntax         : 0 # Super arbitrary stuff, like no loops
-    guard-for-in                 : 0 # For the above rule
-    arrow-body-style             : 0 # Doesn't let you have single statement block functions
+
+    # Allows ForIn
+    no-restricted-syntax:
+      - error
+      #- ForInStatement
+      - LabeledStatement
+      - WithStatement
+
+    guard-for-in     : 0 # For the above rule
+    global-require   : 0 # Limiting
+    arrow-body-style : 0 # Doesn't let you have single statement block functions
 
     #
     # DISABLE BECAUSE OF ERRORS
@@ -21,6 +27,7 @@ rules:
     # WARNINGS
     #
     react/prefer-stateless-function : 1
+    import/prefer-default-export    : 1 # Limits multi-export files when they aren't populated
 
 env:
     mocha   : true
