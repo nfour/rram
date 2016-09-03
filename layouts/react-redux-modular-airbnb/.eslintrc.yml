@@ -9,9 +9,9 @@ rules:
     # Allows ForIn
     no-restricted-syntax:
       - error
-      #- ForInStatement
       - LabeledStatement
       - WithStatement
+    # - ForInStatement
 
     guard-for-in     : 0 # For the above rule
     global-require   : 0 # Limiting
