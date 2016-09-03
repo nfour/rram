@@ -106,8 +106,6 @@ export default class Build {
       },
     };
 
-    console.log({ config });
-
     // Pipe the webpack build through gulp
     return new Promise((resolve, reject) => {
       let g;
