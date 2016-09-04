@@ -21,17 +21,6 @@
     },
 
     "devDependencies": {
-        "eslint-plugin-react"    : "latest",
-        "eslint"                 : "latest",
-        "eslint-config-airbnb"   : "latest",
-        "eslint-plugin-jsx-a11y" : "latest",
-        "eslint-plugin-import"   : "latest",
-        "babel-eslint"           : "latest",
-
-        "nyc"   : "~6.2.1",
-        "mocha" : "~2.4.5",
-        "chai"  : "~3.5.0",
-
         "url-loader"   : "~0.5.0",
         "style-loader" : "~0.13.0",
         "file-loader"  : "~0.8.0",
@@ -52,6 +41,17 @@
         "webpack-livereload-plugin" : "~0.7.0",
         "express"                   : "^4.14.0",
         "yargs"                     : "latest",
+
+        "nyc"   : "~6.2.1",
+        "mocha" : "~2.4.5",
+        "chai"  : "~3.5.0",
+
+        "eslint-plugin-react"    : "latest",
+        "eslint"                 : "latest",
+        "eslint-config-airbnb"   : "latest",
+        "eslint-plugin-jsx-a11y" : "latest",
+        "eslint-plugin-import"   : "latest",
+        "babel-eslint"           : "latest",
 
         "babel-polyfill"                                      : "latest",
         "babel-preset-react"                                  : "^6.0.0",
