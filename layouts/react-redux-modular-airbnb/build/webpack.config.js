@@ -12,7 +12,7 @@ export default {
   plugins: [],
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.json'],
   },
 
   module: {
