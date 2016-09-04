@@ -1,7 +1,7 @@
 import path from 'path';
 import gulp from 'gulp';
 import gulpNodemon from 'gulp-nodemon';
-import fs from 'fs';
+import fs from 'fs-extra';
 import del from 'del';
 import Build from './build/Build';
 
@@ -97,6 +97,7 @@ for (const key in clients) {
   });
 
   gulp.task(`copy-assets:${key}`, async () => {
+    fs.mkdirsSync(CLIENT.config.dist);
     const viewFile = fs.readFileSync(viewPath);
     fs.writeFileSync(path.resolve(CLIENT.config.dist, './index.html'), viewFile);
   });
