@@ -16,8 +16,6 @@ const PATHS = {
 
 const COMPRESS = !!process.env.COMPRESS || process.env.NODE_ENV === 'production';
 
-console.log({ COMPRESS });
-
 const BABELRC = JSON.parse(fs.readFileSync('./.babelrc', 'UTF8'));
 
 // Use a the full preset for the clients
