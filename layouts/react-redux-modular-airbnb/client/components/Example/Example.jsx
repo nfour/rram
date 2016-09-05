@@ -34,8 +34,8 @@ export const Example = ({ text, actions }) =>
   </div>;
 
 Example.propTypes = {
-  text: PropTypes.string.isRequired,
-  actions: PropTypes.object.isRequired,
+  text    : PropTypes.string.isRequired,
+  actions : PropTypes.object.isRequired,
 };
 
 export default pure(Example);

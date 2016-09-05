@@ -4,9 +4,9 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 import Wrapper from '../../__tests__/Wrapper';
-import Counter from '../Counter';
+import Example from './Example';
 
-describe('<Counter />', () => {
+describe('<Example />', () => {
   // This is a shallow render and thus any child components will not render.
   it('Renders shallowly', async () => {
     const props = {
@@ -18,7 +18,7 @@ describe('<Counter />', () => {
     };
 
     const component = shallow(
-      <Counter {...props} />
+      <Example {...props} />
     );
 
     expect(component.find('img').length).to.equal(1);
@@ -41,7 +41,7 @@ describe('<Counter />', () => {
     };
 
     const component = mount(
-      <Wrapper><Counter {...props} /></Wrapper>
+      <Wrapper><Example {...props} /></Wrapper>
     );
 
     expect(component.find('.count').text()).to.equal(`${props.count}`);
