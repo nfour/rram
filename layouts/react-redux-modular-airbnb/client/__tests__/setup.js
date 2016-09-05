@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'isomorphic-fetch';
 
-const body = fs.readFileSync(path.resolve(__dirname, '../views/index.html'));
+const body = fs.readFileSync(path.resolve(__dirname, '../index.html'));
 
 global.Promise = require('bluebird');
 
