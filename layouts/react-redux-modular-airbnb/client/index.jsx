@@ -18,7 +18,7 @@ import { NotFound } from './components';
 //
 
 
-export const STORE = createStore();
+export const STORE   = createStore();
 export const HISTORY = syncHistoryWithStore(hashHistory, STORE);
 
 
