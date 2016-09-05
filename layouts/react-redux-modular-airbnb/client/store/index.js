@@ -12,6 +12,7 @@ const createStoreWithMiddleware = applyMiddleware(
     reduxThunk
 )(createStore);
 
+// Store creator
 export default (initialState) =>
   createStoreWithMiddleware(
     combinedReducers,

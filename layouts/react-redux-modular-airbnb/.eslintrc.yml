@@ -13,6 +13,8 @@ rules:
     - WithStatement
   # - ForInStatement
 
+  no-continue: 0 # Continue is useful, like return to utilize loops
+
   guard-for-in     : 0 # For the above rule
   global-require   : 0 # Limiting
   arrow-body-style : 0 # Doesn't let you have single statement block functions

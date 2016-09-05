@@ -48,8 +48,6 @@ const LIVE_RELOAD = {
 //
 
 
-// There is currently only one client in this app
-// but there can be many
 const clients = {
   client: new Build({
     dist   : path.resolve(__dirname, PATHS.dist, './client'),
@@ -69,7 +67,6 @@ for (const key in clients) {
   const CLIENT = clients[key];
 
   const viewPath = path.resolve(CLIENT.config.source, './index.html');
-
 
   /**
    *  START DEVELOPMENT SERVER & WATCH

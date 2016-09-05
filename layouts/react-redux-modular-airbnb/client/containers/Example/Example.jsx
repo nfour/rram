@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import './Example.less';
 
-import * as actions from '../../redux/example/actions';
+import * as actions from '../../store/Example/actions';
 import { Example } from '../../components';
 
 

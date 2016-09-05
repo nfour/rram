@@ -1,4 +1,5 @@
 import 'isomorphic-fetch';
-import Promise from 'bluebird';
 
-global.Promise = Promise;
+global.Promise = require('bluebird');
+
+// require('react-tap-event-plugin')();

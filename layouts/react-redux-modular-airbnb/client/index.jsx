@@ -6,10 +6,11 @@ import { Provider } from 'react-redux';
 
 import './lib/polyfill';
 
-import createStore from './stores';
-import ExampleContainer from './modules/example/containers/Example';
-import Root from './components/Root';
-import { NotFound } from './components/errors';
+import createStore from './store';
+import initialize from './lib/initialize';
+
+import { Root, Example } from './containers';
+import { NotFound } from './components';
 
 
 //
@@ -30,10 +31,12 @@ render(
   <Provider store={STORE}>
     <Router history={HISTORY}>
       <Route path="/" component={Root}>
-        <IndexRoute component={ExampleContainer} />
+        <IndexRoute component={Example} />
         <Route path="*" component={NotFound} />
       </Route>
     </Router>
   </Provider>,
   document.getElementById('Root')
 );
+
+initialize();

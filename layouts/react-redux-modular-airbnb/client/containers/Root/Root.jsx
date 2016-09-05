@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import '../styles/global.less';
+import './Root.less';
 
 export default class Root extends React.Component {
   static propTypes = {
