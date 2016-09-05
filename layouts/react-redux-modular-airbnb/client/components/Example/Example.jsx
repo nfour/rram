@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { pure } from 'recompose';
 
-import goodJob from '../assets/goodJob.jpg';
+import goodJob from './goodJob.jpg';
 
 function onChange(actionFn) {
   return (event) => actionFn(event.target.value);

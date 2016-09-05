@@ -1,6 +1,12 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import reduxThunk from 'redux-thunk';
-import combinedReducers from '../reducers';
+
+export const reducers = {
+  routing: require('react-router-redux').routerReducer,
+  example: require('./Example/reducer'),
+};
+
+export const combinedReducers = combineReducers(reducers);
 
 const createStoreWithMiddleware = applyMiddleware(
     reduxThunk

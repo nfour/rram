@@ -24,6 +24,8 @@ rules:
     - error
     - devDependencies: true
 
+  import/no-named-as-default: 0 # Limiting for a valid usecase
+
   key-spacing: 0
   no-multi-spaces:
     - 0

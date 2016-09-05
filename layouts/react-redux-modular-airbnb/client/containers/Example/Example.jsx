@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 
 import './Example.less';
 
-import * as actions from '../actions';
-import ExampleComponent from '../components/Example';
+import * as actions from '../../redux/example/actions';
+import { Example } from '../../components';
 
 
 const ExampleContainer = (props) =>
   <section className="module__Example">
-    <ExampleComponent actions={props.actions} text={props.text} />
+    <Example actions={props.actions} text={props.text} />
   </section>;
 
 
