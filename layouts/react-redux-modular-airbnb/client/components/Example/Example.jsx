@@ -26,10 +26,10 @@ export const Example = ({ text, actions }) =>
       />
     </p>
     <p>
-      Fake Change:
+      Pure Render Protected Change:
       <button
         onClick={() => actions.appendText('')}
-      >WONT UPDATE</button>
+      >WONT RE-RENDER</button>
     </p>
   </div>;
 

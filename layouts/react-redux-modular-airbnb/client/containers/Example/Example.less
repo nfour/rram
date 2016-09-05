@@ -1,10 +1,21 @@
 .module__Example {
-  border     : 2px solid #666;
-  padding    : 90px;
-  background : #ddd;
+  border     : 6px solid #ddd;
+  padding    : 2em;
+  margin     : 2em;
+  background : #efefef;
+  box-shadow : 0 0 20px 0 rgba(0,0,0,0.15);
+  color      : #666;
+
 
   input {
-    padding: 0.5em;
-    margin: 1em;
+    padding : 0.5em;
+    margin  : 1em;
+  }
+
+  > div {
+    padding       : 2em;
+    border-radius : 6px;
+    box-shadow    : 0 0 20px 0 rgba(0,0,0,0.25);
+    transition    : all 0.2s ease;
   }
 }
