@@ -8,7 +8,7 @@ import * as actions from '../actions';
 import ExampleComponent from '../components/Example';
 
 
-const ExampleContainer = async (props) =>
+const ExampleContainer = (props) =>
   <section className="module__Example">
     <ExampleComponent actions={props.actions} text={props.text} />
   </section>;
