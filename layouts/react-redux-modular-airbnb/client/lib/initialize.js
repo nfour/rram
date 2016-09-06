@@ -1,6 +1,6 @@
 import { STORE } from '../';
-import { DO_STUFF } from '../store/constants';
+import { requestText } from '../store/example/actions';
 
 export default async () => {
-  await STORE.dispatch({ type: DO_STUFF });
+  await STORE.dispatch(requestText());
 };

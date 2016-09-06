@@ -26,6 +26,12 @@ export const Example = ({ text, actions }) =>
       />
     </p>
     <p>
+      Request Async Text:
+      <button
+        onClick={() => actions.requestText()}
+      >GET TEXT</button>
+    </p>
+    <p>
       Pure Render Protected Change:
       <button
         onClick={() => actions.appendText('')}

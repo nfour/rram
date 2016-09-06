@@ -3,7 +3,7 @@ import reduxThunk from 'redux-thunk';
 
 export const reducers = {
   routing: require('react-router-redux').routerReducer,
-  example: require('./Example/reducer'),
+  example: require('./example/reducer'),
 };
 
 export const combinedReducers = combineReducers(reducers);
