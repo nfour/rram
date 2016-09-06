@@ -7,6 +7,10 @@
  *  @param    {Array}    rows
  *  @param    {Strings}  ...primaryKeys
  *
+ *  @example
+ *    flatten([{ id: 1, key: 'asdsa' }], 'id', '_id', 'key')
+ *    { 1: { id: 1 } }
+ *
  *  @return   {Object}
  */
 export function flatten(rows, ...primaryKeys) {
