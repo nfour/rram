@@ -2,7 +2,6 @@ import path from 'path';
 import gulp from 'gulp';
 import gulpNodemon from 'gulp-nodemon';
 import fs from 'fs-extra';
-import del from 'del';
 import Build from './build/Build';
 
 //
@@ -100,6 +99,6 @@ for (const key in clients) {
   });
 
   gulp.task(`clean:${key}`, async () => {
-    return del(`${CLIENT.config.dist}/*`);
+    fs.emptyDirSync(CLIENT.config.dist);
   });
 }
