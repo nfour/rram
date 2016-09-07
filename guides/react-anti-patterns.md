@@ -63,13 +63,15 @@ import { pure } from 'recompose'
 export default pure((props, context) => {
     // ... do expensive compute on props ...
 
-    return <SomeComponent {...props} />
+    return <SomeComponent someProp={props.someProp} />
 })
 ```
 
 In the above example props are computed on heavily and thus the render method should be avoided as much as possible.
 In react it is important to break components up when they do expensive operations, as the component hierachy is always rendered
 from the top down.
+
+Don't use `{...props}`. It will clone the props object each time which will result in pure render functions detecting a change always.
 
 ```
 - Root
