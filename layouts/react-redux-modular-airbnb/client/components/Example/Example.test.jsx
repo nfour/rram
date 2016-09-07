@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import Wrapper from '../../__tests__/Wrapper';
+import Wrapper from '../../test/Wrapper';
 import Example from './Example';
 
 describe('<Example />', () => {

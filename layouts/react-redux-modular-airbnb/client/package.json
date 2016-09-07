@@ -6,7 +6,7 @@
 
   "scripts": {
     "test"       : "NODE_ENV=test npm run test:mocha",
-    "test:mocha" : "mocha -r babel-register -r ignore-styles -r ./__tests__/setup.js -G $(find $MOCHA_FOLDER -name '*.test.js*' -not -path '*/node_modules/*')",
+    "test:mocha" : "mocha -r babel-register -r ignore-styles -r ./test/setup.js -G $(find $MOCHA_FOLDER -name '*.test.js*' -not -path '*/node_modules/*')",
     "cover"      : "nyc npm test"
   },
 
