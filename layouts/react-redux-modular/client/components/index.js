@@ -1,2 +1,2 @@
-export { default as Root } from './Root'
-export * from './errors'
+export * from './errors';
+export Example from './Example/Example';

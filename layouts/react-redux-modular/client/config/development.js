@@ -1,8 +1,3 @@
-import { merge, clone } from 'lutils'
-
-export default merge(
-    clone( require('./default') ),
-    {
-
-    }
-)
+export default {
+  test: 2,
+};
