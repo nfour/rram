@@ -5,7 +5,10 @@ In order to preserve performance one needs to consider the creation of new entit
 
 #### BAD
 ```jsx
+// BAD
 class Component extends React.Component {
+    state = { clicked: false }
+
     onClick() { this.setState({ clicked: true }) }
 
     render() {
@@ -18,11 +21,10 @@ class Component extends React.Component {
         />
     }
 }
-```
 
-#### GOOD
-```jsx
+// GOOD
 class Component extends React.Component {
+    state = { clicked: false }
     options = { test: 1 }
 
     onClick = () => { this.setState({ clicked: true }) }
@@ -45,21 +47,19 @@ class Component extends React.Component {
 
 #### BAD
 ```jsx
+// BAD
 export default (props, context) => {
     // ... do expensive compute on props ...
 
     return <SomeComponent {...props} />
 }
-```
 
-#### GOOD
-```jsx
-import { pure } from 'recompose'
+// GOOD
+import { pure } from 'recompose';
 
 // See: https://github.com/acdlite/recompose#composition
-// For full examples
 
-// This won't be called when the props dont change
+// This won't be called when the props DONT change
 export default pure((props, context) => {
     // ... do expensive compute on props ...
 
