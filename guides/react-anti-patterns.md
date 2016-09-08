@@ -3,7 +3,6 @@
 ## Pure render immutability
 In order to preserve performance one needs to consider the creation of new entities in the render method.
 
-#### BAD
 ```jsx
 // BAD
 class Component extends React.Component {
@@ -45,7 +44,6 @@ class Component extends React.Component {
 ## Pure render functions
 - Use https://github.com/acdlite/recompose
 
-#### BAD
 ```jsx
 // BAD
 export default (props, context) => {
