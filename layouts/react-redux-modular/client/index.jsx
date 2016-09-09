@@ -9,8 +9,8 @@ import './lib/polyfill';
 import createStore from './store';
 import initialize from './lib/initialize';
 
-import { Root, Example } from './containers';
-import { NotFound } from './components';
+import { Example } from './containers';
+import { Root, NotFound } from './components';
 
 
 //
