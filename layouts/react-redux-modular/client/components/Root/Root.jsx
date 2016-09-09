@@ -4,8 +4,10 @@ import './Root.less';
 
 export default class Root extends React.Component {
   static propTypes = {
-    children: PropTypes.object,
+    children: PropTypes.object.isRequired,
   }
+
+  // ... Put context stuff here
 
   render = () => this.props.children
 }

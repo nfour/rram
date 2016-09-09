@@ -1,2 +1,1 @@
-export Root from './Root/Root';
-export Example from './Example/Example';
+export Example from './Example';

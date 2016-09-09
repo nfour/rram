@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { pure } from 'recompose';
 
+import './Example.less';
 import goodJob from './goodJob.jpg';
 
 function onChange(actionFn) {
