@@ -9,7 +9,10 @@ function onChange(actionFn) {
 }
 
 export const Example = ({ text, actions }) =>
-  <div style={{ border: `10px solid #${(Math.random() * 1000).toString().slice(0, 3)}` }}>
+  <section
+    className="Example"
+    style={{ border: `10px solid #${(Math.random() * 1000).toString().slice(0, 3)}` }}
+  >
     <p>Text: {text}</p>
     <img src={goodJob} alt="" height="100" />
     <p>
@@ -38,7 +41,7 @@ export const Example = ({ text, actions }) =>
         onClick={() => actions.appendText('')}
       >WONT RE-RENDER</button>
     </p>
-  </div>;
+  </section>;
 
 Example.propTypes = {
   text    : PropTypes.string.isRequired,
