@@ -16,7 +16,7 @@ export const setText = (payload) => ({
 
 export const setTextAsync = () =>
   async (dispatch) => {
-    await Promise.delay(100);
+    await Promise.delay(400);
     return dispatch(setText('[[REQUESTING TEXT]]'));
   };
 
@@ -24,7 +24,7 @@ export const appendText = (payload) => ({
   type: APPEND_EXAMPLE_TEXT, payload,
 });
 
-export const requestText = () =>
+export const requestText = (newText = '') =>
   async (dispatch) => {
     // ASYNC DISPATCH
     // We await this dispatch because `setTextAsync` is a proper async action
@@ -34,5 +34,5 @@ export const requestText = () =>
 
     // SYNCHRONOUS DISPATCH
     // Because `setText` is synchronous (doesn't return a promise), we dont need to await it.
-    dispatch(setText(text));
+    dispatch(setText(text + newText));
   };
