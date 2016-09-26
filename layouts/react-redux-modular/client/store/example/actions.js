@@ -3,6 +3,7 @@ import Promise from 'bluebird';
 import {
   SET_EXAMPLE_TEXT,
   APPEND_EXAMPLE_TEXT,
+  PREPEND_EXAMPLE_TEXT,
 } from '../constants';
 
 import {
@@ -22,6 +23,10 @@ export const setTextAsync = () =>
 
 export const appendText = (payload) => ({
   type: APPEND_EXAMPLE_TEXT, payload,
+});
+
+export const prependText = (payload) => ({
+  type: PREPEND_EXAMPLE_TEXT, payload,
 });
 
 export const requestText = (newText = '') =>
