@@ -46,6 +46,7 @@ rules:
   # WARNINGS
   #
   react/prefer-stateless-function : 1
+  react/forbid-prop-types         : 1
   import/prefer-default-export    : 1 # Limits multi-export files when they aren't populated
 
 env:

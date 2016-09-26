@@ -1,8 +1,8 @@
 /**
  *  Converts
- *  	[ { id: 1 } ]
+ *      [ { id: 1 } ]
  *  to
- *  	{ '1': { id: 1 } }
+ *      { '1': { id: 1 } }
  *
  *  @param    {Array}    rows
  *  @param    {Strings}  ...primaryKeys
@@ -11,10 +11,11 @@
  *    flatten([{ id: 1, key: 'asdsa' }], 'id', '_id', 'key')
  *    { 1: { id: 1 } }
  *
- *  @return   {Object}
+ *  @return   {Object} { data, order }
  */
 export function flatten(rows, ...primaryKeys) {
   const data = {};
+  const order = [];
 
   let primaryKey = 'id';
 
@@ -27,14 +28,14 @@ export function flatten(rows, ...primaryKeys) {
     }
   }
 
-  for (const i in rows) {
-    const row    = rows[i];
+  rows.forEach((row) => {
     const rowKey = row[primaryKey];
 
-    if (!rowKey) continue;
+    if (!rowKey) return;
 
+    order.push(rowKey);
     data[rowKey] = row;
-  }
+  });
 
-  return data;
+  return { data, order };
 }

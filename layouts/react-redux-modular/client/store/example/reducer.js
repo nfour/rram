@@ -1,31 +1,31 @@
 import {
-  SET_EXAMPLE_TEXT,
-  APPEND_EXAMPLE_TEXT,
-  PREPEND_EXAMPLE_TEXT,
-  DO_STUFF,
+  EXAMPLE__TEXT_APPEND,
+  EXAMPLE__TEXT_PREPEND,
+  EXAMPLE__MERGE,
+  EXAMPLE__RESET,
 } from '../constants';
+
+import { GenericReducer } from '../reducerFactories';
 
 const initialState = {
   text: 'Example text.',
 };
 
-function doStuff(state) {
-  return state;
-}
+const genericReducer = new GenericReducer({
+  RESET: EXAMPLE__RESET,
+  MERGE: EXAMPLE__MERGE,
+  initialState,
+});
 
 export default function (state = initialState, action) {
-  switch (action.type) {
-    case SET_EXAMPLE_TEXT:
-      return { ...state, text: action.payload };
+  state = genericReducer(state, action);
 
-    case APPEND_EXAMPLE_TEXT:
+  switch (action.type) {
+    case EXAMPLE__TEXT_APPEND:
       return { ...state, text: `${state.text}${action.payload}` };
 
-    case PREPEND_EXAMPLE_TEXT:
+    case EXAMPLE__TEXT_PREPEND:
       return { ...state, text: `${action.payload}${state.text}` };
-
-    case DO_STUFF:
-      return doStuff(state, action);
 
     default:
       return state;

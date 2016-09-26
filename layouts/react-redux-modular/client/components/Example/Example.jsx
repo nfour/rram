@@ -8,8 +8,8 @@ const passValue = (actionFn) => (event) => actionFn(event.target.value);
 
 export const Example = ({ text, actions }) => {
   // An example of an action dispatch based on props
-  if (text === 'Sourced Text!') {
-    actions.requestText('wew');
+  if (text === 'trigger') {
+    actions.requestText(' - Triggered');
     return <div>Loading...</div>;
   }
 
@@ -46,8 +46,11 @@ export const Example = ({ text, actions }) => {
         </p>
         <p>
           <button
-            onClick={() => actions.requestText()}
+            onClick={actions.requestText}
           >Request Async Text</button>
+          <button
+            onClick={actions.resetExample}
+          >Reset</button>
         </p>
         <p>
           <button

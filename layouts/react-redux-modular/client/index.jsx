@@ -9,7 +9,7 @@ import './lib/polyfill';
 import createStore from './store';
 import initialize from './lib/initialize';
 
-import { Example } from './containers';
+import { Example, Page } from './containers';
 import { Root, NotFound } from './components';
 
 
@@ -31,8 +31,10 @@ render(
   <Provider store={STORE}>
     <Router history={HISTORY}>
       <Route path="/" component={Root}>
-        <IndexRoute component={Example} />
-        <Route path="*" component={NotFound} />
+        <Route component={Page}>
+          <IndexRoute component={Example} />
+          <Route path="*" component={NotFound} />
+        </Route>
       </Route>
     </Router>
   </Provider>,

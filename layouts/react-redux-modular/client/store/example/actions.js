@@ -1,39 +1,41 @@
 import Promise from 'bluebird';
 
 import {
-  SET_EXAMPLE_TEXT,
-  APPEND_EXAMPLE_TEXT,
-  PREPEND_EXAMPLE_TEXT,
+  EXAMPLE__TEXT_APPEND,
+  EXAMPLE__TEXT_PREPEND,
+  EXAMPLE__MERGE,
+  EXAMPLE__RESET,
 } from '../constants';
 
-import {
-  getExampleText,
-} from './sources';
+import { getExampleText } from './sources';
 
-
-export const setText = (payload) => ({
-  type: SET_EXAMPLE_TEXT, payload,
+export const setText = (text) => ({
+  type: EXAMPLE__MERGE, payload: { text },
 });
 
-export const setTextAsync = () =>
+export const resetExample = () => ({
+  type: EXAMPLE__RESET,
+});
+
+export const setTextDelayed = () =>
   async (dispatch) => {
     await Promise.delay(400);
     return dispatch(setText('[[REQUESTING TEXT]]'));
   };
 
-export const appendText = (payload) => ({
-  type: APPEND_EXAMPLE_TEXT, payload,
+export const appendText = (text) => ({
+  type: EXAMPLE__TEXT_APPEND, payload: text,
 });
 
-export const prependText = (payload) => ({
-  type: PREPEND_EXAMPLE_TEXT, payload,
+export const prependText = (text) => ({
+  type: EXAMPLE__TEXT_PREPEND, payload: text,
 });
 
 export const requestText = (newText = '') =>
   async (dispatch) => {
     // ASYNC DISPATCH
-    // We await this dispatch because `setTextAsync` is a proper async action
-    await dispatch(setTextAsync('[[REQUESTING TEXT]]'));
+    // We await this dispatch because `setTextDelayed` is a proper async action
+    await dispatch(setTextDelayed('[[REQUESTING TEXT]]'));
 
     const text = await getExampleText();
 
