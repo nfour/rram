@@ -1,12 +1,14 @@
 import React, { PropTypes } from 'react';
 import { pure } from 'recompose';
 
+import ExampleItems from '../ExampleItems/ExampleItems.jsx';
+
 import './Example.less';
 import goodJob from './goodJob.jpg';
 
 const passValue = (actionFn) => (event) => actionFn(event.target.value);
 
-export const Example = ({ text, actions }) => {
+export const Example = ({ text, actions, items }) => {
   // An example of an action dispatch based on props
   if (text === 'trigger') {
     actions.requestText(' - Triggered');
@@ -46,7 +48,7 @@ export const Example = ({ text, actions }) => {
         </p>
         <p>
           <button
-            onClick={actions.requestText}
+            onClick={() => actions.requestText(' - Requested')}
           >Request Async Text</button>
           <button
             onClick={actions.resetExample}
@@ -57,6 +59,7 @@ export const Example = ({ text, actions }) => {
             onClick={() => actions.appendText('')}
           >Pure Render Protected Change (Won't re-render)</button>
         </p>
+        <ExampleItems actions={actions} items={items} />
       </div>
     </section>
   );
@@ -64,6 +67,7 @@ export const Example = ({ text, actions }) => {
 
 Example.propTypes = {
   text    : PropTypes.string.isRequired,
+  items   : PropTypes.object.isRequired, // TODO: use shape({})
   actions : PropTypes.object.isRequired,
 };
 

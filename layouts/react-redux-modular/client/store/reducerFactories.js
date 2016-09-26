@@ -73,8 +73,8 @@ export function RowsReducer({ SET, SET_ORDER, DELETE }) {
 
         state = { ...state, rows: { ...state.rows } };
 
-        if (!state.rowsOrder.length) {
-          state.rowsOrder = rowsOrder;
+        if (!state.rowsOrder.length && rowsOrder) {
+          state.rowsOrder = rowsOrder.map((_key) => String(_key));
 
           // We dont need to check, performance
           ignoreRowsOrder = true;
@@ -108,10 +108,10 @@ export function RowsReducer({ SET, SET_ORDER, DELETE }) {
         if (key in state.rows) {
           state = { ...state, rows: { ...state.rows } };
 
-                // Remove from rows object
+          // Remove from rows object
           delete state.rows[key];
 
-                // Remove from rowsOrder array
+          // Remove from rowsOrder array
           state.rowsOrder = state.rowsOrder.filter((_key) => _key !== key);
         }
 

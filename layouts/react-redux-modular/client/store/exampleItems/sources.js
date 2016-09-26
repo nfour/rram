@@ -2,7 +2,7 @@ import Promise from 'bluebird';
 import { flatten } from '../../lib/utils';
 
 export const getExampleItems = async () => {
-  await Promise.delay(200);
+  await Promise.delay(1);
 
   return flatten([
     {

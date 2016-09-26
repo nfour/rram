@@ -9,7 +9,8 @@ import {
 import { GenericReducer, RowsReducer } from '../reducerFactories';
 
 const initialState = {
-  text: 'Example text.',
+  rows      : {},
+  rowsOrder : [],
 };
 
 const genericReducer = new GenericReducer({
