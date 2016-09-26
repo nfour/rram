@@ -40,6 +40,7 @@ rules:
   #
   generator-star-spacing : 0 # This produces an error on async/await
   require-yield          : 0 # This produces an error on async/await
+  arrow-parens           : 0 # This produces an error on async/await
 
   #
   # WARNINGS

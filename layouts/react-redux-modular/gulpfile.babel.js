@@ -57,7 +57,7 @@ const clients = {
       source   : './index.jsx',
       babel    : BABELRC,
       compress : COMPRESS,
-      webpack  : { progress: true },
+      webpack  : {},
     }],
   }),
 };

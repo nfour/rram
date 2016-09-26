@@ -1,18 +1,19 @@
+import webpack from 'webpack';
 
 /**
  *  Base webpack config, extended by ./Build based on options.
  *  See ../gulpfile.babel.js for usage.
  */
 export default {
-  progress: true,              // Shows progress when compiling on the CLI
-
   entry  : ['babel-polyfill'], // Base entries (Only for requires)
   devtool: 'source-map',       // Only when not compressing
 
-  plugins: [],
+  plugins: [
+    new webpack.ProgressPlugin(),
+  ],
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
   },
 
   module: {
@@ -36,9 +37,6 @@ export default {
     ],
 
     /*
-
-    preLoaders: [],
-    postLoaders: [],
 
     noParse: [ /node_modules/ ],
 
