@@ -4,12 +4,12 @@
 
 - React & Redux
 - Linted with Airbnb
-- Intended for modularity in development
+- Enforces modularity
 
 ## INSTALL
 ```bash
-git clone https://github.com/nfour/rram
-cd rram
+git clone https://github.com/nfour/r2am
+cd r2am
 npm run install:all
 npm start
 ```
