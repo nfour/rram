@@ -1,34 +1,68 @@
-# JS STRUCTURES
-Javascript convention and standardization.
+# REACT REDUX AIRBNB MODULAR
 
-## Guides
-- [Guides](./guides/README.md)
-    - [Style Guide](./guides/style-guid.md)
-    - [React Anti Patterns](./guides/react-anti-patterns.md)
+![R2AM](http://i.imgur.com/qMuaNAd.png)
 
-## BABEL
-Babel has been configured to:
-- Ensure feature sets are **identical** on server & client
-- Support `es2015` and `stage-1`
-- Additional plugins:
-    - `add-module-exports`
-        - Ensures commonjs & ES6 exports behave the same
-    - `async-to-module-method`
-        - Ensures all `async` functions retunr `bluebird` promises
+- React & Redux
+- Linted with Airbnb
+- Intended for modularity in development
 
-## LINTING
-Eslint has been configured to:
-- Conform to the style guide, roughly
-- Autofix various aspects
-- Trigger on some anti-patterns
-- Detect unused variables, and undefined variables in use
-- To be used in the editor only as to not effect build times
+## INSTALL
+```bash
+git clone https://github.com/nfour/rram
+cd rram
+npm run install:all
+npm start
+```
 
-To configure eslint for `atom`:
-- Install the `linter-eslint` atom package (and `linter`)
-- `npm install` within each project directory, ensuring `babel-eslint` is avaliable to the editor.
+## STRUCTURE
+```
+___/ index.jsx
+     - Routing, initialization & store creation
+     |
+     |___/ components
+     |     - JSX views
+     |
+     |___/ containers
+     |     - State assignment
+     |
+     |___/ store
+           - Redux store management
+           |
+           |___/ ${storeItemName}
+                 |
+                 |___/ actions.js
+                 |___/ reducer.js
+                 |___/ sources.js
+```
 
+## FLOW
 
-## LICENSE
+Where the route is `/`, a render occurs as such:
+```
+___/ index.jsx
+     + State is reduced
+     |
+     |___/ store/index.js
+     |     + Resolve reducers to state
+     |     |
+     |     |___/ store/Example/reducer.js
+     |
+     + Route matched
+     + State passed down
+     |
+     |___/ components/Root/Root.jsx
+     |     + All routes pass through this component
+     |
+     |___/ containers/Example.js
+           + Assign state to props
+           + Retrieve actions
+           |
+           |___/ store/Example/actions.js
+           |
+           + Bind dispatch to actions & assign to props
+           |
+           |___/ components/Example/Example.jsx
+                 + Renders
+```
 
-See [license](./LICENSE.md)
+The above is re-run every time the state is changed.

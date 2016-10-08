@@ -1,6 +1,0 @@
-export { default as Counter } from './Counter'
-export { default as Header } from './Header'
-export { default as Table } from './Table'
-export { default as PureCounter } from './pure/Counter'
-export { default as PureHeader } from './pure/Header'
-export { default as PureTable } from './pure/Table'

@@ -1,8 +1,0 @@
-import { merge, clone } from 'lutils'
-
-export default merge(
-    clone( require('./default') ),
-    {
-        port: 80,
-    }
-)

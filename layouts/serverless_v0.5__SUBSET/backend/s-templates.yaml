@@ -1,9 +1,0 @@
-responseParams:
-  body: $input.json('$')
-  httpMethod: $context.httpMethod
-  query: $input.params().querystring
-  resource: $context.resource
-  headers: $input.params().header
-apiRequestTemplate:
-  application/json: '$${responseParams}'
-  text/html: '$${responseParams}'
