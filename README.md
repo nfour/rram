@@ -1,5 +1,3 @@
-# REACT REDUX AIRBNB MODULAR
-
 ![R2AM](http://i.imgur.com/8WGl3mi.png)
 
 - React & Redux
