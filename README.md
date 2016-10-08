@@ -1,8 +1,8 @@
 ![R2AM](http://i.imgur.com/8WGl3mi.png)
 
-- React & Redux
-- Linted with Airbnb
-- Enforces modularity
+- **React** & **Redux**
+- Linted with **Airbnb**
+- Enforces **modularity**
 
 ## INSTALL
 ```bash
