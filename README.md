@@ -1,6 +1,6 @@
 # REACT REDUX AIRBNB MODULAR
 
-![R2AM](http://i.imgur.com/qMuaNAd.png)
+![R2AM](http://i.imgur.com/8WGl3mi.png)
 
 - React & Redux
 - Linted with Airbnb
