@@ -11,7 +11,7 @@ export const ExampleItems = ({ actions, items }) => {
     >
       <div className="items">
         {items.rowsOrder.map((id) =>
-          <button key={id} onClick={() => actions.deleteItem(id)}>
+          <button className={`key_${id}`} key={id} onClick={() => actions.deleteItem(id)}>
             {items.rows[id].name}
           </button>
         )}

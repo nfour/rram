@@ -6,8 +6,10 @@
   "scripts": {
     "test": "cd client && npm test",
 
-    "install:client" : "cd ./client && npm install",
-    "install:all"    : "npm install && npm run install:client",
+    "install:client"      : "cd ./client && npm install",
+    "install:all"         : "npm install && npm run install:client",
+    "install:client:yarn" : "cd ./client && yarn",
+    "install:all:yarn"    : "yarn && npm run install:client:yarn",
 
     "build" : "gulp build:client",
     "start" : "gulp start:client"

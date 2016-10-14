@@ -28,6 +28,7 @@ export const Example = ({ text, actions, items }) => {
         <p>
           Set:
           <input
+            className="setText"
             value={text}
             onChange={passValue(actions.setText)}
           />
@@ -48,6 +49,7 @@ export const Example = ({ text, actions, items }) => {
         </p>
         <p>
           <button
+            className="requestText"
             onClick={() => actions.requestText(' - Requested')}
           >Request Async Text</button>
           <button
