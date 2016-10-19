@@ -14,8 +14,8 @@ const initialState = {
 };
 
 const genericReducer = new GenericReducer({
-  MERGE: EXAMPLE_ITEMS__MERGE,
-  RESET: EXAMPLE_ITEMS__RESET,
+  MERGE : EXAMPLE_ITEMS__MERGE,
+  RESET : EXAMPLE_ITEMS__RESET,
   initialState,
 });
 
