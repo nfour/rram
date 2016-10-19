@@ -50,6 +50,12 @@ ___/ index.jsx
      |___/ components/Root/Root.jsx
      |     + All routes pass through this component
      |
+     |___/ containers/Page.js
+     |     + Any route which should inherit the "page" layout pass through this.
+     |     |
+     |     |___/ components/Page/Page.jsx
+     |           + Wraps children in a page layout component
+     |
      |___/ containers/Example.js
            + Assign state to props
            + Retrieve actions
