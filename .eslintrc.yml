@@ -12,28 +12,41 @@ rules:
     - LabeledStatement
     - WithStatement
   # - ForInStatement
+  no-continue       : 0 # Because ForIn
+  guard-for-in      : 0 # Because ForIn
+  arrow-body-style  : 0 # Doesn't let you have single statement block functions
+  no-param-reassign : 0 # Variable names are hard
+  key-spacing       :
+    - error
+    -
+      align:
+        beforeColon: true
+        afterColon: true
+        on: colon
+      # multiLine: { }
+      singleLine:
+        beforeColon: false
+        afterColon: true
 
-  no-continue: 0 # Continue is useful, like return to utilize loops
+  no-multi-spaces:
+    - 0
+    - exceptions:
+        VariableDeclarator: true
 
-  guard-for-in     : 0 # For the above rule
-  global-require   : 0 # Limiting
-  arrow-body-style : 0 # Doesn't let you have single statement block functions
-  no-param-reassign: 0 # There is nothing wrong with this
+  no-unused-vars: # Can be helpful to define params for verbosity
+    - error
+    - args: none
+
 
   # This allows devDependencies to be imported for build files
   # This can be applied to specific files when eslint supports that feature later
   import/no-extraneous-dependencies:
     - error
     - devDependencies: true
-
   import/no-named-as-default: 0 # Limiting for a valid usecase
 
-  key-spacing: 0
-  no-multi-spaces:
-    - 0
-    - exceptions:
-        VariableDeclarator: true
-
+  jsx-a11y/img-has-alt                    : 0 # Waste of my time
+  jsx-a11y/no-static-element-interactions : 0 # Limiting, needlessly
 
   #
   # DISABLE BECAUSE OF ERRORS
@@ -45,8 +58,12 @@ rules:
   #
   # WARNINGS
   #
+
+  global-require: 1 # Limiting, but useful
+
   react/prefer-stateless-function : 1
   react/forbid-prop-types         : 1
+
   import/prefer-default-export    : 1 # Limits multi-export files when they aren't populated
 
 env:
