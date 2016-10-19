@@ -1,13 +1,12 @@
-![R2AM](http://i.imgur.com/8WGl3mi.png)
+![RRAM](http://i.imgur.com/JPnXeab.png)
 
 - **React** & **Redux**
-- Linted with **Airbnb**
-- Enforces **modularity**
+- **Airbnb** linted
+- **Modular** by design
 
 ## INSTALL
 ```bash
-git clone https://github.com/nfour/r2am
-cd r2am
+git clone https://github.com/nfour/rram && cd rram
 npm run install:all
 npm start
 ```
@@ -62,5 +61,3 @@ ___/ index.jsx
            |___/ components/Example/Example.jsx
                  + Renders
 ```
-
-The above is re-run every time the state is changed.
