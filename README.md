@@ -1,4 +1,4 @@
-![RRAM](http://i.imgur.com/JPnXeab.png)
+![RRAM](http://i.imgur.com/ka5lg9P.png)
 
 - **React** & **Redux**
 - **Airbnb** linted
