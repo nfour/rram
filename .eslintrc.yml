@@ -16,18 +16,8 @@ rules:
   guard-for-in      : 0 # Because ForIn
   arrow-body-style  : 0 # Doesn't let you have single statement block functions
   no-param-reassign : 0 # Variable names are hard
-  key-spacing       :
-    - error
-    -
-      align:
-        beforeColon: true
-        afterColon: true
-        on: colon
-      # multiLine: { }
-      singleLine:
-        beforeColon: false
-        afterColon: true
 
+  no-underscore-dangle: 0 # Good for decalaring "private"
   no-multi-spaces:
     - 0
     - exceptions:
@@ -36,7 +26,6 @@ rules:
   no-unused-vars: # Can be helpful to define params for verbosity
     - error
     - args: none
-
 
   # This allows devDependencies to be imported for build files
   # This can be applied to specific files when eslint supports that feature later
@@ -56,8 +45,25 @@ rules:
   arrow-parens           : 0 # This produces an error on async/await
 
   #
-  # WARNINGS
+  # CHANGES (ERRORS)
   #
+
+  # ...
+
+  #
+  # WARNINGS (WARNINGS)
+  #
+
+  key-spacing:
+    - error
+    -
+      align:
+        beforeColon: true
+        afterColon: true
+        on: colon
+      singleLine:
+        beforeColon: false
+        afterColon: true
 
   global-require: 1 # Limiting, but useful
 

@@ -7,8 +7,8 @@ import { Example } from '../components';
 
 export default connect(
   (state) => ({
-    text: state.example.text,
-    items: state.exampleItems,
+    text  : state.example._text,
+    items : state.exampleItems,
   }),
   (dispatch) => ({
     actions: bindActionCreators({
