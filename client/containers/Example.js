@@ -7,7 +7,7 @@ import { Example } from '../components';
 
 export default connect(
   (state) => ({
-    text  : state.example._text,
+    text  : state.example.text,
     items : state.exampleItems,
   }),
   (dispatch) => ({

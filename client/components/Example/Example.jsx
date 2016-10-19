@@ -70,7 +70,8 @@ export const Example = ({ text, actions, items }) => {
 Example.propTypes = {
   text    : PropTypes.string.isRequired,
   items   : PropTypes.object.isRequired, // TODO: use shape({})
-  actions : PropTypes.object.isRequired,
+
+  actions: PropTypes.object.isRequired, // TODO: use shape({})
 };
 
 export default pure(Example);

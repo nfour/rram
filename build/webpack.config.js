@@ -5,8 +5,8 @@ import webpack from 'webpack';
  *  See ../gulpfile.babel.js for usage.
  */
 export default {
-  entry  : ['babel-polyfill'], // Base entries (Only for requires)
-  devtool: 'source-map',       // Only when not compressing
+  entry   : ['babel-polyfill'], // Base entries (Only for requires)
+  devtool : 'source-map',       // Only when not compressing
 
   plugins: [
     new webpack.ProgressPlugin(),
@@ -26,22 +26,27 @@ export default {
     ],
     loaders: [
       {
-        test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader',
+        test   : /\.less$/,
+        loader : 'style-loader!css-loader!less-loader',
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        test   : /\.css$/,
+        loader : 'style-loader!css-loader',
       },
       {
-        test: /\.(png|jpg|gif|woff|woff2|eot|svg)$/,
-        loader: 'url-loader?limit=8192',
+        test   : /\.(png|jpg|gif|woff|woff2|eot|svg)$/,
+        loader : 'url-loader?limit=8192',
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader',
+        test   : /\.json$/,
+        loader : 'json-loader',
       },
     ],
+
+    eslint: {
+      cache : true,
+      quiet : true,
+    },
 
     /*
 
