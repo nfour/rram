@@ -1,4 +1,4 @@
-![RRAM](http://i.imgur.com/JPnXeab.png)
+![RRAM](http://i.imgur.com/3XyJbkW.png)
 
 You will never need more than **_7938kb_** of RRAM *(2016-10-20)*.
 
@@ -12,6 +12,8 @@ git clone https://github.com/nfour/rram && cd rram
 npm run install:all
 npm start
 ```
+- Can also install using yarn, via `npm run install:all:yarn`
+
 
 ## STRUCTURE
 ```
@@ -53,7 +55,7 @@ ___/ index.jsx
      |     + All routes pass through this component
      |
      |___/ containers/Page.js
-     |     + Any route which should inherit the "page" layout pass through this.
+     |     + Any route which should inherit a "page" layout passes through this
      |     |
      |     |___/ components/Page/Page.jsx
      |           + Wraps children in a page layout component
