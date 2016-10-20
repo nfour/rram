@@ -1,5 +1,7 @@
 ![RRAM](http://i.imgur.com/JPnXeab.png)
 
+You will never need more than **_7938kb_** of RRAM *(2016-10-20)*.
+
 - **React** & **Redux**
 - **Airbnb** linted
 - **Modular** by design
