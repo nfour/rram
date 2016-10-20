@@ -1,6 +1,6 @@
 ![RRAM](http://i.imgur.com/3XyJbkW.png)
 
-You will never need more than **_660 kb_** of RRAM *(as of 2016-10-20)*.
+**_660 kb_** of RRAM ought to be enough for anyone *(as of 2016-10-20)*.
 
 - **React** & **Redux**
 - **Airbnb** linted
