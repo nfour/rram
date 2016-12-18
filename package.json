@@ -7,8 +7,7 @@
     "test:integration": "npm run test:jest -- --testPathPattern='\\.int\\.test\\.jsx?$'",
     "test:jest": "jest --config ./.jestrc --setupTestFrameworkScriptFile ./client/test/setup.js",
     "test": "npm run test:unit",
-    "dashboard": "webpack-dashboard -c cyan -- npm start",
-    "dash": "webpack --watch",
+    "dash": "webpack-dashboard -c cyan -- npm start",
     "build": "rm -rf dist/* && webpack",
     "start": "webpack-dev-server"
   },
