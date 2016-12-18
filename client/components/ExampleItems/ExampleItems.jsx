@@ -13,7 +13,7 @@ export const ExampleItems = ({ actions, items }) => {
         {items.rowsOrder.map((id) =>
           <button className={`key_${id}`} key={id} onClick={() => actions.deleteItem(id)}>
             {items.rows[id].name}
-          </button>
+          </button>,
         )}
       </div>
       {/* TODO: add re-ordering */}

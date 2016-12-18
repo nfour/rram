@@ -9,36 +9,27 @@ import './lib/polyfill';
 import createStore from './store';
 import initialize from './lib/initialize';
 
-import { Example, Page } from './containers';
-import { Root, NotFound } from './components';
+import Page from './containers/Page';
+import Example from './containers/Example';
 
-
-//
-// EXPORTS
-//
-
+import Root from './components/Root/Root';
+import { NotFound } from './components/errors';
 
 export const STORE   = createStore();
 export const HISTORY = syncHistoryWithStore(hashHistory, STORE);
 
-
-//
-// ROUTING
-//
-
-
 render(
   <Provider store={STORE}>
     <Router history={HISTORY}>
-      <Route path="/" component={Root}>
-        <Route component={Page}>
+      <Route component={Root}>
+        <Route path="/" component={Page}>
           <IndexRoute component={Example} />
           <Route path="*" component={NotFound} />
         </Route>
       </Route>
     </Router>
   </Provider>,
-  document.getElementById('Root')
+  document.body.appendChild(document.createElement('div')),
 );
 
 initialize();

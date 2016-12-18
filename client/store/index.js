@@ -14,7 +14,7 @@ export const reducers = {
 export const combinedReducers = combineReducers(reducers);
 
 const createStoreWithMiddleware = applyMiddleware(
-  reduxThunk
+  reduxThunk,
 )(createStore);
 
 // Store creator
@@ -22,5 +22,5 @@ export default (initialState) =>
   createStoreWithMiddleware(
     combinedReducers,
     initialState,
-    window.devToolsExtension && window.devToolsExtension()
+    window.devToolsExtension && window.devToolsExtension(),
   );

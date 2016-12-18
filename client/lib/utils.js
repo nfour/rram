@@ -17,16 +17,7 @@ export function flatten(rowsArray, ...primaryKeys) {
   const rows = {};
   const rowsOrder = [];
 
-  let primaryKey = 'id';
-
-  for (const i in primaryKeys) {
-    const key = primaryKeys[i];
-
-    if (key in rowsArray[0]) {
-      primaryKey = key;
-      break;
-    }
-  }
+  const primaryKey = primaryKeys.find((key) => key in rowsArray[0]) || 'id';
 
   rowsArray.forEach((row) => {
     const rowKey = row[primaryKey];

@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 
 import Wrapper from '../../test/Wrapper';
@@ -28,13 +27,13 @@ describe('<Example />', () => {
       <Example {...props} />
     );
 
-    expect(component.find('.Example').length).to.equal(1);
-    expect(component.find('.text').text()).to.equal(props.text);
+    expect(component.find('.Example').length).toBe(1);
+    expect(component.find('.text').text()).toBe(props.text);
 
     component.find('.requestText').simulate('click');
 
-    expect(props.actions.requestText.calledOnce).to.equal(true);
-  });
+    expect(props.actions.requestText.calledOnce).toBe(true);
+  })
 
   // This is effectively a full render, with a <Provider> and material-ui context
   it('Renders with material-ui', async () => {
@@ -44,7 +43,7 @@ describe('<Example />', () => {
 
     const firstId = props.items.rows['1'].id;
 
-    expect(component.find('.Example').length).to.equal(1);
-    expect(component.find(`.key_${firstId}`).text()).to.equal(props.items.rows['1'].name);
+    expect(component.find('.Example').length).toBe(1);
+    expect(component.find(`.key_${firstId}`).text()).toBe(props.items.rows['1'].name);
   });
 });
