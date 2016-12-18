@@ -3,11 +3,8 @@ import path from 'path';
 import fs from 'fs';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ignoreStyles from 'ignore-styles';
 
 import '../lib/polyfill';
-
-ignoreStyles(['.sass']);
 
 const body = fs.readFileSync(path.resolve(__dirname, '../index.ejs'));
 

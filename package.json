@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test:unit": "npm run test:jest -- --testPathPattern='\\/[^\\/\\.]+\\.test\\.jsx?$'",
-    "test:integrations": "npm run test:jest -- --testPathPattern='\\.int\\.test\\.jsx?$'",
+    "test:integration": "npm run test:jest -- --testPathPattern='\\.int\\.test\\.jsx?$'",
     "test:jest": "jest --config ./.jestrc --setupTestFrameworkScriptFile ./client/test/setup.js",
     "test": "npm run test:unit",
     "dash": "webpack-dashboard -c cyan -- npm start",
@@ -39,7 +39,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-async-to-module-method": "^6.16.0",
     "babel-polyfill": "^6.20.0",
-    "babel-preset-env": "^0.0.7",
+    "babel-preset-env": "^1.1.4",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0",
     "babel-register": "^6.18.0",
@@ -54,7 +54,6 @@
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
     "identity-obj-proxy": "^3.0.0",
-    "ignore-styles": "^5.0.1",
     "jest": "^18.0.0",
     "jest-css-modules": "^1.1.0",
     "jsdom": "^9.8.3",
@@ -69,7 +68,6 @@
     "webpack": "2.2.0-rc.1",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^1.1.1",
-    "yargs": "^6.5.0"
+    "webpack-merge": "^1.1.1"
   }
 }
