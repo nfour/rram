@@ -97,11 +97,11 @@ module.exports = () => {
             'style-loader',
             {
               loader  : 'css-loader',
-              options : { sourceMap: true },
+              options : { sourceMap: DEVELOPMENT },
             },
             {
               loader  : 'sass-loader',
-              options : { sourceMap: true },
+              options : { sourceMap: DEVELOPMENT },
             },
 
           ],
