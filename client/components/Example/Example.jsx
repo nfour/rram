@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { pure } from 'recompose';
 
-import ExampleItems from '../ExampleItems/ExampleItems.jsx';
+import ExampleItems from '../ExampleItems/ExampleItems';
 
-import './Example.less';
+import './Example.scss';
 import goodJob from './goodJob.jpg';
 
 const passValue = (actionFn) => (event) => actionFn(event.target.value);
@@ -59,7 +59,7 @@ export const Example = ({ text, actions, items }) => {
         <p>
           <button
             onClick={() => actions.appendText('')}
-          >Pure Render Protected Change (Won't re-render)</button>
+          >Pure Render Protected Change (Wont re-render)</button>
         </p>
         <ExampleItems actions={actions} items={items} />
       </div>
@@ -70,8 +70,7 @@ export const Example = ({ text, actions, items }) => {
 Example.propTypes = {
   text    : PropTypes.string.isRequired,
   items   : PropTypes.object.isRequired, // TODO: use shape({})
-
-  actions: PropTypes.object.isRequired, // TODO: use shape({})
+  actions : PropTypes.object.isRequired, // TODO: use shape({})
 };
 
 export default pure(Example);

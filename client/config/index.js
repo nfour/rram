@@ -1,12 +1,4 @@
-import { merge } from 'lutils';
-
-const CONFIG = {
-  test: 1,
-};
-
-const ENV_CONFIG = ['production', 'development'].indexOf(process.env.NODE_ENV) > -1
-  ? require(`./${process.env.NODE_ENV}`)
-  : require('./development');
-
-
-export default merge(CONFIG, ENV_CONFIG);
+/**
+ * NOTE: If a NODE_ENV doesn't match, make the file!
+ */
+export default require(`./${process.env.NODE_ENV || 'development'}`); // eslint-disable-line

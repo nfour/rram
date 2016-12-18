@@ -1,17 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
-export class Header extends React.Component {
-  static propTypes = {
-    actions: PropTypes.object.isRequired,
-  }
-
-  state = {}
-
-  handleClick = (event) =>
-    this.props.actions.doStuff(event.target.value)
-
-  render = () =>
-    <div onClick={this.handleClick} />
-}
+export const Header = () =>
+  <div className="header">---</div>;
 
 export default Header;

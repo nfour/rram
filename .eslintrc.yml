@@ -11,7 +11,7 @@ rules:
     - error
     - LabeledStatement
     - WithStatement
-  # - ForInStatement
+    - ForInStatement
   no-continue       : 0 # Because ForIn
   guard-for-in      : 0 # Because ForIn
   arrow-body-style  : 0 # Doesn't let you have single statement block functions
@@ -79,7 +79,7 @@ rules:
   import/prefer-default-export    : 1 # Limits multi-export files when they aren't populated
 
 env:
-  mocha   : true
+  jest    : true
   browser : true
   node    : true
   es6     : true

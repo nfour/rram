@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 
-import { Page } from '../components';
+import Page from '../components/Page/Page';
 
 export default connect(
   (state) => state,
   (dispatch) => ({}),
   (mappedState, mappedDispatch, props) => ({
+    ...props,
     ...mappedState,
     ...mappedDispatch,
-    location: props.location,
-  })
+  }),
 )(Page);

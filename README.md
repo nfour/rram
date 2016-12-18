@@ -1,21 +1,56 @@
 ![RRAM](http://i.imgur.com/3XyJbkW.png)
 
-**_660 kb_** of RRAM ought to be enough for anyone *(as of 2016-10-20)*.
+**_630 kb_** of RRAM ought to be enough for anyone *(as of 2016-10-20)*.
 
 - **React** & **Redux**
 - **Airbnb** linted
 - **Modular** by design
 
 ## INSTALL
+
+It's recommended to use `yarn`.
+
 ```bash
 git clone https://github.com/nfour/rram && cd rram
-npm run install:all
-npm start
+yarn
 ```
-- Can also install using yarn, via `npm run install:all:yarn`
 
+## USAGE
 
-## STRUCTURE
+---
+- `yarn start`
+  - Starts up a `webpack-dev-server` on `http://localhost:8080/webpack-dev-server/`
+- `yarn run dash`
+  - Just like `yarn start`, but uses `webpack-dashboard`. This shows useful build info.
+- `yarn run build`
+  - Build to `./dist`
+- `NODE_ENV=production yarn run build`
+  - Production build to `./dist`
+
+---
+
+- `yarn test`
+  - Uses `jest`, runs unit tests
+- `yarn run test:unit`
+  - Same as `yarn test`
+  - `yarn run test:unit -- --watch` to watch
+- `yarn run test:integration`
+  - Only runs `*.int.test.jsx?` files
+  - `yarn run test:integration -- --watch` to watch
+---
+## BUILD SYSTEM
+
+The build system leverages `webpack` and `webpack-dev-server` exclusively
+and all usage is done through the npm scripts above.
+
+There are 3 build related files:
+- `webpack.config.js` The base config, used by `webpack` directly
+- `webpack.config.dev.js` Development related options
+- `webpack.config.prod.js` Production related options
+
+Edit these files to customize the build process to your needs.
+
+## DIRECTORY STRUCTURE
 ```
 ___/ index.jsx
      - Routing, initialization & store creation

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as exampleActions from '../store/example/actions';
 import * as exampleItemsActions from '../store/exampleItems/actions';
-import { Example } from '../components';
+import Example from '../components/Example/Example';
 
 export default connect(
   (state) => ({
@@ -15,5 +15,5 @@ export default connect(
       ...exampleActions,
       ...exampleItemsActions,
     }, dispatch),
-  })
+  }),
 )(Example);

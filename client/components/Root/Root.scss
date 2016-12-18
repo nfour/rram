@@ -1,5 +1,5 @@
-@import (css) url('https://fonts.googleapis.com/css?family=Roboto:400,300,500');
-@import (css) url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
   opacity     : 1; // For the loading effect
@@ -13,7 +13,8 @@ body {
 
 // Forces constraints to window size
 // NOTE: Remove this as content requires
-html, body, #ROOT, #ROOT > div {
+html, body, body > div {
   width: 100%;
   height: 100%;
 }
+
