@@ -1,13 +1,11 @@
 import React, { PropTypes } from 'react';
 
-import './Root.sass';
+import './Root.scss';
 
-export default class Root extends React.Component {
-  static propTypes = {
-    children: PropTypes.object.isRequired,
-  }
+export const Root = ({ children }) => children;
 
-  // ... Put context stuff here
+Root.propTypes = {
+  children: PropTypes.object.isRequired,
+};
 
-  render = () => this.props.children
-}
+export default Root;

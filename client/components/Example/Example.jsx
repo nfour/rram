@@ -3,7 +3,7 @@ import { pure } from 'recompose';
 
 import ExampleItems from '../ExampleItems/ExampleItems';
 
-import './Example.sass';
+import './Example.scss';
 import goodJob from './goodJob.jpg';
 
 const passValue = (actionFn) => (event) => actionFn(event.target.value);

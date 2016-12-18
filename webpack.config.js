@@ -2,11 +2,14 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const devConfig = require('./webpack.config.dev');
-const pkgJson = require('./package.json');
-
 // The <script_name> in `npm run <script_name>`
-const INVOCATION = process.env.npm_lifecycle_event;
+export const INVOCATION = process.env.npm_lifecycle_event;
+export const DEVELOPMENT = INVOCATION === 'start' || INVOCATION === 'dash';
+export const PRODUCTION = process.env.NODE_ENV === 'production';
+
+const devConfig = require('./webpack.config.dev');
+const prodConfig = require('./webpack.config.prod');
+const pkgJson = require('./package.json');
 
 /**
  * webpack.config.js
@@ -16,10 +19,11 @@ const INVOCATION = process.env.npm_lifecycle_event;
  * - Checks `INVOCATION` to determine whether to run development or production builds
  *
  */
-module.exports = (ENV) => {
+module.exports = () => {
   let config = {
-    context : `${__dirname}/client`,
-    entry   : {
+    context: `${__dirname}/client`,
+
+    entry: {
       bundle: ['babel-polyfill', './index.jsx'],
 
       // Everything in the `dependencies` should be considered a `vendor` library
@@ -47,15 +51,17 @@ module.exports = (ENV) => {
         filename : 'index.html',
         template : './index.ejs',
       }),
+
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        },
+      }),
     ],
 
-    resolve: {
-      extensions: ['.js', '.jsx', '.json'],
-    },
+    resolve: {  extensions: ['.js', '.jsx', '.json']  },
 
-    performance: {
-      hints: false,
-    },
+    performance: { hints: false  },
 
     module: {
       rules: [
@@ -72,13 +78,12 @@ module.exports = (ENV) => {
               use     : [{
                 loader  : 'eslint-loader',
                 options : {
-                  cache       : true,
-                  quiet       : true,
-                  failOnError : false,
+                  cache : true,
+                  quiet : true,
 
                   // Causes `npm run build` to fail on lint errors
                   // but development does not
-                  emitWarning: INVOCATION !== 'build',
+                  emitWarning: DEVELOPMENT,
                 },
               }],
             },
@@ -87,8 +92,19 @@ module.exports = (ENV) => {
 
         // SASS
         {
-          test : /\.sass$/,
-          use  : ['style-loader', 'css-loader', 'sass-loader'],
+          test : /\.s[ac]ss$/,
+          use  : [
+            'style-loader',
+            {
+              loader  : 'css-loader',
+              options : { sourceMap: true },
+            },
+            {
+              loader  : 'sass-loader',
+              options : { sourceMap: true },
+            },
+
+          ],
         },
 
         // CSS
@@ -115,11 +131,11 @@ module.exports = (ENV) => {
     },
   };
 
-  if (INVOCATION === 'start' || INVOCATION === 'dash') {
-    /**
-     * DEVELOPMENT
-     */
+  if (DEVELOPMENT) {
     config = webpackMerge(config, devConfig());
+  } else
+  if (PRODUCTION) {
+    config = webpackMerge(config, prodConfig());
   }
 
   // console.log(JSON.stringify(config, 2, 2));
