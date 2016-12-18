@@ -3,9 +3,9 @@ const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // The <script_name> in `npm run <script_name>`
-export const INVOCATION = process.env.npm_lifecycle_event;
-export const DEVELOPMENT = INVOCATION === 'start' || INVOCATION === 'dash';
-export const PRODUCTION = process.env.NODE_ENV === 'production';
+const INVOCATION = process.env.npm_lifecycle_event;
+const DEVELOPMENT = INVOCATION === 'start' || INVOCATION === 'dash';
+const PRODUCTION = process.env.NODE_ENV === 'production';
 
 const devConfig = require('./webpack.config.dev');
 const prodConfig = require('./webpack.config.prod');
