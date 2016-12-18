@@ -1,6 +1,6 @@
 ![RRAM](http://i.imgur.com/3XyJbkW.png)
 
-**_630 kb_** of RRAM ought to be enough for anyone *(as of 2016-10-20)*.
+**_630 kb_** of RRAM ought to be enough for anyone *(as of 2016-12-18)*.
 
 - **React** & **Redux**
 - **Airbnb** linted
