@@ -50,6 +50,9 @@ There are 3 build related files:
 
 Edit these files to customize the build process to your needs.
 
+There is currently only one entry point, `./client/index.jsx`. A bit of tweaking
+to the `webpack.config.js` can yield multiple entries.
+
 ## DIRECTORY STRUCTURE
 ```
 ___/ index.jsx
