@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const DashboardPlugin = require('webpack-dashboard/plugin');
-const WatchNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
+const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 
 const LIVE_SASS = !!process.env.LIVE_SASS;
 
@@ -11,7 +11,7 @@ module.exports = () => {
   return {
     plugins: [
       new DashboardPlugin(),
-      new WatchNodeModulesPlugin(`${__dirname}/node_modules`),
+      new WatchMissingNodeModulesPlugin(`${__dirname}/node_modules`),
     ],
 
     devtool: 'eval-source-map',
