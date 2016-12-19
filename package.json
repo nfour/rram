@@ -60,6 +60,7 @@
     "json-loader": "^0.5.4",
     "node-sass": "^4.0.0",
     "react-addons-test-utils": "^15.4.1",
+    "react-dev-utils": "^0.4.2",
     "sass-lint": "^1.10.2",
     "sass-loader": "^4.1.0",
     "sinon": "~1.17.4",
