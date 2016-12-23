@@ -44,7 +44,7 @@
     "babel-preset-stage-1": "^6.16.0",
     "babel-register": "^6.18.0",
     "css-loader": "^0.26.1",
-    "enzyme": "^2.6.0",
+    "enzyme": "^2.7.0",
     "eslint": "^3.12.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-loader": "^1.6.1",
@@ -56,19 +56,19 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^18.0.0",
     "jest-css-modules": "^1.1.0",
-    "jsdom": "^9.8.3",
+    "jsdom": "^9.9.1",
     "json-loader": "^0.5.4",
-    "node-sass": "^4.0.0",
+    "node-sass": "^4.1.1",
     "react-addons-test-utils": "^15.4.1",
     "react-dev-utils": "^0.4.2",
     "sass-lint": "^1.10.2",
-    "sass-loader": "^4.1.0",
+    "sass-loader": "^4.1.1",
     "sinon": "~1.17.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "2.2.0-rc.1",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^1.1.1"
+    "webpack-merge": "^2.0.0"
   }
 }
