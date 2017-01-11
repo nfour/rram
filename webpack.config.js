@@ -59,7 +59,7 @@ module.exports = () => {
       }),
     ],
 
-    resolve: {  extensions: ['.js', '.jsx', '.json']  },
+    resolve: { extensions: ['.js', '.jsx', '.json']  },
 
     performance: { hints: false  },
 
@@ -133,7 +133,8 @@ module.exports = () => {
 
   if (DEVELOPMENT) {
     config = webpackMerge(config, devConfig());
-  } else
+  }
+
   if (PRODUCTION) {
     config = webpackMerge(config, prodConfig());
   }
