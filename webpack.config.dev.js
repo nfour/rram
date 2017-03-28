@@ -17,7 +17,7 @@ module.exports = () => {
     devtool: 'eval-source-map',
 
     devServer: {
-      contentBase : './client',
+      contentBase : './src',
       compress    : false,
       // inline      : true,
 

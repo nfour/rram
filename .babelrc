@@ -8,10 +8,6 @@
     "stage-1"
   ],
   "plugins": [
-    "add-module-exports",
-    [
-      "transform-async-to-module-method",
-      { "module": "bluebird", "method": "coroutine" }
-    ]
+    "add-module-exports"
   ]
 }

@@ -21,7 +21,7 @@ const pkgJson = require('./package.json');
  */
 module.exports = () => {
   let config = {
-    context: `${__dirname}/client`,
+    context: `${__dirname}/src`,
 
     entry: {
       bundle: ['babel-polyfill', './index.jsx'],
@@ -49,7 +49,7 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         title    : pkgJson.description || pkgJson.name,
         filename : 'index.html',
-        template : './index.ejs',
+        template : './index.html',
       }),
 
       new webpack.DefinePlugin({
