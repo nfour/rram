@@ -1,4 +1,8 @@
+<img src="https://travis-ci.org/nfour/rram.svg?branch=master" align="right" />
+
 ![RRAM](http://i.imgur.com/3XyJbkW.png)
+
+
 
 **_630 kb_** of RRAM ought to be enough for anyone *(as of 2016-12-18)*.
 
@@ -11,7 +15,7 @@ This is a boilerplate base-project, intended to standardize on:
 
 ---
 
-![travis](https://travis-ci.org/nfour/rram.svg?branch=master)
+
 
 ---
 
