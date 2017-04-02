@@ -163,5 +163,5 @@ For a custom build process:
 - Wire them up with `npm` scripts
 - Invoke `bash` scripts from a `./scripts/` folder
 
-There is currently only one entry point, `./client/index.jsx`. A bit of tweaking
-to the `webpack.config.js` can yield multiple entries.
+There is currently only one entry point, `./src/index.jsx`. \
+A bit of tweaking to the `webpack.config.js` will yield multiple entries.
