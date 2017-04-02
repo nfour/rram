@@ -1,7 +1,8 @@
 import { clone, merge } from 'lutils';
+import defaultConfig from './default';
 
 export default merge(
-  clone(require('./default')),
+  clone(defaultConfig),
   {
     config: 'production',
   },
