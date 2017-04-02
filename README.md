@@ -1,7 +1,12 @@
 <img src="https://travis-ci.org/nfour/rram.svg?branch=master" />
 &nbsp;
+<a href="https://codecov.io/gh/nfour/rram">
+  <img src="https://codecov.io/gh/nfour/rram/branch/master/graph/badge.svg" alt="Codecov" />
+</a>
+&nbsp;
+<a href="https://david-dm.org/nfour/rram" title="dependencies status"><img src="https://david-dm.org/nfour/rram/status.svg"/></a>
+&nbsp;
 <a href="https://codeclimate.com/github/nfour/rram"><img src="https://codeclimate.com/github/nfour/rram/badges/gpa.svg" /></a>
-<a href="https://codeclimate.com/github/nfour/rram"><img src="https://codeclimate.com/github/nfour/rram/badges/issue_count.svg" /></a>
 
 <img src="http://i.imgur.com/3XyJbkW.png" />
 
