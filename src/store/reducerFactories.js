@@ -2,7 +2,7 @@
 /**
  *  @constructs GenericReducer
  *
- *  A reducer factori which returns a reducer to handle:
+ *  A reducer factory which returns a reducer to handle:
  *
  *  MERGE:
  *    payload = { [key]: value }
