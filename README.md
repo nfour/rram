@@ -9,13 +9,19 @@ This is a boilerplate base-project, intended to standardize on:
 - **Airbnb** linted
 - **Modular** by design
 
+---
+
 ![travis](https://travis-ci.org/nfour/rram.svg?branch=master)
+
+---
 
 ## INSTALL
 
 ```bash
 git clone https://github.com/nfour/rram && cd rram && yarn
 ```
+
+---
 
 ## USAGE
 
@@ -40,6 +46,8 @@ git clone https://github.com/nfour/rram && cd rram && yarn
     - Only runs `*.int.test.jsx?` files
     - `yarn run test:integration -- --watch` to watch
 
+---
+
 ## BUILD SYSTEM
 
 The build system leverages `webpack` and `webpack-dev-server` exclusively
@@ -57,6 +65,8 @@ For a custom build process:
 
 There is currently only one entry point, `./client/index.jsx`. A bit of tweaking
 to the `webpack.config.js` can yield multiple entries.
+
+---
 
 ## LAYOUT
 ```js
@@ -76,6 +86,8 @@ to the `webpack.config.js` can yield multiple entries.
           `/reducer` // Redux Reducers
           `/sources` // (Optional) This is where you would pull in external data
 ```
+
+---
 
 ## LAYOUT CONVENTION
 
@@ -99,10 +111,11 @@ to the `webpack.config.js` can yield multiple entries.
     - ✓ `/components/pages/index.js` may be fine, as pages may be exclusive of each other
     - ✓ `/components/errors.jsx` would be fine
 
+---
+
 ## RENDER FLOW
 
 The example below describes the flow of a typical render.
-
 
 ```md
 | /index.jsx
