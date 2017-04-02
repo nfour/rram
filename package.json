@@ -3,11 +3,11 @@
   "version": "0.4.0",
   "private": true,
   "scripts": {
-    "test:unit": "npm run test:jest -- --testPathPattern='\\/[^\\/\\.]+\\.test\\.jsx?$'",
-    "test:integration": "npm run test:jest -- --testPathPattern='\\.int\\.test\\.jsx?$'",
-    "test:jest": "jest --config ./.jestrc --setupTestFrameworkScriptFile ./client/test/setup.js",
-    "test": "npm run test:unit",
-    "dash": "webpack-dashboard -- npm start",
+    "test:unit": "yarn test:jest --testPathPattern=\"(!?\\.int\\.)\"",
+    "test:integration": "yarn test:jest -- --testPathPattern=\"\\.int\\.\"",
+    "test:jest": "jest --config ./.jestrc",
+    "test": "yarn test:unit",
+    "dash": "webpack-dashboard -- yarn start",
     "build": "rm -rf dist/* && webpack",
     "start": "webpack-dev-server"
   },

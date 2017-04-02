@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 
 import '../lib/polyfill';
 
-const body = fs.readFileSync(path.resolve(__dirname, '../index.ejs'));
+const body = fs.readFileSync(path.resolve(__dirname, '../index.html'));
 
 global.document = jsDom.jsdom(body);
 global.window = document.defaultView;

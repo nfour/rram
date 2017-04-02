@@ -99,7 +99,7 @@ to the `webpack.config.js` can yield multiple entries.
 
 ## RENDER FLOW
 
-The example below describes the flow of a typical.
+The example below describes the flow of a typical render.
 
 ```
 | /index.jsx

@@ -1,4 +1,9 @@
-/**
- * NOTE: If a NODE_ENV doesn't match, make the file!
- */
-export default require(`./${process.env.NODE_ENV || 'development'}`); // eslint-disable-line
+/* eslint-disable global-require */
+
+export default (() => {
+  switch (process.env.NODE_ENV) {
+    case 'production': return require('./production');
+    case 'test': return require('./test');
+    default: return require('./development');
+  }
+})();
