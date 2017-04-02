@@ -109,42 +109,42 @@ The example below describes the flow of a typical.
         | /store/Example/reducer.js
         |___
             |
-            | Resolve reducers to state
+            | - Resolve reducers to state
      _______|
     |
-    | State passed down
+    | - State passed down
     |
-    | Route matched
+    | - Route matched
     |
     | /components/Root/Root.jsx
     |___
         | /containers/Page.js
         |___
             |
-            | Any route which should inherit a "page" layout passes through this
+            | - Any route which should inherit a "page" layout passes through this
             |
             | /components/Page/Page.jsx
             |___
                 |
-                | Wraps children in a page layout component
+                | - Wraps children in a page layout component
                 |
                 | /containers/Example.js
                 |___
                     |
-                    | Assign state to props
+                    | - Assign state to props
                     |
-                    | Retrieve actions
+                    | - Retrieve actions
                     |___
                         |
                         | /store/Example/actions.js
                      ___|
                     |
-                    | Bind dispatch to actions & assign to props
+                    | - Bind dispatch to actions & assign to props
                     |
                     | /components/Example/Example.jsx
                     |___
                         |
-                        | Renders
+                        | - Renders
                         |
                         +
 ```
