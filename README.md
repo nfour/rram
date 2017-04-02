@@ -1,4 +1,6 @@
-<img src="https://travis-ci.org/nfour/rram.svg?branch=master" />
+<a href="https://travis-ci.org/nfour/rram">
+  <img src="https://travis-ci.org/nfour/rram.svg?branch=master" />
+</a>
 &nbsp;
 <a href="https://codecov.io/gh/nfour/rram">
   <img src="https://codecov.io/gh/nfour/rram/branch/master/graph/badge.svg" alt="Codecov" />
