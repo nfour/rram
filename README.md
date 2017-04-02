@@ -101,7 +101,8 @@ to the `webpack.config.js` can yield multiple entries.
 
 The example below describes the flow of a typical render.
 
-```
+
+```md
 | /index.jsx
 |___
     | /store/index.js
