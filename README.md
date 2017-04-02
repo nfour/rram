@@ -9,6 +9,8 @@ This is a boilerplate base-project, intended to standardize on:
 - **Airbnb** linted
 - **Modular** by design
 
+![travis](https://travis-ci.org/nfour/rram.svg?branch=master)
+
 ## INSTALL
 
 ```bash
