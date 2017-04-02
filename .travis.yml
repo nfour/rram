@@ -6,6 +6,7 @@ cache:
 
 install:
   - yarn global add codecov
+  - yarn
 
 script:
   - yarn lint
