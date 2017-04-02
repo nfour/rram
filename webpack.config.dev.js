@@ -27,6 +27,6 @@ module.exports = () => {
       },
     },
 
-    output: { path: './src' },
+    output: { path: `${__dirname}/src` },
   };
 };
