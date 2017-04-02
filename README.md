@@ -2,35 +2,29 @@
 
 ![RRAM](http://i.imgur.com/3XyJbkW.png)
 
+**_~630 kb_** of RRAM ought to be enough for anyone *(as of 2016-12-18)*.
 
-
-**_630 kb_** of RRAM ought to be enough for anyone *(as of 2016-12-18)*.
-
-This is a boilerplate base-project, intended to standardize on:
-
-- **React**
-- **Redux**
-- **Airbnb** linted
-- **Modular** by design
+A project boilerplate \
+ **React**, **Redux**, **Airbnb** linted, **Modular** by design
 
 ---
 
-- [INSTALL](#install)
-- [USAGE](#usage)
-- [LAYOUT](#layout)
-- [LAYOUT CONVENTION](#layout-convention)
-- [RENDER FLOW](#render-flow)
-- [BUILD SYSTEM](#build-system)
+- [Install](#install)
+- [Usage](#usage)
+- [Layout](#layout)
+- [Layout Convention](#layout-convention)
+- [Render Flow](#render-flow)
+- [Build System](#build-system)
 
 ---
 
-## INSTALL
+## Install
 
 ```bash
 git clone https://github.com/nfour/rram && cd rram && yarn
 ```
 
-## USAGE
+## Usage
 
 - `yarn start`
     - Starts up a `webpack-dev-server` on `http://localhost:8080/webpack-dev-server/`
@@ -53,7 +47,8 @@ git clone https://github.com/nfour/rram && cd rram && yarn
     - Only runs `*.int.test.jsx?` files
     - `yarn run test:integration -- --watch` to watch
 
-## LAYOUT
+## Layout
+
 ```js
   `/index.jsx` // Routing, initialization & store creation
   `/components/` // View related logic ONLY
@@ -71,7 +66,7 @@ git clone https://github.com/nfour/rram && cd rram && yarn
           `/sources` // (Optional) This is where you would pull in external data
 ```
 
-## LAYOUT CONVENTION
+## Layout Convention
 
 - Components:
     - Should be entirely contained within its respective folder
@@ -93,10 +88,9 @@ git clone https://github.com/nfour/rram && cd rram && yarn
     - ✓ `/components/pages/index.js` may be fine, as pages may be exclusive of each other
     - ✓ `/components/errors.jsx` would be fine
 
-## RENDER FLOW
+## Render Flow
 
 The example below describes the flow of a typical render.
-
 
 ```md
 | /index.jsx
@@ -143,7 +137,7 @@ The example below describes the flow of a typical render.
                         +
 ```
 
-## BUILD SYSTEM
+## Build System
 
 The build system leverages `webpack` and `webpack-dev-server` exclusively
 and all build steps should be done through the npm scripts.
