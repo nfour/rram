@@ -13,6 +13,16 @@ This is a boilerplate base-project, intended to standardize on:
 - **Airbnb** linted
 - **Modular** by design
 
+---
+
+- [INSTALL](#install)
+- [USAGE](#usage)
+- [LAYOUT](#layout)
+- [LAYOUT CONVENTION](#layout-convention)
+- [RENDER FLOW](#render-flow)
+- [BUILD SYSTEM](#build-system)
+
+---
 
 ## INSTALL
 
@@ -43,24 +53,6 @@ git clone https://github.com/nfour/rram && cd rram && yarn
     - Only runs `*.int.test.jsx?` files
     - `yarn run test:integration -- --watch` to watch
 
-## BUILD SYSTEM
-
-The build system leverages `webpack` and `webpack-dev-server` exclusively
-and all build steps should be done through the npm scripts.
-
-There are 3 build related files:
-- `webpack.config.js` The base config, used by `webpack` directly
-- `webpack.config.dev.js` Development related options
-- `webpack.config.prod.js` Production related options
-
-For a custom build process:
-- Edit these files or create variants
-- Wire them up with `npm` scripts
-- Invoke `bash` scripts from a `./scripts/` folder
-
-There is currently only one entry point, `./client/index.jsx`. A bit of tweaking
-to the `webpack.config.js` can yield multiple entries.
-
 ## LAYOUT
 ```js
   `/index.jsx` // Routing, initialization & store creation
@@ -73,7 +65,6 @@ to the `webpack.config.js` can yield multiple entries.
   `/containers/`
       `/${Container}.js` // State assignment logic ONLY
   `/store/` // Redux store management
-      `/index.js` // Tie the store together
       `/${storeName}/` // This should map to store[storeName]
           `/actions` // Redux actions
           `/reducer` // Redux Reducers
@@ -151,3 +142,21 @@ The example below describes the flow of a typical render.
                         |
                         +
 ```
+
+## BUILD SYSTEM
+
+The build system leverages `webpack` and `webpack-dev-server` exclusively
+and all build steps should be done through the npm scripts.
+
+There are 3 build related files:
+- `webpack.config.js` The base config, used by `webpack` directly
+- `webpack.config.dev.js` Development related options
+- `webpack.config.prod.js` Production related options
+
+For a custom build process:
+- Edit these files or create variants
+- Wire them up with `npm` scripts
+- Invoke `bash` scripts from a `./scripts/` folder
+
+There is currently only one entry point, `./client/index.jsx`. A bit of tweaking
+to the `webpack.config.js` can yield multiple entries.
