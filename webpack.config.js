@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const INVOCATION = process.env.npm_lifecycle_event;
 const DEVELOPMENT = INVOCATION === 'start' || INVOCATION === 'dash';
 const PRODUCTION = process.env.NODE_ENV === 'production';
-
 const devConfig = require('./webpack.config.dev');
 const prodConfig = require('./webpack.config.prod');
 const pkgJson = require('./package.json');
@@ -22,7 +21,6 @@ const pkgJson = require('./package.json');
 module.exports = () => {
   let config = {
     context: `${__dirname}/src`,
-
     entry: {
       bundle: ['babel-polyfill', './index.jsx'],
 
@@ -31,13 +29,11 @@ module.exports = () => {
         'babel-polyfill',
       ].concat(Object.keys(pkgJson.dependencies)),
     },
-
     output: {
-      path       : `${__dirname}/dist`,
-      publicPath : '/',
-      filename   : '[name].[chunkhash].js',
+      path: `${__dirname}/dist`,
+      publicPath: '/',
+      filename: '[name].[chunkhash].js',
     },
-
     plugins: [
       new webpack.optimize.CommonsChunkPlugin({
         names: ['vendor', 'manifest'],
@@ -47,9 +43,9 @@ module.exports = () => {
        * This renders out an `./dist/index.html` with all scripts, title etc. attached
        */
       new HtmlWebpackPlugin({
-        title    : pkgJson.description || pkgJson.name,
-        filename : 'index.html',
-        template : './index.html',
+        title: pkgJson.description || pkgJson.name,
+        filename: 'index.html',
+        template: './index.html',
       }),
 
       new webpack.DefinePlugin({
@@ -58,28 +54,27 @@ module.exports = () => {
         },
       }),
     ],
-
     resolve: { extensions: ['.js', '.jsx', '.json']  },
-
     performance: { hints: false  },
-
     module: {
       rules: [
         // JS
         {
-          test    : /\.jsx?$/,
-          use     : ['babel-loader'],
-          exclude : [/node_modules/],
+          test: /\.jsx?$/,
+          exclude: [/node_modules/],
+          use: {
+            loader: 'babel-loader?cacheDirectory',
+          },
 
           // ESLINT
           rules: [
             {
-              enforce : 'pre',
-              use     : [{
-                loader  : 'eslint-loader',
-                options : {
-                  cache : true,
-                  quiet : true,
+              enforce: 'pre',
+              use: [{
+                loader: 'eslint-loader',
+                options: {
+                  cache: true,
+                  quiet: true,
 
                   // Causes `npm run build` to fail on lint errors
                   // but development does not
@@ -92,16 +87,16 @@ module.exports = () => {
 
         // SASS
         {
-          test : /\.s[ac]ss$/,
-          use  : [
+          test: /\.s[ac]ss$/,
+          use: [
             'style-loader',
             {
-              loader  : 'css-loader',
-              options : { sourceMap: DEVELOPMENT },
+              loader: 'css-loader',
+              options: { sourceMap: DEVELOPMENT },
             },
             {
-              loader  : 'sass-loader',
-              options : { sourceMap: DEVELOPMENT },
+              loader: 'sass-loader',
+              options: { sourceMap: DEVELOPMENT },
             },
 
           ],
@@ -109,21 +104,21 @@ module.exports = () => {
 
         // CSS
         {
-          test : /\.css$/,
-          use  : ['style-loader', 'css-loader'],
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
 
         },
 
         // JSON
         {
-          test   : /\.json$/,
-          loader : ['json-loader'],
+          test: /\.json$/,
+          loader: ['json-loader'],
         },
 
         // ASSETS
         {
-          test : /\.(png|jpg|gif|woff|woff2|eot|svg)$/,
-          use  : [
+          test: /\.(png|jpg|gif|woff|woff2|eot|svg)$/,
+          use: [
             { loader: 'url-loader', options: { limit: 8192 } },
           ],
         },
@@ -139,7 +134,7 @@ module.exports = () => {
     config = webpackMerge(config, prodConfig());
   }
 
-  // console.log(JSON.stringify(config, 2, 2));
+  // console.dir(config, { depth: 10, colors: true });
 
   return config;
 };

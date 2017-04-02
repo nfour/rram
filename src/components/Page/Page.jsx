@@ -10,8 +10,8 @@ export const Page = ({ location, children }) =>
   </section>;
 
 Page.propTypes = {
-  location  : PropTypes.object.isRequired,
-  children  : PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default pure(Page);

@@ -1,8 +1,5 @@
-const webpack = require('webpack');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
-
-const LIVE_SASS = !!process.env.LIVE_SASS;
 
 /**
  * Delta development config - must be merged into the main config.
@@ -17,8 +14,8 @@ module.exports = () => {
     devtool: 'eval-source-map',
 
     devServer: {
-      contentBase : './src',
-      compress    : false,
+      contentBase: './src',
+      compress: false,
       // inline      : true,
 
       watchOptions: {
@@ -30,8 +27,6 @@ module.exports = () => {
       },
     },
 
-    output: {
-      path: './client',
-    },
+    output: { path: './src' },
   };
 };

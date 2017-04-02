@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import { pure } from 'recompose';
-
 import ExampleItems from '../ExampleItems/ExampleItems';
-
 import './Example.scss';
 import goodJob from './goodJob.jpg';
 
@@ -68,9 +66,9 @@ export const Example = ({ text, actions, items }) => {
 };
 
 Example.propTypes = {
-  text    : PropTypes.string.isRequired,
-  items   : PropTypes.object.isRequired, // TODO: use shape({})
-  actions : PropTypes.object.isRequired, // TODO: use shape({})
+  text: PropTypes.string.isRequired,
+  items: PropTypes.object.isRequired, // TODO: use shape({})
+  actions: PropTypes.object.isRequired, // TODO: use shape({})
 };
 
 export default pure(Example);

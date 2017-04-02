@@ -32,8 +32,8 @@ export const ExampleItems = ({ actions, items }) => {
 };
 
 ExampleItems.propTypes = {
-  items   : PropTypes.object.isRequired, // TODO: use shape({})
-  actions : PropTypes.object.isRequired, // TODO: use shape({})
+  items: PropTypes.object.isRequired, // TODO: use shape({})
+  actions: PropTypes.object.isRequired, // TODO: use shape({})
 };
 
 export default pure(ExampleItems);

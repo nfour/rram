@@ -50,27 +50,6 @@ rules:
 
   # ...
 
-  #
-  # WARNINGS (WARNINGS)
-  #
-
-  key-spacing:
-    - 1
-    -
-      align:
-        beforeColon: true
-        afterColon: true
-        on: colon
-        mode: strict
-      multiLine:
-        beforeColon: false
-        afterColon: true
-        mode: minimum
-      singleLine:
-        beforeColon: false
-        afterColon: true
-        mode: strict
-
   global-require: 1 # Limiting, but useful
 
   react/prefer-stateless-function : 1

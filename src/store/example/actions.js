@@ -10,8 +10,8 @@ import {
 import { getExampleText } from './sources';
 
 export const setText = (text) => ({
-  type    : EXAMPLE__MERGE,
-  payload : { text },
+  type: EXAMPLE__MERGE,
+  payload: { text },
 });
 
 export const resetExample = () => ({
@@ -25,13 +25,13 @@ export const setTextDelayed = () =>
   };
 
 export const appendText = (text) => ({
-  type    : EXAMPLE__TEXT_APPEND,
-  payload : text,
+  type: EXAMPLE__TEXT_APPEND,
+  payload: text,
 });
 
 export const prependText = (text) => ({
-  type    : EXAMPLE__TEXT_PREPEND,
-  payload : text,
+  type: EXAMPLE__TEXT_PREPEND,
+  payload: text,
 });
 
 export const requestText = (newText = '') =>

@@ -11,8 +11,8 @@ export const getItems = () => {
     const { rows, rowsOrder } = await getExampleItems();
 
     return dispatch({
-      type    : EXAMPLE_ITEMS__SET_ROWS,
-      payload : { rows, rowsOrder },
+      type: EXAMPLE_ITEMS__SET_ROWS,
+      payload: { rows, rowsOrder },
     });
   };
 };
@@ -24,8 +24,8 @@ export const resetItems = () => {
 };
 export const deleteItem = (key) => {
   return {
-    type    : EXAMPLE_ITEMS__DELETE_ROW,
-    payload : { key },
+    type: EXAMPLE_ITEMS__DELETE_ROW,
+    payload: { key },
   };
 };
 

@@ -9,20 +9,20 @@ import {
 import { GenericReducer, RowsReducer } from '../reducerFactories';
 
 const initialState = {
-  rows      : {},
-  rowsOrder : [],
+  rows: {},
+  rowsOrder: [],
 };
 
 const genericReducer = new GenericReducer({
-  MERGE : EXAMPLE_ITEMS__MERGE,
-  RESET : EXAMPLE_ITEMS__RESET,
+  MERGE: EXAMPLE_ITEMS__MERGE,
+  RESET: EXAMPLE_ITEMS__RESET,
   initialState,
 });
 
 const rowsReducer = new RowsReducer({
-  SET       : EXAMPLE_ITEMS__SET_ROWS,
-  SET_ORDER : EXAMPLE_ITEMS__SET_ROWS_ORDER,
-  DELETE    : EXAMPLE_ITEMS__DELETE_ROW,
+  SET: EXAMPLE_ITEMS__SET_ROWS,
+  SET_ORDER: EXAMPLE_ITEMS__SET_ROWS_ORDER,
+  DELETE: EXAMPLE_ITEMS__DELETE_ROW,
 });
 
 export default function (state = initialState, action) {

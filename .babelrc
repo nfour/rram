@@ -9,5 +9,10 @@
   ],
   "plugins": [
     "add-module-exports"
-  ]
+  ],
+  "env": {
+    "production": {
+      "presets": ["babili"]
+    }
+  }
 }
