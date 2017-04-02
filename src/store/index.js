@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { routerReducer as routing } from 'react-router-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import example from './example/reducer';
 import exampleItems from './exampleItems/reducer';
@@ -10,17 +11,19 @@ export const reducers = {
   example,
   exampleItems,
 };
-
 export const combinedReducers = combineReducers(reducers);
 
-const createStoreWithMiddleware = applyMiddleware(
+const middleware = [
   reduxThunk,
-)(createStore);
+];
+const enhancers = composeWithDevTools(
+  applyMiddleware(...middleware),
+);
 
 // Store creator
 export default (initialState) =>
-  createStoreWithMiddleware(
+  createStore(
     combinedReducers,
     initialState,
-    window.devToolsExtension && window.devToolsExtension(),
+    enhancers,
   );

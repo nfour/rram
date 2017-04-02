@@ -4,10 +4,10 @@
     ["env", {
       "node": "current",
       "browsers": ["last 2 versions"]
-    }],
-    "stage-1"
+    }]
   ],
   "plugins": [
+    "transform-object-rest-spread",
     "add-module-exports"
   ]
 }
