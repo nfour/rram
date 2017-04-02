@@ -32,6 +32,7 @@ git clone https://github.com/nfour/rram && cd rram && yarn
     - Uses `jest`, runs unit tests
 - `yarn run test:unit`
     - Same as `yarn test`
+    - Only runs `*.test.jsx?` files, not integration tests
     - `yarn run test:unit -- --watch` to watch
 - `yarn run test:integration`
     - Only runs `*.int.test.jsx?` files
