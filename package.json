@@ -1,6 +1,6 @@
 {
   "name": "rram",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "test:unit": "yarn test:jest --testPathPattern=\"(!?\\.int\\.)\"",
