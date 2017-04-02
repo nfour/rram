@@ -13,11 +13,6 @@ This is a boilerplate base-project, intended to standardize on:
 - **Airbnb** linted
 - **Modular** by design
 
----
-
-
-
----
 
 ## INSTALL
 
