@@ -109,29 +109,22 @@ The example below describes the flow of a typical render.
     | /store/index.js
     |___
         | /store/Example/reducer.js
-        |___
-            |
-            | - Resolve reducers to state
-     _______|
+        | - Resolve reducers to state
+     ___|
     |
     | - Routes matched
     |
     | /components/Root/Root.jsx
     |___
-        |
         | /containers/Page.js
         |___
-            |
             | /components/Page/Page.jsx
+            | - Wraps children in a page layout component
             |___
-                |
-                | - Wraps children in a page layout component
-                |
                 | /containers/Example.js
                 |___
                     |
                     | - Assign state to props
-                    |
                     | - Retrieve actions
                     |___
                         |
