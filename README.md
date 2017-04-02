@@ -1,6 +1,10 @@
-<img src="https://travis-ci.org/nfour/rram.svg?branch=master" align="right" />
+<img src="https://travis-ci.org/nfour/rram.svg?branch=master" />
+&nbsp;
+<a href="https://codeclimate.com/github/nfour/rram"><img src="https://codeclimate.com/github/nfour/rram/badges/gpa.svg" /></a>
+<a href="https://codeclimate.com/github/nfour/rram"><img src="https://codeclimate.com/github/nfour/rram/badges/issue_count.svg" /></a>
 
-![RRAM](http://i.imgur.com/3XyJbkW.png)
+<img src="http://i.imgur.com/3XyJbkW.png" />
+
 
 **_~630 kb_** of RRAM ought to be enough for anyone *(as of 2016-12-18)*.
 
