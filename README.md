@@ -4,7 +4,8 @@
 
 This is a boilerplate base-project, intended to standardize on:
 
-- **React** & **Redux**
+- **React**
+- **Redux**
 - **Airbnb** linted
 - **Modular** by design
 
@@ -17,25 +18,24 @@ git clone https://github.com/nfour/rram && cd rram && yarn
 ## USAGE
 
 - `yarn start`
-  - Starts up a `webpack-dev-server` on `http://localhost:8080/webpack-dev-server/`
+    - Starts up a `webpack-dev-server` on `http://localhost:8080/webpack-dev-server/`
 - `yarn run dash`
-  - Just like `yarn start`, but uses `webpack-dashboard`. This shows useful build info.
+    - Just like `yarn start`, but uses `webpack-dashboard`. This shows useful build info.
 - `yarn run build`
-  - Build to `./dist`
+    - Build to `./dist`
 - `NODE_ENV=production yarn run build`
-  - Production build to `./dist`
+    - Production build to `./dist`
 
 ---
 
 - `yarn test`
-  - Uses `jest`, runs unit tests
+    - Uses `jest`, runs unit tests
 - `yarn run test:unit`
-  - Same as `yarn test`
-  - `yarn run test:unit -- --watch` to watch
+    - Same as `yarn test`
+    - `yarn run test:unit -- --watch` to watch
 - `yarn run test:integration`
-  - Only runs `*.int.test.jsx?` files
-  - `yarn run test:integration -- --watch` to watch
-
+    - Only runs `*.int.test.jsx?` files
+    - `yarn run test:integration -- --watch` to watch
 
 ## BUILD SYSTEM
 
@@ -56,37 +56,39 @@ There is currently only one entry point, `./client/index.jsx`. A bit of tweaking
 to the `webpack.config.js` can yield multiple entries.
 
 ## LAYOUT
-```
-___/ index.jsx
-     - Routing, initialization & store creation
-     |
-     |___/ components
-     |     - View related logic ONLY
-     |     |
-     |     |___/ ${Component}
-     |           |
-     |           |___/ ${Component}.jsx
-     |           |___/ ${Component}.scss
-     |           |___/ ${Component}.test.jsx
-     |           |___/ SomeSubComponent.jsx
-     |
-     |___/ containers
-     |     - State assignment logic ONLY
-     |
-     |___/ store(s)
-           - Redux store management
-           |
-           |___/ ${storeName}
-                 |
-                 |___/ actions
-                       - Actions go here
-                 |___/ reducer
-                       - Reducer logic goes here
-                 |___/ sources (Optional)
-                       - This is where you pull in data
+```js
+`/rram/`
+    `/index.jsx`
+        // - Routing, initialization & store creation
+    
+    `/components/`
+        // - View related logic ONLY
+
+        `/${Component}/`
+            `/${Component}.jsx`
+            `/${Component}.scss`
+            `/${Component}.test.jsx`
+            `/SomeSubComponent.jsx`
+
+    `/containers/`
+        `/${Container}.js`
+            // - State assignment logic ONLY
+  
+    `/store/`
+        // - Redux store management
+
+        `/${storeName}/`
+            `/actions`
+                // - Redux actions
+            `/reducer`
+                // - Redux Reducers
+            `/sources`
+                // - This is where you would pull in external
+                // - Optional
 ```
 
 ## LAYOUT CONVENTION
+
 - Components:
     - Should be entirely contained within its respective folder
     - Should have all data passed in as props
@@ -109,37 +111,53 @@ ___/ index.jsx
 
 ## RENDER FLOW
 
-Where the route is `/`, a render occurs as such:
+
+An exampl Where the incoming route matches `/`:
+
 ```
-___/ index.jsx
-     |
-     |___/ store/index.js
-           + Resolve reducers to state
-           |
-           |___/ store/Example/reducer.js
-           |
-      ____/
-     /
-     + Route matched
-     + State passed down
-     |
-     |___/ components/Root/Root.jsx
-           + All routes pass through this component
-           |
-           |___/ containers/Page.js
-           |     + Any route which should inherit a "page" layout passes through this
-           |
-           |___/ components/Page/Page.jsx
-                 + Wraps children in a page layout component
-                 |
-                 |___/ containers/Example.js
-                       + Assign state to props
-                       + Retrieve actions
-                       |
-                       |___/ store/Example/actions.js
-                       |
-                       + Bind dispatch to actions & assign to props
-                       |
-                       |___/ components/Example/Example.jsx
-                             + Renders
+| /index.jsx
+|___
+    | /store/index.js
+    |___
+        | /store/Example/reducer.js
+        |___
+            |
+            | Resolve reducers to state
+     _______|
+    |
+    | State passed down
+    |
+    | Route matched
+    |
+    | /components/Root/Root.jsx
+    |___
+        | /containers/Page.js
+        |___
+            |
+            | Any route which should inherit a "page" layout passes through this
+            |
+            | /components/Page/Page.jsx
+            |___
+                |
+                | Wraps children in a page layout component
+                |
+                | /containers/Example.js
+                |___
+                    |
+                    | Assign state to props
+                    |
+                    | Retrieve actions
+                    |___
+                        |
+                        | /store/Example/actions.js
+                     ___|
+                    |
+                    | Bind dispatch to actions & assign to props
+                    |
+                    | /components/Example/Example.jsx
+                    |___
+                        |
+                        | Renders
+                        |
+                        +
 ```
