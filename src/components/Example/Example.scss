@@ -1,8 +1,7 @@
-$color: #f32d2d;
 section.Example {
 
   margin     : 2em;
-  background : $color;
+  background : #fff;
   box-shadow : 0 0 0 1em #ddd, 0 0 20px 0 rgba(0,0,0,0.15);
   position   : relative;
   transition : all 0.4s ease;
@@ -22,7 +21,6 @@ section.Example {
     padding : 0.75em;
     margin  : 0.5em;
   }
-
 
   button {
     border        : 0;
