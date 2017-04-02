@@ -58,33 +58,24 @@ to the `webpack.config.js` can yield multiple entries.
 ## LAYOUT
 ```js
 `/rram/`
-    `/index.jsx`
-        // - Routing, initialization & store creation
-    
-    `/components/`
-        // - View related logic ONLY
-
+    `/index.jsx` // Routing, initialization & store creation
+    `/components/` // View related logic ONLY
         `/${Component}/`
             `/${Component}.jsx`
             `/${Component}.scss`
             `/${Component}.test.jsx`
             `/SomeSubComponent.jsx`
-
+    
     `/containers/`
-        `/${Container}.js`
-            // - State assignment logic ONLY
-  
-    `/store/`
-        // - Redux store management
+        `/${Container}.js` // State assignment logic ONLY
 
-        `/${storeName}/`
-            `/actions`
-                // - Redux actions
-            `/reducer`
-                // - Redux Reducers
-            `/sources`
-                // - This is where you would pull in external
-                // - Optional
+    `/store/` // Redux store management
+        `/index.js` // Tie the store together
+        
+        `/${storeName}/` // This should map to store[storeName]
+            `/actions` // Redux actions
+            `/reducer` // Redux Reducers
+            `/sources` // (Optional) This is where you would pull in external data
 ```
 
 ## LAYOUT CONVENTION
@@ -111,8 +102,7 @@ to the `webpack.config.js` can yield multiple entries.
 
 ## RENDER FLOW
 
-
-An exampl Where the incoming route matches `/`:
+The example below describes the flow of a typical.
 
 ```
 | /index.jsx
