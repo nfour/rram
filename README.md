@@ -112,16 +112,13 @@ The example below describes the flow of a typical.
             | - Resolve reducers to state
      _______|
     |
-    | - State passed down
-    |
-    | - Route matched
+    | - Routes matched
     |
     | /components/Root/Root.jsx
     |___
+        |
         | /containers/Page.js
         |___
-            |
-            | - Any route which should inherit a "page" layout passes through this
             |
             | /components/Page/Page.jsx
             |___
